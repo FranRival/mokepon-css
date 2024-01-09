@@ -5,21 +5,20 @@
     background-color: teal;
 }
 
-label {
-    background-color: tomato;
-    width: block;
-    height: block;
+#seleccionar-mascota{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
 }
 
 
-input {
-    background-color: aqua;
-    width: block;
-    height: block;
-}
+/*Flexbox
+Padres e hijos
 
-button {
-    background-color: violet;
-    width: block;
-    height: block;
-}
+
+Section: h2, input - elemento padre
+
+h2 - elemento hijo
+*/
