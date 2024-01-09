@@ -13,12 +13,18 @@
     align-items: center;
 }
 
+.tarjeta-de-mokepon {
+    width: 100px;
+    height: 100px;
+    background: aquamarine;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    border: 1px solid hotpink;
+}
 
-/*Flexbox
-Padres e hijos
 
+input {
+    display: none;
+}
 
-Section: h2, input - elemento padre
-
-h2 - elemento hijo
-*/
