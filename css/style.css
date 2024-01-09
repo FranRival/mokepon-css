@@ -1,8 +1,25 @@
 #titulo{
     color: hotpink;
-    width: auto;
-    height: auto;
+    width: block;
+    height: block;
     background-color: teal;
-
 }
 
+label {
+    background-color: tomato;
+    width: block;
+    height: block;
+}
+
+
+input {
+    background-color: aqua;
+    width: block;
+    height: block;
+}
+
+button {
+    background-color: violet;
+    width: block;
+    height: block;
+}
