@@ -1,9 +1,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 
 body{
-    font-family: 'Lilita One', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #0802A3;
 }
 
@@ -20,6 +22,7 @@ body{
 #titulo{
     color: white;
     font-size: 32px;
+    font-family: 'Lilita One', sans-serif;
 }
 
 
@@ -35,7 +38,7 @@ body{
 }
 
 .tarjeta-de-mokepon {
-    width: 156px;
+    width: 167px;
     height: 100px;
     background: #FF4B91;
     padding: 10px;
@@ -47,6 +50,7 @@ body{
     color: white;
     justify-content: flex-start;
     align-items: center;
+
 }
 
 .tarjeta-de-mokepon img{
@@ -58,10 +62,16 @@ input {
     display: none;
 }
 
-#reiniciar{
-    background-color: hotpink;
+#boton-mascota{
     margin: 10px;
-    width: 103px;
-    height: 30px;
-    border: 1px solid red;
+    width: 180px;
+    height: 40px; 
+    border-radius: 20px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    background-color: #FF7676;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 40px;
+
 }
