@@ -1,6 +1,6 @@
 
 function seleccionarMascotaJugador(){
-    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque').style.display = 'block'
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque').style.display = 'flex'
 
     let sectionSeleccionarMascota = document.getElementById('seleccionar-mascota').style.display = 'none'
 
