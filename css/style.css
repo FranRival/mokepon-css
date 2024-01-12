@@ -26,7 +26,7 @@ body{
 }
 
 
-.tarjetas{
+.tarjetas, .tarjetas-ataque{
     display: flex;
     gap: 10px;
 
@@ -115,4 +115,21 @@ input {
 .ataques{
     display: grid;
     grid-template-columns: 100px 100px;
+    justify-items: center;
+    color: white;
+}
+
+@media(max-width:360px){
+    .tarjetas{
+        flex-direction: column;
+    }
+    .tarjetas-ataque{
+        flex-direction: column;
+    }
+}
+
+.ataques-jugador, .ataques-enemigo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
