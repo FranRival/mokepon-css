@@ -22,22 +22,25 @@ const ataqueDelJugador = document.getElementById('ataque-del-jugador')
 const ataqueDelEnemigo = document.getElementById('ataque-del-enemigo')
 
 
-/* 
 
-clases y objetos:
-para constuir un objeto, necesitamos el plano de ese objeto. eso son las clases. 
-
-objeto: nombre, edad, + caracteristicas. 
-
-
-personajes - obejeto: tipo, plano, vida, nivel, etc. con diferente informacion. 
-
-*/
 
 let ataqueEnemigo
 let vidasJugador = 3
 let vidasEnemigo = 3
 let ataqueJugador
+
+
+class Mokepon {
+    constructor (nombre, foto, vida){
+        this.nombre = nombre
+        this.foto = foto
+        this.vida = vida
+    }
+}
+
+let hipodoge = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5)
+let capipepo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5)
+let ratigueya = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5)
 
 
 function seleccionarMascotaJugador(){
