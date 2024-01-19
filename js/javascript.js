@@ -22,7 +22,17 @@ const ataqueDelJugador = document.getElementById('ataque-del-jugador')
 const ataqueDelEnemigo = document.getElementById('ataque-del-enemigo')
 
 
+/* 
 
+clases y objetos:
+para constuir un objeto, necesitamos el plano de ese objeto. eso son las clases. 
+
+objeto: nombre, edad, + caracteristicas. 
+
+
+personajes - obejeto: tipo, plano, vida, nivel, etc. con diferente informacion. 
+
+*/
 
 let ataqueEnemigo
 let vidasJugador = 3
@@ -155,18 +165,10 @@ function revisarVidas (){
 }
 
 function crearMensajeFinal (resultadoFinal){
-
-
     sectionMensajes.innerHTML = resultadoFinal
-
-
-
     botonFuego.disabled = true
-
     botonAgua.disabled = true
-
     botonTierra.disabled = true
-
 
     sectionReiniciar.style.display = 'block'
 }
