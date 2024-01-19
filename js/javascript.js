@@ -23,7 +23,7 @@ const ataqueDelEnemigo = document.getElementById('ataque-del-enemigo')
 
 
 
-
+let mokepones = []
 let ataqueEnemigo
 let vidasJugador = 3
 let vidasEnemigo = 3
@@ -41,6 +41,10 @@ class Mokepon {
 let hipodoge = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5)
 let capipepo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5)
 let ratigueya = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5)
+
+
+mokepones.push(hipodoge,capipepo,ratigueya)
+console.log(mokepones)
 
 
 function seleccionarMascotaJugador(){
