@@ -40,8 +40,6 @@ class Mokepon {
 }
 
 
-//este array esta siendo utilizado abajo. 
-
 
 let hypodoge = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5)
 let capipepo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5)
@@ -71,8 +69,37 @@ ratigueya.ataques.push(
     {nombre: '🧊', id:'boton-agua'},
 )
 
-//.ataque, es una propiedad que ya se le construyo. y push es para meter mas informacion. 
+mokepones.push(hypodoge,capipepo,ratigueya)
 
+
+function iniciarJuego (){
+
+    sectionSeleccionarAtaque.style.display = 'none'
+
+    mokepones.forEach((mokepon) =>{
+
+        console.log(mokepon.vida)
+        //mokepon. <- nombre, vida, edad, etc.
+    }) 
+
+    //por cada mokepon que existe en el array de mokepone, haz lo siguiente. 
+
+    //este codigo hace que en el inspeccionar, aparezca la informacion en casgada de los mokepones totales en el array sin necesidad de preguntar a la consola por sus propiedades. 
+
+    //inyectar informacion en el HTML
+
+
+
+    sectionReiniciar.style.display = 'none'
+
+      botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
+
+      botonFuego.addEventListener('click', ataqueFuego)
+      botonAgua.addEventListener('click' , ataqueAgua)
+      botonTierra.addEventListener('click', ataqueTierra)
+
+      botonReiniciar.addEventListener('click', reiniciarJuego)
+}
 
 
 function seleccionarMascotaJugador(){
@@ -96,19 +123,6 @@ function seleccionarMascotaJugador(){
 window.addEventListener('load',iniciarJuego)
 
 
-function iniciarJuego (){
-
-    sectionSeleccionarAtaque.style.display = 'none'
-    sectionReiniciar.style.display = 'none'
-
-      botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
-
-      botonFuego.addEventListener('click', ataqueFuego)
-      botonAgua.addEventListener('click' , ataqueAgua)
-      botonTierra.addEventListener('click', ataqueTierra)
-
-      botonReiniciar.addEventListener('click', reiniciarJuego)
-}
 
 
 
