@@ -35,16 +35,44 @@ class Mokepon {
         this.nombre = nombre
         this.foto = foto
         this.vida = vida
+        this.ataques = []
     }
 }
 
-let hipodoge = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5)
+
+//este array esta siendo utilizado abajo. 
+
+
+let hypodoge = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5)
 let capipepo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5)
 let ratigueya = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5)
 
+hypodoge.ataques.push(
+    {nombre: '🧊', id:'boton-agua'},
+    {nombre: '🧊', id:'boton-agua'},
+    {nombre: '🧊', id:'boton-agua'},
+    {nombre: '🔥', id:'boton-fuego'},
+    {nombre: '🌱', id:'boton-tierra'},
+)
 
-mokepones.push(hipodoge,capipepo,ratigueya)
-console.log(mokepones)
+capipepo.ataques.push(
+    {nombre: '🌱', id:'boton-tierra'},
+    {nombre: '🌱', id:'boton-tierra'},
+    {nombre: '🌱', id:'boton-tierra'},
+    {nombre: '🧊', id:'boton-agua'},
+    {nombre: '🔥', id:'boton-fuego'},
+)
+
+ratigueya.ataques.push(
+    {nombre: '🔥', id:'boton-fuego'},
+    {nombre: '🔥', id:'boton-fuego'},
+    {nombre: '🔥', id:'boton-fuego'},
+    {nombre: '🌱', id:'boton-tierra'},
+    {nombre: '🧊', id:'boton-agua'},
+)
+
+//.ataque, es una propiedad que ya se le construyo. y push es para meter mas informacion. 
+
 
 
 function seleccionarMascotaJugador(){
