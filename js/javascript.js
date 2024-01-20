@@ -21,6 +21,7 @@ const sectionMensajes = document.getElementById('resultado')
 const ataqueDelJugador = document.getElementById('ataque-del-jugador')
 const ataqueDelEnemigo = document.getElementById('ataque-del-enemigo')
 
+const contenedorTarjetas = document.getElementById('contenedor-tarjetas')
 
 
 let mokepones = []
@@ -28,6 +29,8 @@ let ataqueEnemigo
 let vidasJugador = 3
 let vidasEnemigo = 3
 let ataqueJugador
+let opcionDeMokepon
+
 
 
 class Mokepon {
@@ -77,9 +80,24 @@ function iniciarJuego (){
     sectionSeleccionarAtaque.style.display = 'none'
 
     mokepones.forEach((mokepon) =>{
+        opcionDeMokepon = `
+        <input type="radio" name="mascota" id=${mokepon.nombre}>
+        <label class="tarjeta-de-mokepon" for=${mokepon.nombre}>
+            <p>${mokepon.nombre}</p>
+            <img src=${mokepon.foto} alt=${mokepon.nombre}>
+        
+        </label>
+        `
+                //templates literarios: html + variables
 
-        console.log(mokepon.vida)
-        //mokepon. <- nombre, vida, edad, etc.
+        contenedorTarjetas.innerHTML+=opcionDeMokepon
+
+        
+        //nadamas se esta imprimiendo uno de los mokepones. para que se impriman en pantalla los 3, solo hay que poner el simbolo de +
+
+
+
+
     }) 
 
     //por cada mokepon que existe en el array de mokepone, haz lo siguiente. 
