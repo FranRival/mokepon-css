@@ -88,23 +88,16 @@ function iniciarJuego (){
         
         </label>
         `
-                //templates literarios: html + variables
+
+        //foreach: iterar por cuantos datos existan en un Array, 
+        //pueden haber 1 o 1M. iterar con forEach. 
+        //Por cada elemento en este Array: 
+        //por cada elemento que exista en el Array de mokepon, 
+        //genera esta estructura de HTML, e inyectala en HTML, y sustituirlo de forma manual, y ser de forma automatica. 
+        //creo que ya entendi esta mierda.
 
         contenedorTarjetas.innerHTML+=opcionDeMokepon
-
-        
-        //nadamas se esta imprimiendo uno de los mokepones. para que se impriman en pantalla los 3, solo hay que poner el simbolo de +
-
-
-
-
     }) 
-
-    //por cada mokepon que existe en el array de mokepone, haz lo siguiente. 
-
-    //este codigo hace que en el inspeccionar, aparezca la informacion en casgada de los mokepones totales en el array sin necesidad de preguntar a la consola por sus propiedades. 
-
-    //inyectar informacion en el HTML
 
 
 
