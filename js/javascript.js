@@ -7,9 +7,6 @@ const botonReiniciar = document.getElementById('boton-reiniciar')
 const botonMascotaJugador = document.getElementById('boton-mascota')
 
 const sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
-const inputHypodoge = document.getElementById('hypodoge')
-const inputCapipepo = document.getElementById('capipepo')
-const inputRatigueya = document.getElementById('ratigueya')
 const spanMascotaJugador = document.getElementById ('mascota-jugador')
 
 const spanMascotaEnemigo = document.getElementById('mascota-enemigo')
@@ -30,6 +27,9 @@ let vidasJugador = 3
 let vidasEnemigo = 3
 let ataqueJugador
 let opcionDeMokepon
+let inputHipodoge
+let inputCapipepo 
+let inputRatigueya 
 
 
 
@@ -88,15 +88,12 @@ function iniciarJuego (){
         
         </label>
         `
-
-        //foreach: iterar por cuantos datos existan en un Array, 
-        //pueden haber 1 o 1M. iterar con forEach. 
-        //Por cada elemento en este Array: 
-        //por cada elemento que exista en el Array de mokepon, 
-        //genera esta estructura de HTML, e inyectala en HTML, y sustituirlo de forma manual, y ser de forma automatica. 
-        //creo que ya entendi esta mierda.
-
         contenedorTarjetas.innerHTML+=opcionDeMokepon
+
+        let inputHypodoge = document.getElementById('Hipodoge')
+        let inputCapipepo = document.getElementById('Capipepo')
+        let inputRatigueya = document.getElementById('Ratigueya')
+        //aparecia un error en la segunda pantalla. NO aparecian sus nombres abajo del contador de vidas, no aparecia el nombre del tipo de mokepon. 
     }) 
 
 
@@ -117,8 +114,8 @@ function seleccionarMascotaJugador(){
     sectionSeleccionarAtaque.style.display = 'flex'
     sectionSeleccionarMascota.style.display = 'none'
 
-    if (inputHypodoge.checked){
-        spanMascotaJugador.innerHTML = 'Hypodoge'
+    if (inputHipodoge.checked){
+        spanMascotaJugador.innerHTML = 'Hipodoge'
     }else if (inputCapipepo.checked){
         spanMascotaJugador.innerHTML = 'Capipepo'
     } else if (inputRatigueya.checked){
