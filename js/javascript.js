@@ -28,14 +28,14 @@ let vidasEnemigo = 3
 let ataqueJugador
 let opcionDeMokepon
 let inputHipodoge
-let inputCapipepo 
-let inputRatigueya 
+let inputCapipepo
+let inputRatigueya
 
 
 
-class Mokepon {
+class Mokepon{
     constructor (nombre, foto, vida){
-        this.nombre = nombre
+        this.nombre=nombre
         this.foto = foto
         this.vida = vida
         this.ataques = []
@@ -49,11 +49,11 @@ let capipepo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjy
 let ratigueya = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5)
 
 hypodoge.ataques.push(
-    {nombre: '🧊', id:'boton-agua'},
-    {nombre: '🧊', id:'boton-agua'},
-    {nombre: '🧊', id:'boton-agua'},
-    {nombre: '🔥', id:'boton-fuego'},
-    {nombre: '🌱', id:'boton-tierra'},
+    {nombre: '🧊', id:"boton-agua"},
+    {nombre: '🧊', id:"boton-agua"},
+    {nombre: '🧊', id:"boton-agua"},
+    {nombre: '🔥', id:"boton-fuego"},
+    {nombre: '🌱', id:"boton-tierra"},
 )
 
 capipepo.ataques.push(
@@ -84,8 +84,8 @@ function iniciarJuego (){
 
     mokepones.forEach((mokepon) =>{
         opcionDeMokepon = `
-        <input type="radio" name="mascota" id=${mokepon.nombre}>
-        <label class="tarjeta-de-mokepon" for=${mokepon.nombre}>
+        <input type="radio" name="mascota" id="${mokepon.nombre}" />
+        <label class="tarjeta-de-mokepon" for="${mokepon.nombre}">
             <p>${mokepon.nombre}</p>
             <img src=${mokepon.foto} alt=${mokepon.nombre}>
         
@@ -95,11 +95,12 @@ function iniciarJuego (){
        
         contenedorTarjetas.innerHTML+=opcionDeMokepon
 
-        let inputHipodoge = document.getElementById('Hipodoge')
-        let inputCapipepo = document.getElementById('Capipepo')
-        let inputRatigueya = document.getElementById('Ratigueya')
 
-        //aparecia un error en la segunda pantalla. NO aparecian sus nombres abajo del contador de vidas, no aparecia el nombre del tipo de mokepon. 
+        let inputHipodoge = document.getElementById("Hipodoge")
+        let inputCapipepo = document.getElementById("Capipepo")
+        let inputRatigueya = document.getElementById("Ratigueya")
+
+
     }) 
 
 
@@ -121,12 +122,11 @@ function seleccionarMascotaJugador(){
     sectionSeleccionarMascota.style.display = 'none'
 //el error esta aqui. 
     if (inputHipodoge.checked){
-        spanMascotaJugador.innerHTML = 'Hipodoge'
-        alert('hipo')
+        spanMascotaJugador.innerHTML ="Hipodoge"
     }else if (inputCapipepo.checked){
-        spanMascotaJugador.innerHTML = 'Capipepo'
+        spanMascotaJugador.innerHTML ="Capipepo"
     } else if (inputRatigueya.checked){
-        spanMascotaJugador.innerHTML = 'Ratigueya'
+        spanMascotaJugador.innerHTML ="Ratigueya"
     }else {
         alert ("Tienes que selecionar")
 
