@@ -91,17 +91,35 @@ function iniciarJuego (){
         
         </label>
         `
-
-       
         contenedorTarjetas.innerHTML+=opcionDeMokepon
 
+    }) 
+
+
+    function seleccionarMascotaJugador(){
+        sectionSeleccionarAtaque.style.display = 'flex'
+        sectionSeleccionarMascota.style.display = 'none'
+    
+        //pegamos este codigo que originalemente estaba en INICIAR-JUEGO
         let inputHipodoge = document.getElementById('Hipodoge')
         let inputCapipepo = document.getElementById('Capipepo')
         let inputRatigueya = document.getElementById('Ratigueya')
-
-        //aparecia un error en la segunda pantalla. NO aparecian sus nombres abajo del contador de vidas, no aparecia el nombre del tipo de mokepon. 
-    }) 
-
+    
+        if (inputHipodoge.checked){
+            spanMascotaJugador.innerHTML = 'Hipodoge'
+            alert('hipo')
+        }else if (inputCapipepo.checked){
+            spanMascotaJugador.innerHTML = 'Capipepo'
+        } else if (inputRatigueya.checked){
+            spanMascotaJugador.innerHTML = 'Ratigueya'
+        }else {
+            alert ("Tienes que selecionar")
+    
+        }
+        seleccionarMascotaEnemigo()
+        
+    }
+    
 
 
     sectionReiniciar.style.display = 'none'
@@ -116,24 +134,6 @@ function iniciarJuego (){
 }
 
 
-function seleccionarMascotaJugador(){
-    sectionSeleccionarAtaque.style.display = 'flex'
-    sectionSeleccionarMascota.style.display = 'none'
-//el error esta aqui. 
-    if (inputHipodoge.checked){
-        spanMascotaJugador.innerHTML = 'Hipodoge'
-        alert('hipo')
-    }else if (inputCapipepo.checked){
-        spanMascotaJugador.innerHTML = 'Capipepo'
-    } else if (inputRatigueya.checked){
-        spanMascotaJugador.innerHTML = 'Ratigueya'
-    }else {
-        alert ("Tienes que selecionar")
-
-    }
-    seleccionarMascotaEnemigo()
-    
-}
 
 window.addEventListener('load',iniciarJuego)
 
