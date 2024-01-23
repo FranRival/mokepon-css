@@ -77,7 +77,10 @@ mokepones.push(hypodoge,capipepo,ratigueya)
 
 function iniciarJuego (){
 
+
+    //ni siquiera entra o serviria la primera pantalla. 
     sectionSeleccionarAtaque.style.display = 'none'
+   
 
     mokepones.forEach((mokepon) =>{
         opcionDeMokepon = `
@@ -88,11 +91,14 @@ function iniciarJuego (){
         
         </label>
         `
+
+       
         contenedorTarjetas.innerHTML+=opcionDeMokepon
 
-        let inputHypodoge = document.getElementById('Hipodoge')
+        let inputHipodoge = document.getElementById('Hipodoge')
         let inputCapipepo = document.getElementById('Capipepo')
         let inputRatigueya = document.getElementById('Ratigueya')
+
         //aparecia un error en la segunda pantalla. NO aparecian sus nombres abajo del contador de vidas, no aparecia el nombre del tipo de mokepon. 
     }) 
 
@@ -116,6 +122,7 @@ function seleccionarMascotaJugador(){
 
     if (inputHipodoge.checked){
         spanMascotaJugador.innerHTML = 'Hipodoge'
+        alert('hipo')
     }else if (inputCapipepo.checked){
         spanMascotaJugador.innerHTML = 'Capipepo'
     } else if (inputRatigueya.checked){
