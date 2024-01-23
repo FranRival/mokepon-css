@@ -44,11 +44,11 @@ class Mokepon{
 
 
 
-let hypodoge = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5)
+let hypodogue = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5)
 let capipepo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5)
 let ratigueya = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5)
 
-hypodoge.ataques.push(
+hypodogue.ataques.push(
     {nombre: '🧊', id:"boton-agua"},
     {nombre: '🧊', id:"boton-agua"},
     {nombre: '🧊', id:"boton-agua"},
@@ -72,7 +72,7 @@ ratigueya.ataques.push(
     {nombre: '🧊', id:'boton-agua'},
 )
 
-mokepones.push(hypodoge,capipepo,ratigueya)
+mokepones.push(hypodogue,capipepo,ratigueya)
 
 
 function iniciarJuego (){
@@ -80,28 +80,49 @@ function iniciarJuego (){
 
     //ni siquiera entra o serviria la primera pantalla. 
     sectionSeleccionarAtaque.style.display = 'none'
-   
 
-    mokepones.forEach((mokepon) =>{
+    
+        mokepones.forEach((mokepon) =>{
         opcionDeMokepon = `
-        <input type="radio" name="mascota" id="${mokepon.nombre}" />
+        <input type="radio" name="mascota" id=${mokepon.nombre} />
         <label class="tarjeta-de-mokepon" for="${mokepon.nombre}">
             <p>${mokepon.nombre}</p>
-            <img src=${mokepon.foto} alt=${mokepon.nombre}>
+            <img src="${mokepon.foto}" alt="${mokepon.nombre}">
         
         </label>
         `
-
        
         contenedorTarjetas.innerHTML+=opcionDeMokepon
 
 
-        let inputHipodoge = document.getElementById("Hipodoge")
-        let inputCapipepo = document.getElementById("Capipepo")
-        let inputRatigueya = document.getElementById("Ratigueya")
-
-
     }) 
+
+
+
+    function seleccionarMascotaJugador(){
+        sectionSeleccionarAtaque.style.display = 'flex'
+        sectionSeleccionarMascota.style.display = 'none'
+    //el error esta aqui. 
+
+    let inputHipodoge = document.getElementById("Hipodoge")
+    let inputCapipepo = document.getElementById("Capipepo")
+    let inputRatigueya = document.getElementById("Ratigueya")
+    
+        if (inputHipodoge.checked){
+            spanMascotaJugador.innerHTML ="Hipodoge"
+        }else if (inputCapipepo.checked){
+            spanMascotaJugador.innerHTML ="Capipepo"
+        } else if (inputRatigueya.checked){
+            spanMascotaJugador.innerHTML ="Ratigueya"
+        }else {
+            alert ("Tienes que selecionar")
+    
+        }
+        seleccionarMascotaEnemigo()
+        
+    }
+    
+
 
 
 
@@ -116,24 +137,6 @@ function iniciarJuego (){
       botonReiniciar.addEventListener('click', reiniciarJuego)
 }
 
-
-function seleccionarMascotaJugador(){
-    sectionSeleccionarAtaque.style.display = 'flex'
-    sectionSeleccionarMascota.style.display = 'none'
-//el error esta aqui. 
-    if (inputHipodoge.checked){
-        spanMascotaJugador.innerHTML ="Hipodoge"
-    }else if (inputCapipepo.checked){
-        spanMascotaJugador.innerHTML ="Capipepo"
-    } else if (inputRatigueya.checked){
-        spanMascotaJugador.innerHTML ="Ratigueya"
-    }else {
-        alert ("Tienes que selecionar")
-
-    }
-    seleccionarMascotaEnemigo()
-    
-}
 
 window.addEventListener('load',iniciarJuego)
 
