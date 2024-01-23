@@ -119,7 +119,7 @@ function iniciarJuego (){
 function seleccionarMascotaJugador(){
     sectionSeleccionarAtaque.style.display = 'flex'
     sectionSeleccionarMascota.style.display = 'none'
-
+//el error esta aqui. 
     if (inputHipodoge.checked){
         spanMascotaJugador.innerHTML = 'Hipodoge'
         alert('hipo')
