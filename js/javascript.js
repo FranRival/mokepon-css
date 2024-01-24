@@ -77,8 +77,6 @@ mokepones.push(hypodoge,capipepo,ratigueya)
 
 function iniciarJuego (){
 
-
-    //ni siquiera entra o serviria la primera pantalla. 
     sectionSeleccionarAtaque.style.display = 'none'
    
 
@@ -92,8 +90,8 @@ function iniciarJuego (){
         </label>
         `
         contenedorTarjetas.innerHTML+=opcionDeMokepon
-
     }) 
+
 
 
     function seleccionarMascotaJugador(){
@@ -101,17 +99,19 @@ function iniciarJuego (){
         sectionSeleccionarMascota.style.display = 'none'
     
         //pegamos este codigo que originalemente estaba en INICIAR-JUEGO
+
         let inputHipodoge = document.getElementById('Hipodoge')
         let inputCapipepo = document.getElementById('Capipepo')
         let inputRatigueya = document.getElementById('Ratigueya')
+
+        ///////////////////////////////
     
         if (inputHipodoge.checked){
-            spanMascotaJugador.innerHTML = 'Hipodoge'
-            alert('hipo')
+            spanMascotaJugador.innerHTML = inputCapipepo.id
         }else if (inputCapipepo.checked){
-            spanMascotaJugador.innerHTML = 'Capipepo'
+            spanMascotaJugador.innerHTML = inputCapipepo.id
         } else if (inputRatigueya.checked){
-            spanMascotaJugador.innerHTML = 'Ratigueya'
+            spanMascotaJugador.innerHTML = inputRatigueya.id
         }else {
             alert ("Tienes que selecionar")
     
