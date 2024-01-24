@@ -30,6 +30,7 @@ let opcionDeMokepon
 let inputHipodoge
 let inputCapipepo 
 let inputRatigueya 
+let mascotaJugador
 
 
 
@@ -91,35 +92,55 @@ function iniciarJuego (){
         `
         contenedorTarjetas.innerHTML+=opcionDeMokepon
     }) 
-
+}
 
 
     function seleccionarMascotaJugador(){
         sectionSeleccionarAtaque.style.display = 'flex'
         sectionSeleccionarMascota.style.display = 'none'
-    
-        //pegamos este codigo que originalemente estaba en INICIAR-JUEGO
 
         let inputHipodoge = document.getElementById('Hipodoge')
         let inputCapipepo = document.getElementById('Capipepo')
         let inputRatigueya = document.getElementById('Ratigueya')
 
-        ///////////////////////////////
     
         if (inputHipodoge.checked){
             spanMascotaJugador.innerHTML = inputCapipepo.id
+            //solo imprimimos el resultado. con esto, guardamos la variable. luego extraer. 
+            mascotaJugador=inputCapipepo.id
         }else if (inputCapipepo.checked){
             spanMascotaJugador.innerHTML = inputCapipepo.id
+            mascotaJugador=inputCapipepo.id
         } else if (inputRatigueya.checked){
             spanMascotaJugador.innerHTML = inputRatigueya.id
+            mascotaJugador=inputRatigueya.id
         }else {
             alert ("Tienes que selecionar")
     
         }
+        extraerAtaques(mascotaJugador)
         seleccionarMascotaEnemigo()
         
     }
 
+
+    function extraerAtaques(mascotaJugador){
+        let ataques
+        //iterar por cada elemento que existe en un arreglo. 
+        for (let i = 0; i < mokepones.length; i++) {
+            if (mascotaJugador== mokepones[i].nombre){
+                //arreglo: y le damos un numero I: nos va a regresar los datos que esten en ese indice. 
+                //pero nos regresara el elemento completo, pero solo queremos el .nombre
+                ataques = mokepones[i].ataques
+            }
+            
+        }
+        mostrarAtaques(ataques)
+    }
+
+
+
+    //a que perra funcion pertenece esta shit? 
      sectionReiniciar.style.display = 'none'
 
       botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
@@ -129,23 +150,11 @@ function iniciarJuego (){
       botonTierra.addEventListener('click', ataqueTierra)
 
       botonReiniciar.addEventListener('click', reiniciarJuego)
-}
 
 
-//cambiar el 3, por el total-infinito de mokepones. utilizando una sola fuente de verdad
+
 function seleccionarMascotaEnemigo(){
     let mascotaAleatoria = aleatorio (0,mokepones.length -1)
-
-
-   // spanMascotaEnemigo = mokepones[mascotaAleatoria]
-
-
-    //esta variable va a traer un numero del 0 al 2, y el numero que ponga, entonces es el numero que el enemigo va a seleccionar
-    //spanMascotaEnemigo, es igual a la longitud de los mokepones, y el mascotaAleatoria, va a elegir un numero entre el 0 al 2. ese va a ser el mokepon que elija el enemigo
-
-    //sale un perro error: seleccionamos a una variable, que esta ligada a un elemento de html a un id
-    //lo que necesitamos hacer es que se imprima el nombre de este personaje. 
-    //para que se imprima el nombre:
 
     spanMascotaEnemigo.innerHTML= mokepones[mascotaAleatoria].nombre
 }
