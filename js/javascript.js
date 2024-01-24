@@ -119,10 +119,8 @@ function iniciarJuego (){
         seleccionarMascotaEnemigo()
         
     }
-    
 
-
-    sectionReiniciar.style.display = 'none'
+     sectionReiniciar.style.display = 'none'
 
       botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 
@@ -132,6 +130,26 @@ function iniciarJuego (){
 
       botonReiniciar.addEventListener('click', reiniciarJuego)
 }
+
+
+//cambiar el 3, por el total-infinito de mokepones. utilizando una sola fuente de verdad
+function seleccionarMascotaEnemigo(){
+    let mascotaAleatoria = aleatorio (0,mokepones.length -1)
+
+
+   // spanMascotaEnemigo = mokepones[mascotaAleatoria]
+
+
+    //esta variable va a traer un numero del 0 al 2, y el numero que ponga, entonces es el numero que el enemigo va a seleccionar
+    //spanMascotaEnemigo, es igual a la longitud de los mokepones, y el mascotaAleatoria, va a elegir un numero entre el 0 al 2. ese va a ser el mokepon que elija el enemigo
+
+    //sale un perro error: seleccionamos a una variable, que esta ligada a un elemento de html a un id
+    //lo que necesitamos hacer es que se imprima el nombre de este personaje. 
+    //para que se imprima el nombre:
+
+    spanMascotaEnemigo.innerHTML= mokepones[mascotaAleatoria].nombre
+}
+
 
 
 
@@ -246,19 +264,6 @@ function crearMensajeFinal (resultadoFinal){
 
 function aleatorio (min, max){
     return Math.floor(Math.random()*(max-min +1)+ min)
-}
-
-function seleccionarMascotaEnemigo(){
-    let mascotaAleatoria = aleatorio (1,3)
-
-
-    if (mascotaAleatoria==1){
-        spanMascotaEnemigo.innerHTML='Hipodoge'
-    }else if (mascotaAleatoria==2){
-        spanMascotaEnemigo.innerHTML='Capipepo'
-    }else if (mascotaAleatoria==3){
-        spanMascotaEnemigo.innerHTML='Ratigueya'
-    }
 }
 
 
