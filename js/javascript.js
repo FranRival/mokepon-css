@@ -112,9 +112,9 @@ function iniciarJuego (){
 
     
         if (inputHipodoge.checked){
-            spanMascotaJugador.innerHTML = inputCapipepo.id
+            spanMascotaJugador.innerHTML = inputHipodoge.id
             //solo imprimimos el resultado. con esto, guardamos la variable. luego extraer. 
-            mascotaJugador=inputCapipepo.id
+            mascotaJugador=inputHipodoge.id
         }else if (inputCapipepo.checked){
             spanMascotaJugador.innerHTML = inputCapipepo.id
             mascotaJugador=inputCapipepo.id
@@ -125,8 +125,10 @@ function iniciarJuego (){
             alert ("Tienes que selecionar")
     
         }
-        extraerAtaques(mascotaJugador)
+
         seleccionarMascotaEnemigo()
+        extraerAtaques(mascotaJugador)
+
         
     }
 
@@ -146,6 +148,8 @@ function iniciarJuego (){
     }
 
 //el error de codigo esta entre extraerAtaques y mostrarAtaques
+
+
 function mostrarAtaques(){
     ataques.forEach((ataque) => {
         ataquesMokepon = `
