@@ -123,6 +123,8 @@ function mostrarAtaques(){
         botonAgua.addEventListener('click' , ataqueAgua)
         botonTierra.addEventListener('click', ataqueTierra)
 
+
+        
 }
 
 
