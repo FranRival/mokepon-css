@@ -145,21 +145,7 @@ function iniciarJuego (){
         mostrarAtaques(ataques)
     }
 
-    //a que perra funcion pertenece esta shit? 
-     sectionReiniciar.style.display = 'none'
-
-      botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
-
-
-
-
-function seleccionarMascotaEnemigo(){
-    let mascotaAleatoria = aleatorio (0,mokepones.length -1)
-
-    spanMascotaEnemigo.innerHTML= mokepones[mascotaAleatoria].nombre
-}
-
-
+//el error de codigo esta entre extraerAtaques y mostrarAtaques
 function mostrarAtaques(){
     ataques.forEach((ataque) => {
         ataquesMokepon = `
@@ -176,12 +162,21 @@ function mostrarAtaques(){
         botonFuego.addEventListener('click', ataqueFuego)
         botonAgua.addEventListener('click' , ataqueAgua)
         botonTierra.addEventListener('click', ataqueTierra)
-  
-
-
-
-
 }
+
+
+function seleccionarMascotaEnemigo(){
+    let mascotaAleatoria = aleatorio (0,mokepones.length -1)
+
+    spanMascotaEnemigo.innerHTML= mokepones[mascotaAleatoria].nombre
+}
+
+
+
+    //a que perra funcion pertenece esta shit? 
+    sectionReiniciar.style.display = 'none'
+
+    botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 
 
 
