@@ -21,6 +21,8 @@ const contenedorTarjetas = document.getElementById('contenedor-tarjetas')
 
 const contenedorAtaques = document.getElementById('contenedorAtaques')
 
+sectionReiniciar.style.display = 'none'
+
 
 let mokepones = []
 let ataqueEnemigo
@@ -99,7 +101,32 @@ function iniciarJuego (){
         `
         contenedorTarjetas.innerHTML+=opcionDeMokepon
     }) 
+
+    botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 }
+
+
+function mostrarAtaques(){
+    ataques.forEach((ataque) => {
+        ataquesMokepon = `
+        <button id=${ataque.id} class="boton-de-ataque">${ataque.nombre}</button>
+        `
+        contenedorAtaques.innerHTML += ataquesMokepon
+    })
+
+        botonFuego = document.getElementById('boton-fuego')
+        botonAgua = document.getElementById('boton-agua')
+        botonTierra = document.getElementById('boton-tierra')
+
+
+        botonFuego.addEventListener('click', ataqueFuego)
+        botonAgua.addEventListener('click' , ataqueAgua)
+        botonTierra.addEventListener('click', ataqueTierra)
+
+}
+
+
+
 
 
     function seleccionarMascotaJugador(){
@@ -145,12 +172,6 @@ function iniciarJuego (){
         mostrarAtaques(ataques)
     }
 
-    //a que perra funcion pertenece esta shit? 
-     sectionReiniciar.style.display = 'none'
-
-      botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
-
-
 
 
 function seleccionarMascotaEnemigo(){
@@ -160,28 +181,6 @@ function seleccionarMascotaEnemigo(){
 }
 
 
-function mostrarAtaques(){
-    ataques.forEach((ataque) => {
-        ataquesMokepon = `
-        <button id=${ataque.id} class="boton-de-ataque">${ataque.nombre}</button>
-        `
-        contenedorAtaques.innerHTML += ataquesMokepon
-    })
-
-        botonFuego = document.getElementById('boton-fuego')
-        botonAgua = document.getElementById('boton-agua')
-        botonTierra = document.getElementById('boton-tierra')
-
-
-        botonFuego.addEventListener('click', ataqueFuego)
-        botonAgua.addEventListener('click' , ataqueAgua)
-        botonTierra.addEventListener('click', ataqueTierra)
-  
-
-
-
-
-}
 
 
 
