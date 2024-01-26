@@ -144,7 +144,8 @@ function iniciarJuego (){
 //esta informacion almacenada en ataques, no esta pasando a la funcion de mostrarAtaques. Why?
 
 
-function mostrarAtaques(){
+function mostrarAtaques(ataques){
+
     ataques.forEach(ataque => {
         ataquesMokepon = `
         <button id=${ataque.id} class="boton-de-ataque">${ataque.nombre}</button>
