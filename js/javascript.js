@@ -38,9 +38,6 @@ let botonFuego
 let botonAgua
 let botonTierra
 
-
-
-
 class Mokepon {
     constructor (nombre, foto, vida){
         this.nombre = nombre
@@ -84,10 +81,8 @@ mokepones.push(hypodoge,capipepo,ratigueya)
 
 
 function iniciarJuego (){
-
     sectionSeleccionarAtaque.style.display = 'none'
    
-
     mokepones.forEach((mokepon) =>{
         opcionDeMokepon = `
         <input type="radio" name="mascota" id=${mokepon.nombre}>
@@ -110,7 +105,6 @@ function iniciarJuego (){
         let inputCapipepo = document.getElementById('Capipepo')
         let inputRatigueya = document.getElementById('Ratigueya')
 
-    
         if (inputHipodoge.checked){
             spanMascotaJugador.innerHTML = inputHipodoge.id
             //solo imprimimos el resultado. con esto, guardamos la variable. luego extraer. 
@@ -130,7 +124,7 @@ function iniciarJuego (){
         extraerAtaques(mascotaJugador)
 
         
-    }
+    }//mi teoria es, que extraerAtaques, debe estar arriba de esta funcion. porque no tiene nada declarado. 
 
 
     function extraerAtaques(mascotaJugador){
@@ -147,11 +141,11 @@ function iniciarJuego (){
         mostrarAtaques(ataques)
     }
 
-//el error de codigo esta entre extraerAtaques y mostrarAtaques
+//esta informacion almacenada en ataques, no esta pasando a la funcion de mostrarAtaques. Why?
 
 
 function mostrarAtaques(){
-    ataques.forEach((ataque) => {
+    ataques.forEach(ataque => {
         ataquesMokepon = `
         <button id=${ataque.id} class="boton-de-ataque">${ataque.nombre}</button>
         `
@@ -162,10 +156,11 @@ function mostrarAtaques(){
         botonAgua = document.getElementById('boton-agua')
         botonTierra = document.getElementById('boton-tierra')
 
-
         botonFuego.addEventListener('click', ataqueFuego)
         botonAgua.addEventListener('click' , ataqueAgua)
         botonTierra.addEventListener('click', ataqueTierra)
+
+        
 }
 
 
