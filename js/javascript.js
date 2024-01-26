@@ -35,6 +35,7 @@ let inputCapipepo
 let inputRatigueya 
 let mascotaJugador
 let ataquesMokepon
+let botones = []
 
 let botonFuego
 let botonAgua
@@ -147,7 +148,7 @@ function mostrarAtaques(ataques){
 
     ataques.forEach(ataque => {
         ataquesMokepon = `
-        <button id=${ataque.id} class="boton-de-ataque">${ataque.nombre}</button>
+        <button id=${ataque.id} class="boton-de-ataque BATaque">${ataque.nombre}</button>
         `
         contenedorAtaques.innerHTML += ataquesMokepon
     })
@@ -155,6 +156,9 @@ function mostrarAtaques(ataques){
         botonFuego = document.getElementById('boton-fuego')
         botonAgua = document.getElementById('boton-agua')
         botonTierra = document.getElementById('boton-tierra')
+        botones = document.querySelectorAll('.BATaque')
+        //todos los botones que se generen, que compartan esa misma clase 
+
 
         botonFuego.addEventListener('click', ataqueFuego)
         botonAgua.addEventListener('click' , ataqueAgua)
@@ -164,10 +168,27 @@ function mostrarAtaques(ataques){
 }
 
 
+function secuenciaAtaque(){
+    //se va a cambiar la logica del juego: se mueve por vidas, tu 3, el enemigo 3, se pueden jugar mas de 3 veces. por empates. 
+    botones.forEach((boton) =>{
+
+        boton.addEventListener('click',(e) => {
+            //cada boton va a tener un eventlistener, que es el click. cuando le de click, la e siginifica el evento mismo.
+            console.log(e)
+        })
+    })
+    //por cada boton que exista en el arreglo, haz algo. 
+}
+
+
 function seleccionarMascotaEnemigo(){
+
+    
+    secuenciaAtaque()
     let mascotaAleatoria = aleatorio (0,mokepones.length -1)
 
     spanMascotaEnemigo.innerHTML= mokepones[mascotaAleatoria].nombre
+
 }
 
 
