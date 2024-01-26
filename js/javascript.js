@@ -21,6 +21,8 @@ const contenedorTarjetas = document.getElementById('contenedor-tarjetas')
 
 const contenedorAtaques = document.getElementById('contenedorAtaques')
 
+sectionReiniciar.style.display = 'none'
+
 
 let mokepones = []
 let ataqueEnemigo
@@ -124,16 +126,13 @@ function iniciarJuego (){
         extraerAtaques(mascotaJugador)
 
         
-    }//mi teoria es, que extraerAtaques, debe estar arriba de esta funcion. porque no tiene nada declarado. 
-
+    }
 
     function extraerAtaques(mascotaJugador){
         let ataques
-        //iterar por cada elemento que existe en un arreglo. 
+
         for (let i = 0; i < mokepones.length; i++) {
             if (mascotaJugador== mokepones[i].nombre){
-                //arreglo: y le damos un numero I: nos va a regresar los datos que esten en ese indice. 
-                //pero nos regresara el elemento completo, pero solo queremos el .nombre
                 ataques = mokepones[i].ataques
             }
             
@@ -141,7 +140,7 @@ function iniciarJuego (){
         mostrarAtaques(ataques)
     }
 
-//esta informacion almacenada en ataques, no esta pasando a la funcion de mostrarAtaques. Why?
+
 
 
 function mostrarAtaques(ataques){
@@ -173,8 +172,6 @@ function seleccionarMascotaEnemigo(){
 
 
 
-    //a que perra funcion pertenece esta shit? 
-    sectionReiniciar.style.display = 'none'
 
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 
