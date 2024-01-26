@@ -28,7 +28,6 @@ let mokepones = []
 let ataqueEnemigo
 let vidasJugador = 3
 let vidasEnemigo = 3
-let ataqueJugador
 let opcionDeMokepon
 let inputHipodoge
 let inputCapipepo 
@@ -36,6 +35,7 @@ let inputRatigueya
 let mascotaJugador
 let ataquesMokepon
 let botones = []
+let ataqueJugador = []
 
 let botonFuego
 let botonAgua
@@ -157,27 +157,28 @@ function mostrarAtaques(ataques){
         botonAgua = document.getElementById('boton-agua')
         botonTierra = document.getElementById('boton-tierra')
         botones = document.querySelectorAll('.BATaque')
-        //todos los botones que se generen, que compartan esa misma clase 
-
-
-        botonFuego.addEventListener('click', ataqueFuego)
-        botonAgua.addEventListener('click' , ataqueAgua)
-        botonTierra.addEventListener('click', ataqueTierra)
-
-        
 }
 
 
 function secuenciaAtaque(){
-    //se va a cambiar la logica del juego: se mueve por vidas, tu 3, el enemigo 3, se pueden jugar mas de 3 veces. por empates. 
     botones.forEach((boton) =>{
-
         boton.addEventListener('click',(e) => {
-            //cada boton va a tener un eventlistener, que es el click. cuando le de click, la e siginifica el evento mismo.
-            console.log(e)
+            if (e.target.textContent == '🔥') {
+                ataqueJugador.push('FUEGO')
+                console.log(ataqueJugador)
+                boton.style.background = '#112f58'
+            }else if (e.target.textContent == '🧊'){
+                ataqueJugador.push('AGUA')
+                console.log(ataqueJugador)
+                boton.style.background = '#112f58'
+            }else{
+                ataqueJugador.push('TIERRA')
+                console.log(ataqueJugador)
+                boton.style.background = '#112f58'
+            }
         })
     })
-    //por cada boton que exista en el arreglo, haz algo. 
+
 }
 
 
@@ -208,20 +209,6 @@ function reiniciarJuego(){
     location.reload()
 }
 
-function ataqueFuego (){
-    ataqueJugador='Fuego'
-    ataqueAleatorioEnemigo ()
-}
-
-function ataqueAgua (){
-    ataqueJugador='Agua'
-    ataqueAleatorioEnemigo()
-}
-
-function ataqueTierra(){
-    ataqueJugador='Tierra'
-    ataqueAleatorioEnemigo()
-}
 
 
 function ataqueAleatorioEnemigo (){
