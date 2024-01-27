@@ -81,12 +81,16 @@ ratigueya.ataques.push(
 )
 
 mokepones.push(hypodoge,capipepo,ratigueya)
+//empujamos la informacion de 3 nombres, y los volvemos mokepones
 
 
 function iniciarJuego (){
     sectionSeleccionarAtaque.style.display = 'none'
-   
+
+
+   //mokepones es un array. 
     mokepones.forEach((mokepon) =>{
+        //variable declarada fuera de la funcion. 
         opcionDeMokepon = `
         <input type="radio" name="mascota" id=${mokepon.nombre}>
         <label class="tarjeta-de-mokepon" for=${mokepon.nombre}>
@@ -95,6 +99,7 @@ function iniciarJuego (){
         
         </label>
         `
+        //templates literarios: html + variables
         contenedorTarjetas.innerHTML+=opcionDeMokepon   
         //nadamas se esta imprimiendo uno de los mokepones. para que se impriman en pantalla los 3, solo hay que poner el simbolo de +
     }) //instancia Mokepones. 
@@ -122,39 +127,49 @@ function iniciarJuego (){
             alert ("Tienes que selecionar")
     
         }
+
         extraerAtaques(mascotaJugador)
         seleccionarMascotaEnemigo()
+
     }//relacionamos los botones de los 3 mokepones. 
     //verificamos cual ha sido chequeado. 
     //extraemos los ataques
-    //
+    //el resultado de la funcion de extraerAtaques
 
+    //da entre 1 - 3 a la mascotaJugador.
     function extraerAtaques(mascotaJugador){
         let ataques
 
         for (let i = 0; i < mokepones.length; i++) {
+            //de 1 a 3, 
+            //i, a la longitud que haya llegado, dame el nombre
+            //y establece ataques, a ese lugar. y dame el ataque
             if (mascotaJugador== mokepones[i].nombre){
                 ataques = mokepones[i].ataques
     //arreglo: y le damos un numero I: nos va a regresar los datos que esten en ese indice. 
     //pero nos regresara el elemento completo, pero solo queremos el .nombre
             } 
         }
+        
         mostrarAtaques(ataques)
-    }//mokepones es un array. 
-    //se establece la variable ataques
+        
+    }//ya tenemos el ataque, y lo enviamos a la funcion de mostrarAtaques
 
 
 
 
-
+//fuego, agua, tierra
 function mostrarAtaques(ataques){
-
+    //fuego, agua, tierra
+    
     ataques.forEach(ataque => {
+        //vas a recorrer cada boton de mokepon, y le vas a asignar un nombre, id, ataque. 
         ataquesMokepon = `
         <button id=${ataque.id} class="boton-de-ataque BATaque">${ataque.nombre}</button>
         `
         contenedorAtaques.innerHTML += ataquesMokepon
     })
+
 
     //este ocdigo puede ser eliminado?
         botonFuego = document.getElementById('boton-fuego')
@@ -166,7 +181,6 @@ function mostrarAtaques(ataques){
 
 
 function secuenciaAtaque(){
-
 
     botones.forEach((boton) =>{
         boton.addEventListener('click',(Event) => {
@@ -193,6 +207,7 @@ function seleccionarMascotaEnemigo(){
     let mascotaAleatoria = aleatorio (0,mokepones.length -1)
     spanMascotaEnemigo.innerHTML= mokepones[mascotaAleatoria].nombre
     secuenciaAtaque()
+    
 }
 
 
@@ -214,6 +229,7 @@ function reiniciarJuego(){
 
 
 //me parece que el error esta en que no se llama a la funcion de ataqueAleatorioEnemigo
+
 function ataqueAleatorioEnemigo (){
     let ataqueAleatorio = aleatorio(1,3)
 
@@ -227,22 +243,6 @@ function ataqueAleatorioEnemigo (){
         ataqueEnemigo = 'Tierra'
     }
     combate()
-}
-
-
-
-function crearMensaje (resultado){
-    let nuevoAtaqueDelJugador = document.createElement('p')
-    let nuevoAtaqueDelEnemigo = document.createElement('p')
-
-
-    sectionMensajes.innerHTML = resultado
-    nuevoAtaqueDelJugador.innerHTML = ataqueJugador
-    nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
-
-    
-    ataqueDelJugador.appendChild(nuevoAtaqueDelJugador)
-    ataqueDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
 }
 
 
@@ -290,7 +290,19 @@ function crearMensajeFinal (resultadoFinal){
 
 
 
+function crearMensaje (resultado){
+    let nuevoAtaqueDelJugador = document.createElement('p')
+    let nuevoAtaqueDelEnemigo = document.createElement('p')
 
+
+    sectionMensajes.innerHTML = resultado
+    nuevoAtaqueDelJugador.innerHTML = ataqueJugador
+    nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
+
+    
+    ataqueDelJugador.appendChild(nuevoAtaqueDelJugador)
+    ataqueDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
+}
 
 
 
