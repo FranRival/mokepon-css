@@ -95,9 +95,10 @@ function iniciarJuego (){
         
         </label>
         `
-        contenedorTarjetas.innerHTML+=opcionDeMokepon
-    }) 
-}//instancia Mokepones. 
+        contenedorTarjetas.innerHTML+=opcionDeMokepon   
+        //nadamas se esta imprimiendo uno de los mokepones. para que se impriman en pantalla los 3, solo hay que poner el simbolo de +
+    }) //instancia Mokepones. 
+}
 
 
     function seleccionarMascotaJugador(){
