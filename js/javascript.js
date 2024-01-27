@@ -97,7 +97,7 @@ function iniciarJuego (){
         `
         contenedorTarjetas.innerHTML+=opcionDeMokepon
     }) 
-}
+}//instancia Mokepones. 
 
 
     function seleccionarMascotaJugador(){
@@ -123,7 +123,10 @@ function iniciarJuego (){
         }
         extraerAtaques(mascotaJugador)
         seleccionarMascotaEnemigo()
-    }
+    }//relacionamos los botones de los 3 mokepones. 
+    //verificamos cual ha sido chequeado. 
+    //extraemos los ataques
+    //
 
     function extraerAtaques(mascotaJugador){
         let ataques
@@ -131,11 +134,11 @@ function iniciarJuego (){
         for (let i = 0; i < mokepones.length; i++) {
             if (mascotaJugador== mokepones[i].nombre){
                 ataques = mokepones[i].ataques
-            }
-            
+            } 
         }
         mostrarAtaques(ataques)
-    }
+    }//mokepones es un array. 
+    //se establece la variable ataques
 
 
 
@@ -153,7 +156,8 @@ function mostrarAtaques(ataques){
         botonAgua = document.getElementById('boton-agua')
         botonTierra = document.getElementById('boton-tierra')
         botones = document.querySelectorAll('.BATaque')
-}
+}//
+
 
 
 function secuenciaAtaque(){
