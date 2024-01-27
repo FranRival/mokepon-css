@@ -121,12 +121,8 @@ function iniciarJuego (){
             alert ("Tienes que selecionar")
     
         }
-
-
         extraerAtaques(mascotaJugador)
         seleccionarMascotaEnemigo()
-
-        
     }
 
     function extraerAtaques(mascotaJugador){
@@ -161,6 +157,8 @@ function mostrarAtaques(ataques){
 
 
 function secuenciaAtaque(){
+
+
     botones.forEach((boton) =>{
         boton.addEventListener('click',(Event) => {
             console.log(Event)
@@ -179,18 +177,13 @@ function secuenciaAtaque(){
             }
         })
     })
-
 }
 
 
 function seleccionarMascotaEnemigo(){
-
-    
-    secuenciaAtaque()
     let mascotaAleatoria = aleatorio (0,mokepones.length -1)
-
     spanMascotaEnemigo.innerHTML= mokepones[mascotaAleatoria].nombre
-
+    secuenciaAtaque()
 }
 
 
@@ -211,7 +204,7 @@ function reiniciarJuego(){
 }
 
 
-
+//me parece que el error esta en que no se llama a la funcion de ataqueAleatorioEnemigo
 function ataqueAleatorioEnemigo (){
     let ataqueAleatorio = aleatorio(1,3)
 
@@ -245,9 +238,6 @@ function crearMensaje (resultado){
 
 
 function combate (){
-
-
-
     if(ataqueEnemigo==ataqueJugador){
         crearMensaje('Empate')
        } else if (ataqueJugador == 'Fuego' && ataqueEnemigo == 'Tierra'){
