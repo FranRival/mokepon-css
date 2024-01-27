@@ -110,7 +110,6 @@ function iniciarJuego (){
 
         if (inputHipodoge.checked){
             spanMascotaJugador.innerHTML = inputHipodoge.id
-            //solo imprimimos el resultado. con esto, guardamos la variable. luego extraer. 
             mascotaJugador=inputHipodoge.id
         }else if (inputCapipepo.checked){
             spanMascotaJugador.innerHTML = inputCapipepo.id
@@ -165,19 +164,19 @@ function secuenciaAtaque(){
     botones.forEach((boton) =>{
         boton.addEventListener('click',(Event) => {
             console.log(Event)
-            // if (e.target.textContent == '🔥') {
-            //     ataqueJugador.push('FUEGO')
-            //     console.log(ataqueJugador)
-            //     boton.style.background = '#112f58'
-            // }else if (e.target.textContent == '🧊'){
-            //     ataqueJugador.push('AGUA')
-            //     console.log(ataqueJugador)
-            //     boton.style.background = '#112f58'
-            // }else{
-            //     ataqueJugador.push('TIERRA')
-            //     console.log(ataqueJugador)
-            //     boton.style.background = '#112f58'
-            // }
+            if (Event.target.textContent === '🔥') {
+                ataqueJugador.push('FUEGO')
+                console.log(ataqueJugador)
+                boton.style.background = '#112f58'
+            }else if (Event.target.textContent === '🧊'){
+                ataqueJugador.push('AGUA')
+                console.log(ataqueJugador)
+                boton.style.background = '#112f58'
+            }else{
+                ataqueJugador.push('TIERRA')
+                console.log(ataqueJugador)
+                boton.style.background = '#112f58'
+            }
         })
     })
 
