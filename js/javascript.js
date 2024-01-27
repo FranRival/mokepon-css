@@ -134,11 +134,14 @@ function iniciarJuego (){
         for (let i = 0; i < mokepones.length; i++) {
             if (mascotaJugador== mokepones[i].nombre){
                 ataques = mokepones[i].ataques
+    //arreglo: y le damos un numero I: nos va a regresar los datos que esten en ese indice. 
+    //pero nos regresara el elemento completo, pero solo queremos el .nombre
             } 
         }
         mostrarAtaques(ataques)
     }//mokepones es un array. 
     //se establece la variable ataques
+
 
 
 
@@ -152,6 +155,7 @@ function mostrarAtaques(ataques){
         contenedorAtaques.innerHTML += ataquesMokepon
     })
 
+    //este ocdigo puede ser eliminado?
         botonFuego = document.getElementById('boton-fuego')
         botonAgua = document.getElementById('boton-agua')
         botonTierra = document.getElementById('boton-tierra')
