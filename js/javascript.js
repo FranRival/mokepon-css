@@ -176,11 +176,13 @@ function mostrarAtaques(ataques){
         botonAgua = document.getElementById('boton-agua')
         botonTierra = document.getElementById('boton-tierra')
         botones = document.querySelectorAll('.BATaque')
+
 }//
 
 
 
 function secuenciaAtaque(){
+
 
     botones.forEach((boton) =>{
         boton.addEventListener('click',(Event) => {
@@ -211,7 +213,7 @@ function seleccionarMascotaEnemigo(){
 }
 
 
-
+//hay que comenzar a ver como funciona el html. mas el video. 
 
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 
