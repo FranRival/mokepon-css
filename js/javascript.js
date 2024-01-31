@@ -213,7 +213,18 @@ function seleccionarMascotaEnemigo(){
 }
 
 
-//hay que comenzar a ver como funciona el html. mas el video. 
+/* iniciarJuego - si
+seleccionarMascotaJugador - si
+               extraerAtaques (mascotaJugador) - si
+                                         mostrarAtaques(ataques)
+
+               seleccionarMascotaEnemigo - si
+                                        secuenciaAtaque - si
+
+en donde esta la opcion de entrar en combate? 
+donde se ligaron los botones con el ataque?
+
+ataqueAleatorioEnemigo -  */
 
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 
