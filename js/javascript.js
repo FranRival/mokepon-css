@@ -87,7 +87,6 @@ mokepones.push(hypodoge,capipepo,ratigueya)
 function iniciarJuego (){
     sectionSeleccionarAtaque.style.display = 'none'
 
-
    //mokepones es un array. 
     mokepones.forEach((mokepon) =>{
         //variable declarada fuera de la funcion. 
@@ -100,7 +99,7 @@ function iniciarJuego (){
         </label>
         `
         //templates literarios: html + variables
-        contenedorTarjetas.innerHTML+=opcionDeMokepon   
+        contenedorTarjetas.innerHTML+=opcionDeMokepon
         //nadamas se esta imprimiendo uno de los mokepones. para que se impriman en pantalla los 3, solo hay que poner el simbolo de +
     }) //instancia Mokepones. 
 }
@@ -182,8 +181,6 @@ function mostrarAtaques(ataques){
 
 
 function secuenciaAtaque(){
-
-
     botones.forEach((boton) =>{
         boton.addEventListener('click',(Event) => {
             console.log(Event)
@@ -202,18 +199,34 @@ function secuenciaAtaque(){
             }
         })
     })
+
 }
 
 
 function seleccionarMascotaEnemigo(){
     let mascotaAleatoria = aleatorio (0,mokepones.length -1)
     spanMascotaEnemigo.innerHTML= mokepones[mascotaAleatoria].nombre
+
+
     secuenciaAtaque()
+
+    
     
 }
 
+/* iniciarJuego - si
+seleccionarMascotaJugador - si
+               extraerAtaques (mascotaJugador) - si
+                                         mostrarAtaques(ataques)
 
-//hay que comenzar a ver como funciona el html. mas el video. 
+               seleccionarMascotaEnemigo - si
+                                        secuenciaAtaque - si
+
+en donde esta la opcion de entrar en combate? 
+donde se ligaron los botones con el ataque?
+
+ataqueAleatorioEnemigo -  */
+
 
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 
