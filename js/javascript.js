@@ -25,7 +25,7 @@ sectionReiniciar.style.display = 'none'
 
 
 let mokepones = []
-let ataqueEnemigo
+let ataqueEnemigo = []
 let vidasJugador = 3
 let vidasEnemigo = 3
 let opcionDeMokepon
@@ -40,6 +40,8 @@ let ataqueJugador = []
 let botonFuego
 let botonAgua
 let botonTierra
+
+let ataquesMokeponEnemigo
 
 class Mokepon {
     constructor (nombre, foto, vida){
@@ -202,6 +204,7 @@ function secuenciaAtaque(){
                 console.log(ataqueJugador)
                 boton.style.background = '#112f58'
             }
+            ataqueAleatorioEnemigo()
         })
     })
 }
@@ -210,11 +213,10 @@ function secuenciaAtaque(){
 function seleccionarMascotaEnemigo(){
     let mascotaAleatoria = aleatorio (0,mokepones.length -1)
     spanMascotaEnemigo.innerHTML= mokepones[mascotaAleatoria].nombre
+    ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques //this mothofucker, new. the solution alv
     secuenciaAtaque()
     
 }
-
-
 /* iniciarJuego - si
 seleccionarMascotaJugador - si
                extraerAtaques (mascotaJugador) - si
@@ -231,35 +233,25 @@ ataqueAleatorioEnemigo -
 a que botones se liga... en la funcion de ataqueAleatorio...
 */
 
-
-
-
-
-window.addEventListener('load',iniciarJuego)
-
-
-
-
-
-function reiniciarJuego(){
-    location.reload()
-}
-
-
 //me parece que el error esta en que no se llama a la funcion de ataqueAleatorioEnemigo
 
 function ataqueAleatorioEnemigo (){
-    let ataqueAleatorio = aleatorio(1,3)
 
-    if (ataqueAleatorio == 1){
-        ataqueEnemigo = 'Fuego'
+    //ya no son 3 ataques, sino 5. hay que obtener el lenght. (1, 3)
+    let ataqueAleatorio = aleatorio(0,mokepones.length -1)
 
-    }else if (ataqueAleatorio == 2){
-        ataqueEnemigo = 'Agua'
+    if (ataqueAleatorio == 0 || ataqueAleatorio==1){
+       // ataqueEnemigo = 'Fuego'
+       //el punto push solo funciona con arreglos. hay que convertir los lets en arrays alv
+       ataqueEnemigo.push('Fuego')
+
+    }else if (ataqueAleatorio == 3 || ataqueAleatorio==4){
+        ataqueEnemigo.push('Agua')
 
     }else if (ataqueAleatorio == 3){
-        ataqueEnemigo = 'Tierra'
+        ataqueEnemigo.push('Tierra')
     }
+    console.log(ataqueEnemigo)
     combate()
 }
 
@@ -305,6 +297,17 @@ function crearMensajeFinal (resultadoFinal){
     sectionReiniciar.style.display = 'block'
 }
 
+
+
+window.addEventListener('load',iniciarJuego)
+
+
+
+
+
+function reiniciarJuego(){
+    location.reload()
+}
 
 
 
