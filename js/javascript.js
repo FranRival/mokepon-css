@@ -210,7 +210,9 @@ function ataqueAleatorioEnemigo (){
         ataqueEnemigo.push('Tierra')
     }
     console.log(ataqueEnemigo)
+
     iniciarPelea()
+
 
 }
 
