@@ -103,6 +103,8 @@ function iniciarJuego (){
         contenedorTarjetas.innerHTML+=opcionDeMokepon   
         //nadamas se esta imprimiendo uno de los mokepones. para que se impriman en pantalla los 3, solo hay que poner el simbolo de +
     }) //instancia Mokepones. 
+
+    botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 }
 
 
@@ -224,9 +226,12 @@ seleccionarMascotaJugador - si
 en donde esta la opcion de entrar en combate? 
 donde se ligaron los botones con el ataque?
 
-ataqueAleatorioEnemigo -  */
+ataqueAleatorioEnemigo -  
 
-    botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
+a que botones se liga... en la funcion de ataqueAleatorio...
+*/
+
+
 
 
 
