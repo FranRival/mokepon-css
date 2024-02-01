@@ -217,6 +217,10 @@ function seleccionarMascotaEnemigo(){
     secuenciaAtaque()
     
 }
+
+
+
+///hay que analizar this shit.
 /* iniciarJuego - si
 seleccionarMascotaJugador - si
                extraerAtaques (mascotaJugador) - si
