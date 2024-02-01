@@ -42,6 +42,8 @@ let botonAgua
 let botonTierra
 
 let ataquesMokeponEnemigo
+let indexAtaqueJugador
+let indexAtaqueEnemigo
 
 class Mokepon {
     constructor (nombre, foto, vida){
@@ -204,7 +206,7 @@ function ataqueAleatorioEnemigo (){
     }else if (ataqueAleatorio == 3 || ataqueAleatorio==4){
         ataqueEnemigo.push('Agua')
 
-    }else if (ataqueAleatorio == 3){
+    }else{
         ataqueEnemigo.push('Tierra')
     }
     console.log(ataqueEnemigo)
@@ -220,26 +222,29 @@ function iniciarPelea (){
 }
 
 
+
+function indexAmbosOponente(jugador, enemigo){
+    indexAtaqueJugador = ataqueJugador[jugador]
+    indexAtaqueEnemigo = ataqueEnemigo[enemigo]
+}
+
 function combate (){
-    if(ataqueEnemigo==ataqueJugador){
-        crearMensaje('Empate')
-       } else if (ataqueJugador == 'Fuego' && ataqueEnemigo == 'Tierra'){
-        crearMensaje("Ganaste")
-        vidasEnemigo--
-        spanVidasEnemigo.innerHTML = vidasEnemigo
-       } else if (ataqueJugador == 'Agua' && ataqueEnemigo == 'Fuego'){
-        crearMensaje("Ganaste")
-        vidasEnemigo--
-        spanVidasEnemigo.innerHTML = vidasEnemigo
-       } else if (ataqueJugador == 'Tierra' && ataqueEnemigo == 'Agua'){
-        crearMensaje("Ganaste")
-        vidasEnemigo--
-        spanVidasEnemigo.innerHTML= vidasEnemigo
-       }else {
-        crearMensaje ("Perdiste")
-        vidasJugador --
-        spanVidasJugador.innerHTML = vidasJugador
-       }
+    //genera un loop a traves de los 2 arreglos que ya se tienen. el for es para recorrer los elementos del arreglo
+    for (let index = 0; index < ataqueJugador.length; index++) {
+        // index se convierte un numero
+        // console.log(ataqueJugador[index])
+
+        //si la opcion n1 del arreglo del ataque del jugador
+        // es igual a la opcion n1 del arreglo del ataque
+        //del enemigo, es un empate
+        if (ataqueJugador[index]===ataqueEnemigo[index]) {
+            indexAmbosOponente(index, index)
+            crearMensaje('Empate')
+        }
+        
+    }
+
+
        revisarVidas()
 }
 
@@ -281,8 +286,8 @@ function crearMensaje (resultado){
 
 
     sectionMensajes.innerHTML = resultado
-    nuevoAtaqueDelJugador.innerHTML = ataqueJugador
-    nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
+    nuevoAtaqueDelJugador.innerHTML = indexAtaqueJugador
+    nuevoAtaqueDelEnemigo.innerHTML = indexAtaqueEnemigo
 
     
     ataqueDelJugador.appendChild(nuevoAtaqueDelJugador)
