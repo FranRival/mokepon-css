@@ -169,7 +169,7 @@ function secuenciaAtaque(){
 
     botones.forEach((boton) =>{
         boton.addEventListener('click',(Event) => {
-            console.log(Event)
+           // console.log(Event)
             if (Event.target.textContent === '🔥') {
                 ataqueJugador.push('FUEGO')
                 console.log(ataqueJugador)
@@ -226,6 +226,7 @@ function iniciarPelea (){
 
 
 function indexAmbosOponente(jugador, enemigo){
+    //
     indexAtaqueJugador = ataqueJugador[jugador]
     indexAtaqueEnemigo = ataqueEnemigo[enemigo]
 }
@@ -234,17 +235,38 @@ function combate (){
     //genera un loop a traves de los 2 arreglos que ya se tienen. el for es para recorrer los elementos del arreglo
     for (let index = 0; index < ataqueJugador.length; index++) {
         // index se convierte un numero
-        // console.log(ataqueJugador[index])
+         console.log(ataqueJugador[index])
 
         //si la opcion n1 del arreglo del ataque del jugador
         // es igual a la opcion n1 del arreglo del ataque
         //del enemigo, es un empate
         if (ataqueJugador[index]===ataqueEnemigo[index]) {
+            //el index es un numero,
             indexAmbosOponente(index, index)
             crearMensaje('Empate')
         }
         
     }
+
+    if(ataqueEnemigo==ataqueJugador){
+        crearMensaje('Empate')
+       } else if (ataqueJugador == 'Fuego' && ataqueEnemigo == 'Tierra'){
+        crearMensaje("Ganaste")
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
+       } else if (ataqueJugador == 'Agua' && ataqueEnemigo == 'Fuego'){
+        crearMensaje("Ganaste")
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
+       } else if (ataqueJugador == 'Tierra' && ataqueEnemigo == 'Agua'){
+        crearMensaje("Ganaste")
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML= vidasEnemigo
+       }else {
+        crearMensaje ("Perdiste")
+        vidasJugador --
+        spanVidasJugador.innerHTML = vidasJugador
+       }
 
 
        revisarVidas()
