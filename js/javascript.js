@@ -165,21 +165,19 @@ function mostrarAtaques(ataques){
 
 
 function secuenciaAtaque(){
-
-
     botones.forEach((boton) =>{
         boton.addEventListener('click',(Event) => {
-           // console.log(Event)
+            //console.log(Event)
             if (Event.target.textContent === '🔥') {
-                ataqueJugador.push('FUEGO')
+                ataqueJugador.push('Fuego')
                 console.log(ataqueJugador)
                 boton.style.background = '#112f58'
             }else if (Event.target.textContent === '🧊'){
-                ataqueJugador.push('AGUA')
+                ataqueJugador.push('Agua')
                 console.log(ataqueJugador)
                 boton.style.background = '#112f58'
             }else{
-                ataqueJugador.push('TIERRA')
+                ataqueJugador.push('Tierra')
                 console.log(ataqueJugador)
                 boton.style.background = '#112f58'
             }
@@ -188,7 +186,7 @@ function secuenciaAtaque(){
     })
 }
 
-
+//probablemente, aqui este el mistake
 function seleccionarMascotaEnemigo(){
     let mascotaAleatoria = aleatorio (0,mokepones.length -1)
     spanMascotaEnemigo.innerHTML= mokepones[mascotaAleatoria].nombre
@@ -203,7 +201,7 @@ function ataqueAleatorioEnemigo (){
     if (ataqueAleatorio == 0 || ataqueAleatorio==1){
        ataqueEnemigo.push('Fuego')
 
-    }else if (ataqueAleatorio == 3 || ataqueAleatorio==4){
+    }else if (ataqueAleatorio == 2 || ataqueAleatorio==3){
         ataqueEnemigo.push('Agua')
 
     }else{
