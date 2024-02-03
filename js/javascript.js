@@ -45,6 +45,9 @@ let ataquesMokeponEnemigo
 let indexAtaqueJugador
 let indexAtaqueEnemigo
 
+let victoriasJugador= 0
+let victoriasEnemigo =0
+
 class Mokepon {
     constructor (nombre, foto, vida){
         this.nombre = nombre
@@ -235,43 +238,43 @@ function combate (){
         if (ataqueJugador[index]===ataqueEnemigo[index]) {
             indexAmbosOponente(index, index)
             crearMensaje('Empate')
-            vidasEnemigo--
-            spanVidasEnemigo.innerHTML = vidasEnemigo
+            victoriasJugador++
+            spanVidasJugador.innerHTML = victoriasJugador
         } else if (ataqueJugador[index] ==='Fuego' && ataqueEnemigo[index] ==='Tierra'){
             indexAmbosOponente(index, index)
             crearMensaje("Ganaste")
-            vidasEnemigo--
-            spanVidasEnemigo.innerHTML = vidasEnemigo
+            victoriasJugador++
+            spanVidasJugador.innerHTML = victoriasJugador
         
-    }else if (ataqueJugador[index]==='Agua' && ataqueEnemigo[index] === 'Fuego'){
-        indexAmbosOponente(index, index)
-        crearMensaje("Ganaste")
-        vidasEnemigo--
-        spanVidasEnemigo.innerHTML= vidasEnemigo
-       } else if (ataqueJugador[index]==='Tierra' && ataqueEnemigo[index] === 'Agua'){
-        indexAmbosOponente(index, index)
-        crearMensaje ("Ganaste")
-        vidasEnemigo--
-        spanVidasJugador.innerHTML = vidasEnemigo
-       }else {
-        indexAmbosOponente(index, index)
-        crearMensaje ("Perdiste")
-        vidasJugador --
-        spanVidasJugador.innerHTML = vidasJugador
+        }else if (ataqueJugador[index]==='Agua' && ataqueEnemigo[index] === 'Fuego'){
+            indexAmbosOponente(index, index)
+            crearMensaje("Ganaste")
+            victoriasJugador++
+            spanVidasJugador.innerHTML = victoriasJugador
+        } else if (ataqueJugador[index]==='Tierra' && ataqueEnemigo[index] === 'Agua'){
+            indexAmbosOponente(index, index)
+            crearMensaje ("Ganaste")
+            victoriasJugador++
+            spanVidasJugador.innerHTML = victoriasJugador
+        }else {
+            indexAmbosOponente(index, index)
+            crearMensaje ("Perdiste")
+            victoriasEnemigo++
+            spanVidasEnemigo.innerHTML = victoriasEnemigo
+        }
        }
-       
-       }
-
-
        revisarVidas()
 }
 
-function revisarVidas (){
-    if (vidasEnemigo==0){
-        crearMensajeFinal("Felicitaciones, ganaste 🎈")
-    }else if (vidasJugador==0){
-        crearMensajeFinal("Perdiste. 🎃")
 
+
+function revisarVidas (){
+    if (victoriasJugador===victoriasEnemigo){
+        crearMensajeFinal("Esto fue un empate!!!")
+    }else if (victoriasJugador>victoriasEnemigo){
+        crearMensajeFinal("Felicitaciones, ganaste 🎈")
+    }else {
+        crearMensajeFinal("Perdiste. 🎃")
     }
 }
 
