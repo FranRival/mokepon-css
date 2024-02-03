@@ -201,7 +201,7 @@ function ataqueAleatorioEnemigo (){
     if (ataqueAleatorio == 0 || ataqueAleatorio==1){
        ataqueEnemigo.push('Fuego')
 
-    }else if (ataqueAleatorio == 2 || ataqueAleatorio==3){
+    }else if (ataqueAleatorio == 3 || ataqueAleatorio==4){
         ataqueEnemigo.push('Agua')
 
     }else{
@@ -230,40 +230,36 @@ function indexAmbosOponente(jugador, enemigo){
 }
 
 function combate (){
-    //genera un loop a traves de los 2 arreglos que ya se tienen. el for es para recorrer los elementos del arreglo
     for (let index = 0; index < ataqueJugador.length; index++) {
-        // index se convierte un numero
-         console.log(ataqueJugador[index])
-
-        //si la opcion n1 del arreglo del ataque del jugador
-        // es igual a la opcion n1 del arreglo del ataque
-        //del enemigo, es un empate
+       //  console.log(ataqueJugador[index])
         if (ataqueJugador[index]===ataqueEnemigo[index]) {
-            //el index es un numero,
             indexAmbosOponente(index, index)
             crearMensaje('Empate')
-        }
+            vidasEnemigo--
+            spanVidasEnemigo.innerHTML = vidasEnemigo
+        } else if (ataqueJugador[index] ==='Fuego' && ataqueEnemigo[index] ==='Tierra'){
+            indexAmbosOponente(index, index)
+            crearMensaje("Ganaste")
+            vidasEnemigo--
+            spanVidasEnemigo.innerHTML = vidasEnemigo
         
-    }
-
-    if(ataqueEnemigo==ataqueJugador){
-        crearMensaje('Empate')
-       } else if (ataqueJugador == 'Fuego' && ataqueEnemigo == 'Tierra'){
-        crearMensaje("Ganaste")
-        vidasEnemigo--
-        spanVidasEnemigo.innerHTML = vidasEnemigo
-       } else if (ataqueJugador == 'Agua' && ataqueEnemigo == 'Fuego'){
-        crearMensaje("Ganaste")
-        vidasEnemigo--
-        spanVidasEnemigo.innerHTML = vidasEnemigo
-       } else if (ataqueJugador == 'Tierra' && ataqueEnemigo == 'Agua'){
+    }else if (ataqueJugador[index]==='Agua' && ataqueEnemigo[index] === 'Fuego'){
+        indexAmbosOponente(index, index)
         crearMensaje("Ganaste")
         vidasEnemigo--
         spanVidasEnemigo.innerHTML= vidasEnemigo
+       } else if (ataqueJugador[index]==='Tierra' && ataqueEnemigo[index] === 'Agua'){
+        indexAmbosOponente(index, index)
+        crearMensaje ("Ganaste")
+        vidasEnemigo--
+        spanVidasJugador.innerHTML = vidasEnemigo
        }else {
+        indexAmbosOponente(index, index)
         crearMensaje ("Perdiste")
         vidasJugador --
         spanVidasJugador.innerHTML = vidasJugador
+       }
+       
        }
 
 
