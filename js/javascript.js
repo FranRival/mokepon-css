@@ -58,6 +58,12 @@ class Mokepon {
         this.foto = foto
         this.vida = vida
         this.ataques = []
+        this.x = 20
+        this.y = 30
+        this.ancho = 80
+        this.alto = 80
+        this.mapaFoto = new Image()
+        this.mapaFoto.src = foto
     }
 }
 
@@ -118,10 +124,7 @@ function iniciarJuego (){
        // sectionSeleccionarAtaque.style.display = 'flex'
         sectionSeleccionarMascota.style.display = 'none'
         sectionVerMapa.style.display = 'flex'
-        let imagenCapipepo = new Image ()
-        imagenCapipepo.src = capipepo.foto
-      //  lienzo.fillRect(5,15,20,40)
-      lienzo.drawImage(imagenCapipepo, 20,40,100, 100)
+
 
 
         let inputHipodoge = document.getElementById('Hipodoge')
@@ -335,5 +338,13 @@ function aleatorio (min, max){
 
 
 
-
+function pintarPersonaje(){
+    lienzo.drawImage(
+        imagenCapipepo, 
+        20,
+        40,
+        100, 
+        100
+        )
+}
 
