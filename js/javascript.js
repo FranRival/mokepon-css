@@ -22,7 +22,6 @@ const contenedorTarjetas = document.getElementById('contenedor-tarjetas')
 const contenedorAtaques = document.getElementById('contenedorAtaques')
 
 sectionReiniciar.style.display = 'none'
-//desde aqui, hay que analizar esta shit. porque no le entiende alv
 
 let mokepones = []
 let ataqueEnemigo = []
