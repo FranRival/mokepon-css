@@ -23,6 +23,11 @@ const contenedorAtaques = document.getElementById('contenedorAtaques')
 
 sectionReiniciar.style.display = 'none'
 
+
+const sectionVerMapa = document.getElementById('ver-mapa')
+const mapa = document.getElementById('mapa')
+let lienzo = mapa.getContext('2d')
+
 let mokepones = []
 let ataqueEnemigo = []
 let vidasJugador = 3
@@ -90,6 +95,8 @@ mokepones.push(hypodoge,capipepo,ratigueya)
 
 function iniciarJuego (){
     sectionSeleccionarAtaque.style.display = 'none'
+    sectionVerMapa.style.display = 'none'
+
     mokepones.forEach((mokepon) =>{
         opcionDeMokepon = `
         <input type="radio" name="mascota" id=${mokepon.nombre}>
@@ -108,8 +115,14 @@ function iniciarJuego (){
 
 
     function seleccionarMascotaJugador(){
-        sectionSeleccionarAtaque.style.display = 'flex'
+       // sectionSeleccionarAtaque.style.display = 'flex'
         sectionSeleccionarMascota.style.display = 'none'
+        sectionVerMapa.style.display = 'flex'
+        let imagenCapipepo = new Image ()
+        imagenCapipepo.src = capipepo.foto
+      //  lienzo.fillRect(5,15,20,40)
+      lienzo.drawImage(imagenCapipepo, 20,40,100, 100)
+
 
         let inputHipodoge = document.getElementById('Hipodoge')
         let inputCapipepo = document.getElementById('Capipepo')
