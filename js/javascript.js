@@ -57,7 +57,7 @@ class Mokepon {
     }
 }
 
-
+//el detalle de la clase de mokepon. que pasa si agregamos mas tonteras
 
 let hypodoge = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5)
 let capipepo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5)
