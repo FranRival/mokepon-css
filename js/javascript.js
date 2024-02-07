@@ -339,12 +339,19 @@ function aleatorio (min, max){
 
 
 function pintarPersonaje(){
+    lienzo.clearRect(0,0,mapa.width,mapa.height)
     lienzo.drawImage(
-        imagenCapipepo, 
-        20,
-        40,
-        100, 
-        100
+        capipepo.mapaFoto, 
+        capipepo.x,
+        capipepo.y,
+        capipepo.ancho, 
+        capipepo.alto
         )
+}
+
+function moverCapipepo(){
+    //actualizamos la pocision
+    capipepo.x = capipepo.x + 5
+    pintarPersonaje()
 }
 
