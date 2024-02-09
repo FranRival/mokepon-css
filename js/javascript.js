@@ -374,26 +374,30 @@ function pintarCanvas(){
 }
 
 function moverDerecha(){
-    capipepo.velocidadX = 5
+    const miMokepon = obtenerObjetoMascota()
+    miMokepon.velocidadX = 5
 
 }
 
 function moverIzquierda(){
-    capipepo.velocidadX = - 5
+    const miMokepon = obtenerObjetoMascota()
+    miMokepon.velocidadX = - 5
 }
 
 function moverAbajo(){
-    capipepo.velocidadY = 5
+    const miMokepon = obtenerObjetoMascota()
+    miMokepon.velocidadY = 5
 }
 
 function moverArriba(){
-    capipepo.velocidadY = -5
+    const miMokepon = obtenerObjetoMascota()
+    miMokepon.velocidadY = -5
 }
 
 function detenerMovimiento(){
     const miMokepon = obtenerObjetoMascota()
-    capipepo.velocidadX =0
-    capipepo.velocidadY=0
+    miMokepon.velocidadY=0
+    miMokepon.velocidadX =0
 }
 
 function obtenerObjetoMascota(){
