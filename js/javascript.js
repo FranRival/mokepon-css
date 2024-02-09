@@ -53,6 +53,9 @@ let indexAtaqueEnemigo
 let victoriasJugador= 0
 let victoriasEnemigo =0
 
+let mapaBackground = new Image ()
+mapaBackground.src ='https://images2.imgbox.com/b4/d9/x9ubpv2H_o.png'
+
 class Mokepon {
     constructor (nombre, foto, vida){
         this.nombre = nombre
@@ -126,11 +129,6 @@ function iniciarJuego (){
        // sectionSeleccionarAtaque.style.display = 'flex'
         sectionSeleccionarMascota.style.display = 'none'
         sectionVerMapa.style.display = 'flex'
-
-        intervalo = setInterval(pintarPersonaje,50)
-        //se ejecuta cuando se presiona una tecla. si se elemina este codigo, nada sucedera. porque no entra dentro de las funciones. 
-        window.addEventListener('keyup', detenerMovimiento)
-        window.addEventListener('keydown',SePresionoUnaTecla)
 
 
         iniciarMapa()
@@ -350,10 +348,18 @@ function aleatorio (min, max){
 
 
 
-function pintarPersonaje(){
+function pintarCanvas(){
     capipepo.x=capipepo.x+capipepo.velocidadX
     capipepo.y=capipepo.y+capipepo.velocidadY
     lienzo.clearRect(0,0,mapa.width,mapa.height)
+    lienzo.drawImage(
+        mapaBackground,
+        0,
+        0,
+        mapa.width,
+        mapa.height
+    )
+
     lienzo.drawImage(
         capipepo.mapaFoto, 
         capipepo.x,
@@ -411,4 +417,11 @@ function SePresionoUnaTecla(event){
 
 function iniciarMapa(){
 
+    mapa.width=320
+    mapa.height=240
+
+    intervalo = setInterval(pintarCanvas,50)
+    //se ejecuta cuando se presiona una tecla. si se elemina este codigo, nada sucedera. porque no entra dentro de las funciones. 
+    window.addEventListener('keyup', detenerMovimiento)
+    window.addEventListener('keydown',SePresionoUnaTecla)
 }
