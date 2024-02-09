@@ -65,8 +65,8 @@ class Mokepon {
         this.ataques = []
         this.x = 20
         this.y = 30
-        this.ancho = 80
-        this.alto = 80
+        this.ancho = 40
+        this.alto = 40
         this.mapaFoto = new Image()
         this.mapaFoto.src = fotoMapa
         this.velocidadX=0
@@ -74,10 +74,15 @@ class Mokepon {
     }
 }
 
-//todos los mokepones tendran un x y y de 10
+
 let hypodoge = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5, 'https://images2.imgbox.com/77/e6/LGzhLnXN_o.png')
 let capipepo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5, 'https://images2.imgbox.com/78/79/uZx0xJgg_o.png')
 let ratigueya = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5, 'https://images2.imgbox.com/26/83/CO9zxorc_o.png')
+
+
+let hypodogeEnemigo = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5, 'https://images2.imgbox.com/77/e6/LGzhLnXN_o.png', 80, 120)
+let capipepoEnemigo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5, 'https://images2.imgbox.com/78/79/uZx0xJgg_o.png', 150, 95)
+let ratigueyaEnemigo = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5, 'https://images2.imgbox.com/26/83/CO9zxorc_o.png', 200,190)
 
 hypodoge.ataques.push(
     {nombre: '🧊', id:'boton-agua'},
@@ -369,6 +374,7 @@ function pintarCanvas(){
         mascotaDelJugadorObjeto.ancho, 
         mascotaDelJugadorObjeto.alto
     )
+    
 }
 
 function moverDerecha(){
