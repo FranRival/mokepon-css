@@ -351,11 +351,8 @@ function aleatorio (min, max){
 
 function pintarCanvas(){
 
-
-
-
-    capipepo.x=capipepo.x+capipepo.velocidadX
-    capipepo.y=capipepo.y+capipepo.velocidadY
+    mascotaDelJugadorObjeto.x=mascotaDelJugadorObjeto.x+mascotaDelJugadorObjeto.velocidadX
+    mascotaDelJugadorObjeto.y=mascotaDelJugadorObjeto.y+mascotaDelJugadorObjeto.velocidadY
     lienzo.clearRect(0,0,mapa.width,mapa.height)
     lienzo.drawImage(
         mapaBackground,
@@ -365,13 +362,13 @@ function pintarCanvas(){
         mapa.height
     )
 
-    lienzo.drawImage(
-        capipepo.mapaFoto, 
-        capipepo.x,
-        capipepo.y,
-        capipepo.ancho, 
-        capipepo.alto
-        )
+    lienzo.drawImage
+        mascotaDelJugadorObjeto.mapaFoto, 
+        mascotaDelJugadorObjeto.x,
+        mascotaDelJugadorObjeto.y,
+        mascotaDelJugadorObjeto.ancho, 
+        mascotaDelJugadorObjeto.alto
+        
 }
 
 function moverDerecha(){
