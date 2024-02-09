@@ -349,6 +349,10 @@ function aleatorio (min, max){
 
 
 function pintarCanvas(){
+
+
+
+
     capipepo.x=capipepo.x+capipepo.velocidadX
     capipepo.y=capipepo.y+capipepo.velocidadY
     lienzo.clearRect(0,0,mapa.width,mapa.height)
@@ -424,4 +428,14 @@ function iniciarMapa(){
     //se ejecuta cuando se presiona una tecla. si se elemina este codigo, nada sucedera. porque no entra dentro de las funciones. 
     window.addEventListener('keyup', detenerMovimiento)
     window.addEventListener('keydown',SePresionoUnaTecla)
+}
+
+function obtenerObjetoMascota(){
+    
+    //el mismo for de extraerAtaques
+    for (let i = 0; i < mokepones.length; i++) {
+        if (mascotaJugador== mokepones[i].nombre){
+            return mokepones [i]
+        } 
+    }
 }
