@@ -379,23 +379,20 @@ function pintarCanvas(){
         mapa.height
     )
 
-    //usar el objeto que se creo de la mascota del juegador
-    //y de ese objeto se llamara a la funcion de pintar. 
     mascotaDelJugadorObjeto.pintarMokepon()
     hypodogeEnemigo.pintarMokepon()
     ratigueyaEnemigo.pintarMokepon()
     capipepoEnemigo.pintarMokepon()
 
 
-//esto quedara eliminado. Porque se modifico en la clase de Mokepon. 
-/*     lienzo.drawImage(
-        mascotaDelJugadorObjeto.mapaFoto, 
-        mascotaDelJugadorObjeto.x,
-        mascotaDelJugadorObjeto.y,
-        mascotaDelJugadorObjeto.ancho, 
-        mascotaDelJugadorObjeto.alto
-    ) */
-    
+    //todas las macotas inician en la misma pocision del mapa
+    if (mascotaDelJugadorObjeto.velocidadX!==0||mascotaDelJugadorObjeto.velocidadY!==0) {
+        revisarColision(hypodogeEnemigo)
+        
+    }
+
+
+
 }
 
 function moverDerecha(){
@@ -463,3 +460,28 @@ function SePresionoUnaTecla(event){
     }
 }
 
+function revisarColision(enemigo){
+
+    const arribaEnemigo = enemigo.y
+    const abajoEnemigo = enemigo.y+enemigo.alto//y es donde se pinta el enemigo
+    const derechaEnemigo = enemigo.x+enemigo.ancho
+    const izquierdaEnemigo = enemigo.x
+
+    const arribaMascota = mascotaDelJugadorObjeto.y
+    const abajoMascota = mascotaDelJugadorObjeto.y+mascotaDelJugadorObjeto.alto
+    const derechaMascota = mascotaDelJugadorObjeto.x+mascotaDelJugadorObjeto.ancho
+    const izquierdaMascota = mascotaDelJugadorObjeto.x
+
+
+    if (abajoMascota<arribaEnemigo||   
+        arribaMascota>abajoEnemigo||
+        derechaMascota<izquierdaEnemigo||
+        izquierdaMascota>derechaEnemigo
+        
+        ) {
+            return
+        
+    }
+
+    alert("Hay colision")
+}
