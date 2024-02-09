@@ -388,6 +388,8 @@ function pintarCanvas(){
     //todas las macotas inician en la misma pocision del mapa
     if (mascotaDelJugadorObjeto.velocidadX!==0||mascotaDelJugadorObjeto.velocidadY!==0) {
         revisarColision(hypodogeEnemigo)
+        revisarColision(capipepoEnemigo)
+        revisarColision(ratigueyaEnemigo)
         
     }
 
@@ -483,5 +485,6 @@ function revisarColision(enemigo){
         
     }
 
-    alert("Hay colision")
+    detenerMovimiento()
+    alert("Hay colision " + enemigo.nombre)
 }
