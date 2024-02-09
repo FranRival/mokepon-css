@@ -129,6 +129,10 @@ function iniciarJuego (){
 
         intervalo = setInterval(pintarPersonaje,50)
 
+        window.addEventListener('keydown',SePresionoUnaTecla)
+        window.addEventListener('keyup', detenerMovimiento)
+
+
 
 
         let inputHipodoge = document.getElementById('Hipodoge')
@@ -378,3 +382,7 @@ function detenerMovimiento(){
 }
 
 
+function SePresionoUnaTecla(event){
+    console.log(event.key)
+
+}
