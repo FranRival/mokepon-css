@@ -391,8 +391,19 @@ function moverArriba(){
 }
 
 function detenerMovimiento(){
+    const miMokepon = obtenerObjetoMascota()
     capipepo.velocidadX =0
     capipepo.velocidadY=0
+}
+
+function obtenerObjetoMascota(){
+    
+    //el mismo for de extraerAtaques
+    for (let i = 0; i < mokepones.length; i++) {
+        if (mascotaJugador== mokepones[i].nombre){
+            return mokepones [i]
+        } 
+    }
 }
 
 
@@ -430,12 +441,3 @@ function iniciarMapa(){
     window.addEventListener('keydown',SePresionoUnaTecla)
 }
 
-function obtenerObjetoMascota(){
-    
-    //el mismo for de extraerAtaques
-    for (let i = 0; i < mokepones.length; i++) {
-        if (mascotaJugador== mokepones[i].nombre){
-            return mokepones [i]
-        } 
-    }
-}
