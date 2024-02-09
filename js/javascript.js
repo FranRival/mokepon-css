@@ -91,9 +91,9 @@ let hypodoge = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIb
 let capipepo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5, 'https://images2.imgbox.com/78/79/uZx0xJgg_o.png')
 let ratigueya = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5, 'https://images2.imgbox.com/26/83/CO9zxorc_o.png')
 
-let capipepoEnemigo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5, 'https://images2.imgbox.com/78/79/uZx0xJgg_o.png', 150, 95)
-let hypodogeEnemigo = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5, 'https://images2.imgbox.com/77/e6/LGzhLnXN_o.png', 80, 120)
 
+let hypodogeEnemigo = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5, 'https://images2.imgbox.com/77/e6/LGzhLnXN_o.png', 80, 120)
+let capipepoEnemigo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5, 'https://images2.imgbox.com/78/79/uZx0xJgg_o.png', 150, 95)
 let ratigueyaEnemigo = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5, 'https://images2.imgbox.com/26/83/CO9zxorc_o.png', 200,190)
 
 hypodoge.ataques.push(
@@ -383,8 +383,8 @@ function pintarCanvas(){
     //y de ese objeto se llamara a la funcion de pintar. 
     mascotaDelJugadorObjeto.pintarMokepon()
     hypodogeEnemigo.pintarMokepon()
-    ratigueya.pintarMokepon()
-    capipepo.pintarMokepon()
+    ratigueyaEnemigo.pintarMokepon()
+    capipepoEnemigo.pintarMokepon()
 
 
 //esto quedara eliminado. Porque se modifico en la clase de Mokepon. 
@@ -434,8 +434,7 @@ function iniciarMapa(){
 
     mapa.width=320
     mapa.height=240
-    mascotaDelJugadorObjeto = obtenerObjetoMascota(mascotaJugador)//?
-    console.log(mascotaDelJugadorObjeto, mascotaJugador)
+    mascotaDelJugadorObjeto = obtenerObjetoMascota(mascotaJugador)
 
     intervalo = setInterval(pintarCanvas,50)
     window.addEventListener('keyup', detenerMovimiento)
@@ -446,11 +445,10 @@ function iniciarMapa(){
 
 
 function SePresionoUnaTecla(event){
-    //el valor que se va a usar para comparar en las condiciones if que va a suceder
     switch (event.key) {
         case 'ArrowUp':
             moverArriba()
-            break;//
+            break;
         case 'ArrowDown':
                 moverAbajo()
              break;
@@ -463,7 +461,5 @@ function SePresionoUnaTecla(event){
         default:
             break;
     }
-    //el switch va comparando las opciones que tiene por dentro. cuando hace match con un caso, ejecuta ese caso y termina. 
-
 }
 
