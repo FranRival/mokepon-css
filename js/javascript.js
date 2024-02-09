@@ -409,7 +409,6 @@ function iniciarMapa(){
     console.log(mascotaDelJugadorObjeto, mascotaJugador)
 
     intervalo = setInterval(pintarCanvas,50)
-    //se ejecuta cuando se presiona una tecla. si se elemina este codigo, nada sucedera. porque no entra dentro de las funciones. 
     window.addEventListener('keyup', detenerMovimiento)
     window.addEventListener('keydown',SePresionoUnaTecla)
 }
