@@ -63,8 +63,9 @@ class Mokepon {
         this.foto = foto
         this.vida = vida
         this.ataques = []
-        this.x = 20
-        this.y = 30
+        //x arriba, estan asi, en un color oscuro comparado con estas de abajo, porque no se estan utilizando. primer hay que instanciarlas. asi cambiaran al mismo color
+        this.x = x
+        this.y = y
         this.ancho = 40
         this.alto = 40
         this.mapaFoto = new Image()
@@ -90,9 +91,9 @@ let hypodoge = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIb
 let capipepo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5, 'https://images2.imgbox.com/78/79/uZx0xJgg_o.png')
 let ratigueya = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5, 'https://images2.imgbox.com/26/83/CO9zxorc_o.png')
 
-
-let hypodogeEnemigo = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5, 'https://images2.imgbox.com/77/e6/LGzhLnXN_o.png', 80, 120)
 let capipepoEnemigo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5, 'https://images2.imgbox.com/78/79/uZx0xJgg_o.png', 150, 95)
+let hypodogeEnemigo = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5, 'https://images2.imgbox.com/77/e6/LGzhLnXN_o.png', 80, 120)
+
 let ratigueyaEnemigo = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5, 'https://images2.imgbox.com/26/83/CO9zxorc_o.png', 200,190)
 
 hypodoge.ataques.push(
