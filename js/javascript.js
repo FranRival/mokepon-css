@@ -132,10 +132,6 @@ function iniciarJuego (){
         sectionVerMapa.style.display = 'flex'
 
 
-        iniciarMapa()
-
-
-
 
 
         let inputHipodoge = document.getElementById('Hipodoge')
@@ -157,6 +153,7 @@ function iniciarJuego (){
         }
 
         extraerAtaques(mascotaJugador)
+        iniciarMapa() //el error infinito estaba aqui. primero se ejecutaba la funcion antes de tener un valor. cambiandola aqui, se resuelve ese error. 
         seleccionarMascotaEnemigo()
 
     }
@@ -351,6 +348,7 @@ function aleatorio (min, max){
 
 function pintarCanvas(){
 
+
     mascotaDelJugadorObjeto.x=mascotaDelJugadorObjeto.x+mascotaDelJugadorObjeto.velocidadX
     mascotaDelJugadorObjeto.y=mascotaDelJugadorObjeto.y+mascotaDelJugadorObjeto.velocidadY
     lienzo.clearRect(0,0,mapa.width,mapa.height)
@@ -373,7 +371,6 @@ function pintarCanvas(){
 
 function moverDerecha(){
     mascotaDelJugadorObjeto.velocidadX = 5
-
 }
 
 function moverIzquierda(){
@@ -409,6 +406,7 @@ function iniciarMapa(){
     mapa.width=320
     mapa.height=240
     mascotaDelJugadorObjeto = obtenerObjetoMascota(mascotaJugador)//?
+    console.log(mascotaDelJugadorObjeto, mascotaJugador)
 
     intervalo = setInterval(pintarCanvas,50)
     //se ejecuta cuando se presiona una tecla. si se elemina este codigo, nada sucedera. porque no entra dentro de las funciones. 
