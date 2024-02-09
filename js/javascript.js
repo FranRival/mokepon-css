@@ -55,6 +55,7 @@ let victoriasEnemigo =0
 
 let mapaBackground = new Image ()
 mapaBackground.src ='https://images2.imgbox.com/b4/d9/x9ubpv2H_o.png'
+let mascotaDelJugadorObjeto
 
 class Mokepon {
     constructor (nombre, foto, vida){
@@ -374,30 +375,25 @@ function pintarCanvas(){
 }
 
 function moverDerecha(){
-    const miMokepon = obtenerObjetoMascota()
-    miMokepon.velocidadX = 5
+    mascotaDelJugadorObjeto.velocidadX = 5
 
 }
 
 function moverIzquierda(){
-    const miMokepon = obtenerObjetoMascota()
-    miMokepon.velocidadX = - 5
+    mascotaDelJugadorObjeto.velocidadX = - 5
 }
 
 function moverAbajo(){
-    const miMokepon = obtenerObjetoMascota()
-    miMokepon.velocidadY = 5
+    mascotaDelJugadorObjeto.velocidadY = 5
 }
 
 function moverArriba(){
-    const miMokepon = obtenerObjetoMascota()
-    miMokepon.velocidadY = -5
+    mascotaDelJugadorObjeto.velocidadY = -5
 }
 
 function detenerMovimiento(){
-    const miMokepon = obtenerObjetoMascota()
-    miMokepon.velocidadY=0
-    miMokepon.velocidadX =0
+    mascotaDelJugadorObjeto.velocidadY=0
+    mascotaDelJugadorObjeto.velocidadX =0
 }
 
 function obtenerObjetoMascota(){
@@ -409,6 +405,21 @@ function obtenerObjetoMascota(){
         } 
     }
 }
+
+
+function iniciarMapa(){
+
+    mapa.width=320
+    mapa.height=240
+    mascotaDelJugadorObjeto = obtenerObjetoMascota(mascotaJugador)//?
+
+    intervalo = setInterval(pintarCanvas,50)
+    //se ejecuta cuando se presiona una tecla. si se elemina este codigo, nada sucedera. porque no entra dentro de las funciones. 
+    window.addEventListener('keyup', detenerMovimiento)
+    window.addEventListener('keydown',SePresionoUnaTecla)
+}
+
+
 
 
 function SePresionoUnaTecla(event){
@@ -431,17 +442,5 @@ function SePresionoUnaTecla(event){
     }
     //el switch va comparando las opciones que tiene por dentro. cuando hace match con un caso, ejecuta ese caso y termina. 
 
-}
-
-
-function iniciarMapa(){
-
-    mapa.width=320
-    mapa.height=240
-
-    intervalo = setInterval(pintarCanvas,50)
-    //se ejecuta cuando se presiona una tecla. si se elemina este codigo, nada sucedera. porque no entra dentro de las funciones. 
-    window.addEventListener('keyup', detenerMovimiento)
-    window.addEventListener('keydown',SePresionoUnaTecla)
 }
 
