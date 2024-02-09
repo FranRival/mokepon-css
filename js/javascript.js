@@ -128,9 +128,13 @@ function iniciarJuego (){
         sectionVerMapa.style.display = 'flex'
 
         intervalo = setInterval(pintarPersonaje,50)
-
-        window.addEventListener('keydown',SePresionoUnaTecla)
+        //se ejecuta cuando se presiona una tecla. si se elemina este codigo, nada sucedera. porque no entra dentro de las funciones. 
         window.addEventListener('keyup', detenerMovimiento)
+        window.addEventListener('keydown',SePresionoUnaTecla)
+
+
+        iniciarMapa()
+
 
 
 
@@ -383,6 +387,28 @@ function detenerMovimiento(){
 
 
 function SePresionoUnaTecla(event){
-    console.log(event.key)
+    //el valor que se va a usar para comparar en las condiciones if que va a suceder
+    switch (event.key) {
+        case 'ArrowUp':
+            moverArriba()
+            break;//
+        case 'ArrowDown':
+                moverAbajo()
+             break;
+        case 'ArrowLeft':
+                moverIzquierda()
+                break;
+        case 'ArrowRight':
+            moverDerecha()
+                break;
+        default:
+            break;
+    }
+    //el switch va comparando las opciones que tiene por dentro. cuando hace match con un caso, ejecuta ese caso y termina. 
+
+}
+
+
+function iniciarMapa(){
 
 }
