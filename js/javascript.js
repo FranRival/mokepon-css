@@ -72,6 +72,17 @@ class Mokepon {
         this.velocidadX=0
         this.velocidadY=0
     }
+
+    //se copio de la funcion de Canva. y se utiliza this. porque usamos los atributos del objeto que se creo en la clase. se le llama metodos de la clase 
+    pintarMokepon(){
+        lienzo.drawImage(
+            this.mapaFoto, 
+            this.x,
+            this.y,
+            this.ancho, 
+            this.alto
+        )
+    }
 }
 
 
@@ -367,13 +378,22 @@ function pintarCanvas(){
         mapa.height
     )
 
-    lienzo.drawImage(
+    //usar el objeto que se creo de la mascota del juegador
+    //y de ese objeto se llamara a la funcion de pintar. 
+    mascotaDelJugadorObjeto.pintarMokepon()
+    hypodogeEnemigo.pintarMokepon()
+    ratigueya.pintarMokepon()
+    capipepo.pintarMokepon()
+
+
+//esto quedara eliminado. Porque se modifico en la clase de Mokepon. 
+/*     lienzo.drawImage(
         mascotaDelJugadorObjeto.mapaFoto, 
         mascotaDelJugadorObjeto.x,
         mascotaDelJugadorObjeto.y,
         mascotaDelJugadorObjeto.ancho, 
         mascotaDelJugadorObjeto.alto
-    )
+    ) */
     
 }
 
