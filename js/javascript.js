@@ -58,7 +58,7 @@ mapaBackground.src ='https://images2.imgbox.com/b4/d9/x9ubpv2H_o.png'
 let mascotaDelJugadorObjeto
 
 class Mokepon {
-    constructor (nombre, foto, vida){
+    constructor (nombre, foto, vida, fotoMapa, x = 10, y = 10){
         this.nombre = nombre
         this.foto = foto
         this.vida = vida
@@ -68,16 +68,16 @@ class Mokepon {
         this.ancho = 80
         this.alto = 80
         this.mapaFoto = new Image()
-        this.mapaFoto.src = foto
+        this.mapaFoto.src = fotoMapa
         this.velocidadX=0
         this.velocidadY=0
     }
 }
 
-
-let hypodoge = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5)
-let capipepo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5)
-let ratigueya = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5)
+//todos los mokepones tendran un x y y de 10
+let hypodoge = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5, 'https://images2.imgbox.com/77/e6/LGzhLnXN_o.png')
+let capipepo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5, 'https://images2.imgbox.com/78/79/uZx0xJgg_o.png')
+let ratigueya = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5, 'https://images2.imgbox.com/26/83/CO9zxorc_o.png')
 
 hypodoge.ataques.push(
     {nombre: '🧊', id:'boton-agua'},
