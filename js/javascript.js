@@ -152,7 +152,9 @@ function iniciarJuego (){
     
         }
 
+
         extraerAtaques(mascotaJugador)
+
         iniciarMapa() //el error infinito estaba aqui. primero se ejecutaba la funcion antes de tener un valor. cambiandola aqui, se resuelve ese error. 
         seleccionarMascotaEnemigo()
 
@@ -360,13 +362,13 @@ function pintarCanvas(){
         mapa.height
     )
 
-    lienzo.drawImage
+    lienzo.drawImage(
         mascotaDelJugadorObjeto.mapaFoto, 
         mascotaDelJugadorObjeto.x,
         mascotaDelJugadorObjeto.y,
         mascotaDelJugadorObjeto.ancho, 
         mascotaDelJugadorObjeto.alto
-        
+    )
 }
 
 function moverDerecha(){
