@@ -132,10 +132,6 @@ function iniciarJuego (){
         sectionVerMapa.style.display = 'flex'
 
 
-        iniciarMapa()
-
-
-
 
 
         let inputHipodoge = document.getElementById('Hipodoge')
@@ -158,6 +154,11 @@ function iniciarJuego (){
 
         extraerAtaques(mascotaJugador)
         seleccionarMascotaEnemigo()
+        
+        iniciarMapa()
+
+
+
 
     }
 
