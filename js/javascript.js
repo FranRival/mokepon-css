@@ -63,7 +63,6 @@ class Mokepon {
         this.foto = foto
         this.vida = vida
         this.ataques = []
-        //x arriba, estan asi, en un color oscuro comparado con estas de abajo, porque no se estan utilizando. primer hay que instanciarlas. asi cambiaran al mismo color
         this.x = x
         this.y = y
         this.ancho = 40
@@ -74,7 +73,6 @@ class Mokepon {
         this.velocidadY=0
     }
 
-    //se copio de la funcion de Canva. y se utiliza this. porque usamos los atributos del objeto que se creo en la clase. se le llama metodos de la clase 
     pintarMokepon(){
         lienzo.drawImage(
             this.mapaFoto, 
@@ -104,14 +102,14 @@ hypodoge.ataques.push(
     {nombre: '🌱', id:'boton-tierra'},
 )
 
-hypodogeEnemigo.ataques.push(
+/* hypodogeEnemigo.ataques.push(
     {nombre: '🧊', id:'boton-agua'},
     {nombre: '🧊', id:'boton-agua'},
     {nombre: '🧊', id:'boton-agua'},
     {nombre: '🔥', id:'boton-fuego'},
     {nombre: '🌱', id:'boton-tierra'},
 )
-
+ */
 capipepo.ataques.push(
     {nombre: '🌱', id:'boton-tierra'},
     {nombre: '🌱', id:'boton-tierra'},
@@ -120,13 +118,13 @@ capipepo.ataques.push(
     {nombre: '🔥', id:'boton-fuego'},
 )
 
-capipepoEnemigo.ataques.push(
+/* capipepoEnemigo.ataques.push(
     {nombre: '🌱', id:'boton-tierra'},
     {nombre: '🌱', id:'boton-tierra'},
     {nombre: '🌱', id:'boton-tierra'},
     {nombre: '🧊', id:'boton-agua'},
     {nombre: '🔥', id:'boton-fuego'},
-)
+) */
 
 ratigueya.ataques.push(
     {nombre: '🔥', id:'boton-fuego'},
@@ -136,13 +134,13 @@ ratigueya.ataques.push(
     {nombre: '🧊', id:'boton-agua'},
 )
 
-ratigueyaEnemigo.ataques.push(
+/* ratigueyaEnemigo.ataques.push(
     {nombre: '🔥', id:'boton-fuego'},
     {nombre: '🔥', id:'boton-fuego'},
     {nombre: '🔥', id:'boton-fuego'},
     {nombre: '🌱', id:'boton-tierra'},
     {nombre: '🧊', id:'boton-agua'},
-)
+) */
 
 mokepones.push(hypodoge,capipepo,ratigueya)
 
@@ -515,6 +513,8 @@ function revisarColision(enemigo){
     }
 
     detenerMovimiento()
+    clearInterval(intervalo)
+    console.log('se deecto una colision');
     sectionSeleccionarAtaque.style.display = 'flex'
     sectionVerMapa.style.display='none'
     seleccionarMascotaEnemigo(enemigo)
