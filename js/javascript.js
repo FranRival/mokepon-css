@@ -102,14 +102,14 @@ hypodoge.ataques.push(
     {nombre: '🌱', id:'boton-tierra'},
 )
 
-/* hypodogeEnemigo.ataques.push(
+hypodogeEnemigo.ataques.push(
     {nombre: '🧊', id:'boton-agua'},
     {nombre: '🧊', id:'boton-agua'},
     {nombre: '🧊', id:'boton-agua'},
     {nombre: '🔥', id:'boton-fuego'},
     {nombre: '🌱', id:'boton-tierra'},
 )
- */
+
 capipepo.ataques.push(
     {nombre: '🌱', id:'boton-tierra'},
     {nombre: '🌱', id:'boton-tierra'},
@@ -118,13 +118,13 @@ capipepo.ataques.push(
     {nombre: '🔥', id:'boton-fuego'},
 )
 
-/* capipepoEnemigo.ataques.push(
+capipepoEnemigo.ataques.push(
     {nombre: '🌱', id:'boton-tierra'},
     {nombre: '🌱', id:'boton-tierra'},
     {nombre: '🌱', id:'boton-tierra'},
     {nombre: '🧊', id:'boton-agua'},
     {nombre: '🔥', id:'boton-fuego'},
-) */
+)
 
 ratigueya.ataques.push(
     {nombre: '🔥', id:'boton-fuego'},
@@ -134,13 +134,13 @@ ratigueya.ataques.push(
     {nombre: '🧊', id:'boton-agua'},
 )
 
-/* ratigueyaEnemigo.ataques.push(
+ratigueyaEnemigo.ataques.push(
     {nombre: '🔥', id:'boton-fuego'},
     {nombre: '🔥', id:'boton-fuego'},
     {nombre: '🔥', id:'boton-fuego'},
     {nombre: '🌱', id:'boton-tierra'},
     {nombre: '🧊', id:'boton-agua'},
-) */
+)
 
 mokepones.push(hypodoge,capipepo,ratigueya)
 
@@ -307,7 +307,6 @@ function combate (){
         if (ataqueJugador[index]===ataqueEnemigo[index]) {
             indexAmbosOponente(index, index)
             crearMensaje('Empate')
-            victoriasJugador++
             spanVidasJugador.innerHTML = victoriasJugador
         } else if (ataqueJugador[index] ==='Fuego' && ataqueEnemigo[index] ==='Tierra'){
             indexAmbosOponente(index, index)
