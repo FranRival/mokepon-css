@@ -104,6 +104,14 @@ hypodoge.ataques.push(
     {nombre: '🌱', id:'boton-tierra'},
 )
 
+hypodogeEnemigo.ataques.push(
+    {nombre: '🧊', id:'boton-agua'},
+    {nombre: '🧊', id:'boton-agua'},
+    {nombre: '🧊', id:'boton-agua'},
+    {nombre: '🔥', id:'boton-fuego'},
+    {nombre: '🌱', id:'boton-tierra'},
+)
+
 capipepo.ataques.push(
     {nombre: '🌱', id:'boton-tierra'},
     {nombre: '🌱', id:'boton-tierra'},
@@ -112,7 +120,23 @@ capipepo.ataques.push(
     {nombre: '🔥', id:'boton-fuego'},
 )
 
+capipepoEnemigo.ataques.push(
+    {nombre: '🌱', id:'boton-tierra'},
+    {nombre: '🌱', id:'boton-tierra'},
+    {nombre: '🌱', id:'boton-tierra'},
+    {nombre: '🧊', id:'boton-agua'},
+    {nombre: '🔥', id:'boton-fuego'},
+)
+
 ratigueya.ataques.push(
+    {nombre: '🔥', id:'boton-fuego'},
+    {nombre: '🔥', id:'boton-fuego'},
+    {nombre: '🔥', id:'boton-fuego'},
+    {nombre: '🌱', id:'boton-tierra'},
+    {nombre: '🧊', id:'boton-agua'},
+)
+
+ratigueyaEnemigo.ataques.push(
     {nombre: '🔥', id:'boton-fuego'},
     {nombre: '🔥', id:'boton-fuego'},
     {nombre: '🔥', id:'boton-fuego'},
@@ -243,7 +267,11 @@ function seleccionarMascotaEnemigo(){
 
 function ataqueAleatorioEnemigo (){
 
-    let ataqueAleatorio = aleatorio(0,mokepones.length -1)
+    console.log('Ataque enemigo', ataquesMokeponEnemigo);
+
+
+    let ataqueAleatorio = aleatorio(0,ataquesMokeponEnemigo.length -1)
+
     if (ataqueAleatorio == 0 || ataqueAleatorio==1){
        ataqueEnemigo.push('Fuego')
 
