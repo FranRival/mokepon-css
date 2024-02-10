@@ -144,7 +144,7 @@ function iniciarJuego (){
 
 
     function seleccionarMascotaJugador(){
-       // sectionSeleccionarAtaque.style.display = 'flex'
+       // 
         sectionSeleccionarMascota.style.display = 'none'
         sectionVerMapa.style.display = 'flex'
 
@@ -171,9 +171,10 @@ function iniciarJuego (){
 
 
         extraerAtaques(mascotaJugador)
+       // sectionSeleccionarAtaque.style.display = 'flex'
+        iniciarMapa()
 
-        iniciarMapa() //el error infinito estaba aqui. primero se ejecutaba la funcion antes de tener un valor. cambiandola aqui, se resuelve ese error. 
-        seleccionarMascotaEnemigo()
+        
 
     }
 
@@ -486,5 +487,7 @@ function revisarColision(enemigo){
     }
 
     detenerMovimiento()
-    alert("Hay colision " + enemigo.nombre)
+    sectionSeleccionarAtaque.style.display = 'flex'
+    sectionVerMapa.style.display='none'
+    seleccionarMascotaEnemigo(enemigo)
 }
