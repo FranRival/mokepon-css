@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mokepon</title>
     <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
 </head>
@@ -21,12 +22,15 @@
 
     
     <section id="ver-mapa">
-        <h2 id="titulo">Recorre el mapa con el mokepon</h2>
+        <h2 class="subtitulo">Recorre el mapa con el mokepon</h2>
         <canvas id="mapa"></canvas>
         <button onmouseout="detenerMovimiento()" onmousedown="moverArriba()">Arriba</button>
-        <button onmouseout="detenerMovimiento()" onmousedown="moverIzquierda()">Izquierda</button>
-        <button onmouseout="detenerMovimiento()" onmousedown="moverAbajo()">Abajo</button>
-        <button onmouseout="detenerMovimiento()" onmousedown="moverDerecha()">Derecha</button>
+
+        <div>
+            <button onmouseout="detenerMovimiento()" onmousedown="moverIzquierda()">Izquierda</button>
+            <button onmouseout="detenerMovimiento()" onmousedown="moverAbajo()">Abajo</button>
+            <button onmouseout="detenerMovimiento()" onmousedown="moverDerecha()">Derecha</button>
+         </div>
     </section>
 
 
