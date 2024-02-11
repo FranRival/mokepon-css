@@ -177,10 +177,32 @@ function iniciarJuego (){
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 
     botonReiniciar.addEventListener('click',reiniciarJuego)
+
+
+    unirseAlJuego()
+}
+
+function unirseAlJuego(){
+    //se hace una peticion al servidor.
+    //fetch. hacia otros servicios. 
+    //es asincrona.
+    fetch("http://localhost:8080/unirse")
+    .then(function (res){
+        if (res.ok) {
+            res.text()
+                .then(function(respuesta){
+                    console.log(respuesta);
+                })
+            
+        }//se hace un if para saber si todo salio bien. traemso datos de respuesta, entonces, hacemos un res. text, nos devuelva un teto con el id. 
+        //y su methodo then, se agrega una funcion. 
+        //
+    })
+
 }
 
 
-    function seleccionarMascotaJugador(){
+function seleccionarMascotaJugador(){
        // 
         sectionSeleccionarMascota.style.display = 'none'
         sectionVerMapa.style.display = 'flex'
@@ -212,7 +234,7 @@ function iniciarJuego (){
 
         
 
-    }
+}
 
     function extraerAtaques(mascotaJugador){
         let ataques

@@ -15,7 +15,11 @@ app.get("/unirse", (req,res)=>{ //nuestra pagina en el fronted llame un servicio
     const jugador = new Jugador(id)
 
     jugadores.push(jugador)
-    res.send(id)
+ 
+    res.setHeader("Access-Control-Allow-Origin", "*")
+
+
+    res.send(id) //es como una sala de juego. 
 
 }) 
 
