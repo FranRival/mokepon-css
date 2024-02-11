@@ -1,0 +1,1 @@
+console.log('Esto es node y un mensaje simple');
