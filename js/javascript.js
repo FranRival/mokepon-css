@@ -175,6 +175,8 @@ function iniciarJuego (){
     }) 
 
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
+
+    botonReiniciar.addEventListener('click',reiniciarJuego)
 }
 
 
