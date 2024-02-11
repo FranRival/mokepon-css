@@ -57,6 +57,13 @@ let mapaBackground = new Image ()
 mapaBackground.src ='https://images2.imgbox.com/b4/d9/x9ubpv2H_o.png'
 let mascotaDelJugadorObjeto
 
+let alturaQueBuscamos
+let anchoDelMapa = window.innerWidth - 20
+alturaQueBuscamos = anchoDelMapa*600/800
+
+mapa.width=anchoDelMapa
+mapa.height=alturaQueBuscamos
+
 class Mokepon {
     constructor (nombre, foto, vida, fotoMapa, x = 10, y = 10){
         this.nombre = nombre
@@ -457,8 +464,7 @@ function obtenerObjetoMascota(){
 
 function iniciarMapa(){
 
-    mapa.width=320
-    mapa.height=240
+
     mascotaDelJugadorObjeto = obtenerObjetoMascota(mascotaJugador)
 
     intervalo = setInterval(pintarCanvas,50)
