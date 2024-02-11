@@ -206,7 +206,6 @@ function iniciarJuego (){
 
 
         extraerAtaques(mascotaJugador)
-       // sectionSeleccionarAtaque.style.display = 'flex'
         iniciarMapa()
 
         
@@ -300,7 +299,6 @@ function ataqueAleatorioEnemigo (){
 }
 
 function iniciarPelea (){
-    //cuando la longitud sea 5, se va a esperar a que sean 5
     if (ataqueJugador.length===5) {
         combate()   
     }
@@ -316,7 +314,6 @@ function indexAmbosOponente(jugador, enemigo){
 
 function combate (){
     for (let index = 0; index < ataqueJugador.length; index++) {
-       //  console.log(ataqueJugador[index])
         if (ataqueJugador[index]===ataqueEnemigo[index]) {
             indexAmbosOponente(index, index)
             crearMensaje('Empate')
@@ -424,7 +421,6 @@ function pintarCanvas(){
     capipepoEnemigo.pintarMokepon()
 
 
-    //todas las macotas inician en la misma pocision del mapa
     if (mascotaDelJugadorObjeto.velocidadX!==0||mascotaDelJugadorObjeto.velocidadY!==0) {
         revisarColision(hypodogeEnemigo)
         revisarColision(capipepoEnemigo)
@@ -459,7 +455,6 @@ function detenerMovimiento(){
 
 function obtenerObjetoMascota(){
     
-    //el mismo for de extraerAtaques
     for (let i = 0; i < mokepones.length; i++) {
         if (mascotaJugador== mokepones[i].nombre){
             return mokepones [i]
@@ -503,7 +498,7 @@ function SePresionoUnaTecla(event){
 function revisarColision(enemigo){
 
     const arribaEnemigo = enemigo.y
-    const abajoEnemigo = enemigo.y+enemigo.alto//y es donde se pinta el enemigo
+    const abajoEnemigo = enemigo.y+enemigo.alto
     const derechaEnemigo = enemigo.x+enemigo.ancho
     const izquierdaEnemigo = enemigo.x
 
