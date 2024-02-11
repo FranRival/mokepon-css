@@ -64,16 +64,22 @@ alturaQueBuscamos = anchoDelMapa*600/800
 mapa.width=anchoDelMapa
 mapa.height=alturaQueBuscamos
 
+const anchoMaximoDelMapa = 350
+if (anchoDelMapa>anchoMaximoDelMapa) {
+    anchoDelMapa=anchoMaximoDelMapa-20
+    
+}
+
 class Mokepon {
-    constructor (nombre, foto, vida, fotoMapa, x = 10, y = 10){
+    constructor (nombre, foto, vida, fotoMapa){
         this.nombre = nombre
         this.foto = foto
         this.vida = vida
         this.ataques = []
-        this.x = x
-        this.y = y
         this.ancho = 40
         this.alto = 40
+        this.x = aleatorio(0,mapa.width- this.ancho)
+        this.y = aleatorio(0,mapa.height-this.alto)
         this.mapaFoto = new Image()
         this.mapaFoto.src = fotoMapa
         this.velocidadX=0
@@ -97,9 +103,9 @@ let capipepo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjy
 let ratigueya = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5, 'https://images2.imgbox.com/26/83/CO9zxorc_o.png')
 
 
-let hypodogeEnemigo = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5, 'https://images2.imgbox.com/77/e6/LGzhLnXN_o.png', 80, 120)
-let capipepoEnemigo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5, 'https://images2.imgbox.com/78/79/uZx0xJgg_o.png', 150, 95)
-let ratigueyaEnemigo = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5, 'https://images2.imgbox.com/26/83/CO9zxorc_o.png', 200,190)
+let hypodogeEnemigo = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5, 'https://images2.imgbox.com/77/e6/LGzhLnXN_o.png')
+let capipepoEnemigo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5, 'https://images2.imgbox.com/78/79/uZx0xJgg_o.png')
+let ratigueyaEnemigo = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5, 'https://images2.imgbox.com/26/83/CO9zxorc_o.png')
 
 hypodoge.ataques.push(
     {nombre: '🧊', id:'boton-agua'},
