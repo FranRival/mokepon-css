@@ -73,7 +73,8 @@ if (anchoDelMapa>anchoMaximoDelMapa) {
 }
 
 class Mokepon {
-    constructor (nombre, foto, vida, fotoMapa){
+    constructor (nombre, foto, vida, fotoMapa, id = null){
+        this.id = id
         this.nombre = nombre
         this.foto = foto
         this.vida = vida
@@ -500,8 +501,10 @@ function enviarPocision (x,y){
 
                     }
 
+                    mokeponEnemigo.x = enemigo.x
+                    mokeponEnemigo.y = enemigo.y
+
                     mokeponEnemigo.pintarMokepon()
-                    mokeponEnemigo.x
                   })
                          
 
