@@ -464,6 +464,9 @@ function pintarCanvas(){
     )
 
     mascotaDelJugadorObjeto.pintarMokepon()
+
+    enviarPocision(mascotaDelJugadorObjeto.x,mascotaDelJugadorObjeto.y)
+
     hypodogeEnemigo.pintarMokepon()
     ratigueyaEnemigo.pintarMokepon()
     capipepoEnemigo.pintarMokepon()
@@ -475,9 +478,20 @@ function pintarCanvas(){
         revisarColision(ratigueyaEnemigo)
         
     }
+}
 
-
-
+function enviarPocision (x,y){
+    fetch(`http://localhost:8080/mokepon/${jugadorId}/pocision/`,{
+    method:'post',
+    headers:{
+        "Content-Type": "application/json"
+    },
+    body:JSON.stringify({
+        x,
+        y
+    })
+        
+    })
 }
 
 function moverDerecha(){
