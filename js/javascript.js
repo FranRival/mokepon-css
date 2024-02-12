@@ -197,6 +197,12 @@ function unirseAlJuego(){
         }//se hace un if para saber si todo salio bien. traemso datos de respuesta, entonces, hacemos un res. text, nos devuelva un teto con el id. 
         //y su methodo then, se agrega una funcion. 
         //
+
+/*         cd .. <--regresar una carpeta atras
+
+nmp init <--para inisializar el proyecto 
+express js <---crear servidores.  */
+
     })
 
 }
