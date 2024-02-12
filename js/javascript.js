@@ -66,6 +66,8 @@ mapa.height=alturaQueBuscamos
 
 let jugadorId = null
 
+let mokeponesEnemigos = []
+
 const anchoMaximoDelMapa = 350
 if (anchoDelMapa>anchoMaximoDelMapa) {
     anchoDelMapa=anchoMaximoDelMapa-20
@@ -454,10 +456,13 @@ function pintarCanvas(){
 
     enviarPocision(mascotaDelJugadorObjeto.x,mascotaDelJugadorObjeto.y)
 
-    hypodogeEnemigo.pintarMokepon()
-    ratigueyaEnemigo.pintarMokepon()
-    capipepoEnemigo.pintarMokepon()
 
+    mokeponesEnemigos.forEach(function(mokepon){
+        mokepon.pintarMokepon()
+    })
+
+
+    
 
     if (mascotaDelJugadorObjeto.velocidadX!==0||mascotaDelJugadorObjeto.velocidadY!==0) {
         revisarColision(hypodogeEnemigo)
@@ -487,7 +492,8 @@ function enviarPocision (x,y){
                   console.log(enemigos)
 
 
-                  enemigos.forEach(function(enemigo){
+
+                  mokeponesEnemigos = enemigos.map(function(enemigo){
                     let mokeponEnemigo=null
                     const mokeponNombre = enemigo.mokepon.nombre || ""
                     if(mokeponNombre==="Hipodoge"){
@@ -504,7 +510,7 @@ function enviarPocision (x,y){
                     mokeponEnemigo.x = enemigo.x
                     mokeponEnemigo.y = enemigo.y
 
-                    mokeponEnemigo.pintarMokepon() //funciona, y no se como funciona alv
+                    return mokeponEnemigo
                   })
                          
 
