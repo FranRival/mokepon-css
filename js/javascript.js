@@ -459,17 +459,11 @@ function pintarCanvas(){
 
     mokeponesEnemigos.forEach(function(mokepon){
         mokepon.pintarMokepon()
+        revisarColision(mokepon)
     })
 
 
-    
 
-    if (mascotaDelJugadorObjeto.velocidadX!==0||mascotaDelJugadorObjeto.velocidadY!==0) {
-        revisarColision(hypodogeEnemigo)
-        revisarColision(capipepoEnemigo)
-        revisarColision(ratigueyaEnemigo)
-        
-    }
 }
 
 function enviarPocision (x,y){
