@@ -504,7 +504,7 @@ function enviarPocision (x,y){
                     mokeponEnemigo.x = enemigo.x
                     mokeponEnemigo.y = enemigo.y
 
-                    mokeponEnemigo.pintarMokepon()
+                    mokeponEnemigo.pintarMokepon() //funciona, y no se como funciona alv
                   })
                          
 
