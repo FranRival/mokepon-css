@@ -64,6 +64,8 @@ alturaQueBuscamos = anchoDelMapa*600/800
 mapa.width=anchoDelMapa
 mapa.height=alturaQueBuscamos
 
+let jugadorId = null
+
 const anchoMaximoDelMapa = 350
 if (anchoDelMapa>anchoMaximoDelMapa) {
     anchoDelMapa=anchoMaximoDelMapa-20
@@ -192,6 +194,7 @@ function unirseAlJuego(){
             res.text()
                 .then(function(respuesta){
                     console.log(respuesta);
+                    jugadorId = respuesta
                 })
             
         }//se hace un if para saber si todo salio bien. traemso datos de respuesta, entonces, hacemos un res. text, nos devuelva un teto con el id. 
@@ -209,7 +212,7 @@ express js <---crear servidores.  */
 
 
 function seleccionarMascotaJugador(){
-       // 
+
         sectionSeleccionarMascota.style.display = 'none'
         sectionVerMapa.style.display = 'flex'
 
@@ -234,15 +237,30 @@ function seleccionarMascotaJugador(){
     
         }
 
+        //esta funcion va a enviar los datos al backedn 
+        seleccionarMokepon(mascotaJugador)
 
         extraerAtaques(mascotaJugador)
-        iniciarMapa()
+        iniciarMapa()  
+}
 
-        
+function seleccionarMokepon(mascotaJugador){
+    //no es un get, es un post
+
+    fetch(`http://localhost:8080/mokepon/${jugadorId}`,{
+        method: "post",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            mokepon:mascotaJugador
+        })
+    })
+
 
 }
 
-    function extraerAtaques(mascotaJugador){
+function extraerAtaques(mascotaJugador){
         let ataques
 
         for (let i = 0; i < mokepones.length; i++) {
