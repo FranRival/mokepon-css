@@ -65,6 +65,7 @@ mapa.width=anchoDelMapa
 mapa.height=alturaQueBuscamos
 
 let jugadorId = null
+let enemigoId = null
 
 let mokeponesEnemigos = []
 
@@ -298,7 +299,23 @@ function secuenciaAtaque(){
                 console.log(ataqueJugador)
                 boton.style.background = '#112f58'
             }
-            ataqueAleatorioEnemigo()
+
+            if (ataqueJugador.length===5) {
+                enviarAtaques()
+            }
+
+        })
+    })
+}
+
+function enviarAtaques(){
+    fetch(`http://localhost:8080/mokepon/${jugadorId}/ataques`,{
+        method: "post",
+        headers:{
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            ataques: ataqueJugador
         })
     })
 }
@@ -491,13 +508,13 @@ function enviarPocision (x,y){
                     let mokeponEnemigo=null
                     const mokeponNombre = enemigo.mokepon.nombre || ""
                     if(mokeponNombre==="Hipodoge"){
-                        mokeponEnemigo = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5, 'https://images2.imgbox.com/77/e6/LGzhLnXN_o.png')
+                        mokeponEnemigo = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5, 'https://images2.imgbox.com/77/e6/LGzhLnXN_o.png', enemigo.id)
 
                     }else if (mokeponNombre==="Capipepo"){
-                        mokeponEnemigo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5, 'https://images2.imgbox.com/78/79/uZx0xJgg_o.png')
+                        mokeponEnemigo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5, 'https://images2.imgbox.com/78/79/uZx0xJgg_o.png', enemigo.id)
 
                     }else if (mokeponNombre==="Ratigueya"){
-                        mokeponEnemigo = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5, 'https://images2.imgbox.com/26/83/CO9zxorc_o.png')
+                        mokeponEnemigo = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5, 'https://images2.imgbox.com/26/83/CO9zxorc_o.png', enemigo.id)
 
                     }
 
@@ -604,6 +621,7 @@ function revisarColision(enemigo){
     detenerMovimiento()
     clearInterval(intervalo)
     console.log('se deecto una colision');
+    enemigoId = enemigo.id
     sectionSeleccionarAtaque.style.display = 'flex'
     sectionVerMapa.style.display='none'
     seleccionarMascotaEnemigo(enemigo)
