@@ -105,9 +105,6 @@ let capipepo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjy
 let ratigueya = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5, 'https://images2.imgbox.com/26/83/CO9zxorc_o.png')
 
 
-let hypodogeEnemigo = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5, 'https://images2.imgbox.com/77/e6/LGzhLnXN_o.png')
-let capipepoEnemigo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5, 'https://images2.imgbox.com/78/79/uZx0xJgg_o.png')
-let ratigueyaEnemigo = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5, 'https://images2.imgbox.com/26/83/CO9zxorc_o.png')
 
 
 const HIPODOGE_ATAQUES =[
@@ -121,8 +118,6 @@ const HIPODOGE_ATAQUES =[
 hypodoge.ataques.push(...HIPODOGE_ATAQUES)
 
 
-hypodogeEnemigo.ataques.push(...HIPODOGE_ATAQUES)
-
 const CAPIPEPO_ATAQUES=[
     {nombre: '🌱', id:'boton-tierra'},
     {nombre: '🌱', id:'boton-tierra'},
@@ -133,7 +128,6 @@ const CAPIPEPO_ATAQUES=[
 
 capipepo.ataques.push(...CAPIPEPO_ATAQUES)
 
-capipepoEnemigo.ataques.push(...CAPIPEPO_ATAQUES)
 
 const RATIGUEYA_ATAQUES=[
     {nombre: '🔥', id:'boton-fuego'},
@@ -144,12 +138,12 @@ const RATIGUEYA_ATAQUES=[
 ]
 ratigueya.ataques.push(...RATIGUEYA_ATAQUES)
 
-ratigueyaEnemigo.ataques.push(...RATIGUEYA_ATAQUES)
-
 
 
 
 mokepones.push(hypodoge,capipepo,ratigueya)
+
+
 
 function iniciarJuego (){
     sectionSeleccionarAtaque.style.display = 'none'
@@ -490,6 +484,27 @@ function enviarPocision (x,y){
             res.json()
                 .then(function({enemigos}){
                   console.log(enemigos)
+
+
+                  enemigos.forEach(function(enemigo){
+                    let mokeponEnemigo=null
+                    const mokeponNombre = enemigo.mokepon.nombre || ""
+                    if(mokeponNombre==="Hipodoge"){
+                        mokeponEnemigo = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5, 'https://images2.imgbox.com/77/e6/LGzhLnXN_o.png')
+
+                    }else if (mokeponNombre==="Capipepo"){
+                        mokeponEnemigo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5, 'https://images2.imgbox.com/78/79/uZx0xJgg_o.png')
+
+                    }else if (mokeponNombre==="Ratigueya"){
+                        mokeponEnemigo = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5, 'https://images2.imgbox.com/26/83/CO9zxorc_o.png')
+
+                    }
+
+                    mokeponEnemigo.pintarMokepon()
+                    mokeponEnemigo.x
+                  })
+                         
+
                 })
             
         }
