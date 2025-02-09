@@ -209,7 +209,6 @@ function seleccionarMascotaJugador(){
     
         }
 
-        //esta funcion va a enviar los datos al backedn 
         seleccionarMokepon(mascotaJugador)
         extraerAtaques(mascotaJugador)
         iniciarMapa()  
