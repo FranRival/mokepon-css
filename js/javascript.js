@@ -142,9 +142,6 @@ const RATIGUEYA_ATAQUES=[
 ]
 ratigueya.ataques.push(...RATIGUEYA_ATAQUES)
 
-
-
-
 mokepones.push(hypodoge,capipepo,ratigueya)
 
 
@@ -167,10 +164,7 @@ function iniciarJuego (){
     }) 
 
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
-
     botonReiniciar.addEventListener('click',reiniciarJuego)
-
-
     unirseAlJuego()
 }
 
@@ -225,7 +219,6 @@ function seleccionarMascotaJugador(){
 
         //esta funcion va a enviar los datos al backedn 
         seleccionarMokepon(mascotaJugador)
-
         extraerAtaques(mascotaJugador)
         iniciarMapa()  
 }
@@ -253,32 +246,26 @@ function extraerAtaques(mascotaJugador){
                 ataques = mokepones[i].ataques
             } 
         }
-        
         mostrarAtaques(ataques)
-        
     }
 
 
 function mostrarAtaques(ataques){
-    
-    ataques.forEach(ataque => {
+    ataques.forEach(ataque => { //ataques. en un forEach.
         ataquesMokepon = `
         <button id=${ataque.id} class="boton-de-ataque BATaque">${ataque.nombre}</button>
         `
         contenedorAtaques.innerHTML += ataquesMokepon
     })
-
         botonFuego = document.getElementById('boton-fuego')
         botonAgua = document.getElementById('boton-agua')
         botonTierra = document.getElementById('boton-tierra')
         botones = document.querySelectorAll('.BATaque')
-
-}//
-
+}
 
 
 function secuenciaAtaque(){
-    botones.forEach((boton) =>{
+    botones.forEach((boton) =>{ //botones. en un forEach.
         boton.addEventListener('click',(Event) => {
             //console.log(Event)
             if (Event.target.textContent === '🔥') {
@@ -294,11 +281,9 @@ function secuenciaAtaque(){
                 console.log(ataqueJugador)
                 boton.style.background = '#112f58'
             }
-
             if (ataqueJugador.length===5) {
                 enviarAtaques()
             }
-
         })
     })
 }
@@ -313,7 +298,6 @@ function enviarAtaques(){
             ataques: ataqueJugador
         })
     })
-
     intervalo = setInterval(obtenerAtaques, 50)
 }
 
@@ -326,13 +310,10 @@ function obtenerAtaques (){
                 if (ataques.length===5) {
                     ataqueEnemigo=ataques
                     combate()
-                    
                 }
             })
-            
         }
     })
-    
 }
 
 //probablemente, aqui este el mistake
@@ -345,10 +326,7 @@ function seleccionarMascotaEnemigo(){
 }
 
 function ataqueAleatorioEnemigo (){
-
     console.log('Ataque enemigo', ataquesMokeponEnemigo);
-
-
     let ataqueAleatorio = aleatorio(0,ataquesMokeponEnemigo.length -1)
 
     if (ataqueAleatorio == 0 || ataqueAleatorio==1){
@@ -376,15 +354,12 @@ function iniciarPelea (){
 
 
 function indexAmbosOponente(jugador, enemigo){
-    //
     indexAtaqueJugador = ataqueJugador[jugador]
     indexAtaqueEnemigo = ataqueEnemigo[enemigo]
 }
 
 function combate (){
-
     clearInterval(intervalo)
-
     for (let index = 0; index < ataqueJugador.length; index++) {
         if (ataqueJugador[index]===ataqueEnemigo[index]) {
             indexAmbosOponente(index, index)
@@ -395,7 +370,6 @@ function combate (){
             crearMensaje("Ganaste")
             victoriasJugador++
             spanVidasJugador.innerHTML = victoriasJugador
-        
         }else if (ataqueJugador[index]==='Agua' && ataqueEnemigo[index] === 'Fuego'){
             indexAmbosOponente(index, index)
             crearMensaje("Ganaste")
@@ -433,16 +407,12 @@ function crearMensajeFinal (resultadoFinal){
     botonFuego.disabled = true
     botonAgua.disabled = true
     botonTierra.disabled = true
-
     sectionReiniciar.style.display = 'block'
 }
 
 
 
 window.addEventListener('load',iniciarJuego)
-
-
-
 
 
 function reiniciarJuego(){
@@ -455,12 +425,10 @@ function crearMensaje (resultado){
     let nuevoAtaqueDelJugador = document.createElement('p')
     let nuevoAtaqueDelEnemigo = document.createElement('p')
 
-
     sectionMensajes.innerHTML = resultado
     nuevoAtaqueDelJugador.innerHTML = indexAtaqueJugador
     nuevoAtaqueDelEnemigo.innerHTML = indexAtaqueEnemigo
 
-    
     ataqueDelJugador.appendChild(nuevoAtaqueDelJugador)
     ataqueDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
 }
@@ -474,8 +442,6 @@ function aleatorio (min, max){
 
 
 function pintarCanvas(){
-
-
     mascotaDelJugadorObjeto.x=mascotaDelJugadorObjeto.x+mascotaDelJugadorObjeto.velocidadX
     mascotaDelJugadorObjeto.y=mascotaDelJugadorObjeto.y+mascotaDelJugadorObjeto.velocidadY
     lienzo.clearRect(0,0,mapa.width,mapa.height)
@@ -488,9 +454,7 @@ function pintarCanvas(){
     )
 
     mascotaDelJugadorObjeto.pintarMokepon()
-
     enviarPocision(mascotaDelJugadorObjeto.x,mascotaDelJugadorObjeto.y)
-
 
     mokeponesEnemigos.forEach(function(mokepon){
         mokepon.pintarMokepon()
@@ -572,7 +536,6 @@ function detenerMovimiento(){
 }
 
 function obtenerObjetoMascota(){
-    
     for (let i = 0; i < mokepones.length; i++) {
         if (mascotaJugador== mokepones[i].nombre){
             return mokepones [i]
@@ -582,8 +545,6 @@ function obtenerObjetoMascota(){
 
 
 function iniciarMapa(){
-
-
     mascotaDelJugadorObjeto = obtenerObjetoMascota(mascotaJugador)
 
     intervalo = setInterval(pintarCanvas,50)
@@ -614,12 +575,10 @@ function SePresionoUnaTecla(event){
 }
 
 function revisarColision(enemigo){
-
     const arribaEnemigo = enemigo.y
     const abajoEnemigo = enemigo.y+enemigo.alto
     const derechaEnemigo = enemigo.x+enemigo.ancho
     const izquierdaEnemigo = enemigo.x
-
     const arribaMascota = mascotaDelJugadorObjeto.y
     const abajoMascota = mascotaDelJugadorObjeto.y+mascotaDelJugadorObjeto.alto
     const derechaMascota = mascotaDelJugadorObjeto.x+mascotaDelJugadorObjeto.ancho
@@ -635,7 +594,6 @@ function revisarColision(enemigo){
             return
         
     }
-
     detenerMovimiento()
     clearInterval(intervalo)
     console.log('se deecto una colision');
