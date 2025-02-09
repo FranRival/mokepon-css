@@ -240,6 +240,7 @@ function extraerAtaques(mascotaJugador){
     }//se obtiene el nombre y el ataque. 
 
 
+    //asigna valor.
 function mostrarAtaques(ataques){
     ataques.forEach(ataque => {//2 variables locales. 
         ataquesMokepon = `
@@ -340,7 +341,7 @@ function iniciarPelea (){
 
 
 
-function indexAmbosOponente(jugador, enemigo){
+function indexAmbosOponente(jugador, enemigo){//asigna valor.
     indexAtaqueJugador = ataqueJugador[jugador]
     indexAtaqueEnemigo = ataqueEnemigo[enemigo]
 }
@@ -379,7 +380,7 @@ function combate (){
 
 
 
-function revisarVidas (){
+function revisarVidas (){//asigna o compara valor.
     if (victoriasJugador===victoriasEnemigo){
         crearMensajeFinal("Esto fue un empate!!!")
     }else if (victoriasJugador>victoriasEnemigo){
@@ -389,7 +390,7 @@ function revisarVidas (){
     }
 }
 
-function crearMensajeFinal (resultadoFinal){
+function crearMensajeFinal (resultadoFinal){ //asigna o compara valor.
     sectionMensajes.innerHTML = resultadoFinal
     botonFuego.disabled = true
     botonAgua.disabled = true
@@ -402,13 +403,13 @@ function crearMensajeFinal (resultadoFinal){
 window.addEventListener('load',iniciarJuego)
 
 
-function reiniciarJuego(){
+function reiniciarJuego(){ //asigna o compara valor.
     location.reload()
 }
 
 
 
-function crearMensaje (resultado){
+function crearMensaje (resultado){ //asigna o compara valor.
     let nuevoAtaqueDelJugador = document.createElement('p')
     let nuevoAtaqueDelEnemigo = document.createElement('p')
 
@@ -422,7 +423,7 @@ function crearMensaje (resultado){
 
 
 
-function aleatorio (min, max){
+function aleatorio (min, max){//asigna o compara valor.
     return Math.floor(Math.random()*(max-min +1)+ min)
 }
 
@@ -500,28 +501,28 @@ function enviarPocision (x,y){
 
 }
 
-function moverDerecha(){
+function moverDerecha(){ //asigna o compara valor.
     mascotaDelJugadorObjeto.velocidadX = 5
 }
 
-function moverIzquierda(){
+function moverIzquierda(){//asigna o compara valor.
     mascotaDelJugadorObjeto.velocidadX = - 5
 }
 
-function moverAbajo(){
+function moverAbajo(){ //asigna o compara valor.
     mascotaDelJugadorObjeto.velocidadY = 5
 }
 
-function moverArriba(){
+function moverArriba(){ //asigna o compara valor.
     mascotaDelJugadorObjeto.velocidadY = -5
 }
 
-function detenerMovimiento(){
+function detenerMovimiento(){ //asigna o compara valor.
     mascotaDelJugadorObjeto.velocidadY=0
     mascotaDelJugadorObjeto.velocidadX =0
 }
 
-function obtenerObjetoMascota(){
+function obtenerObjetoMascota(){ //asigna o compara valor.
     for (let i = 0; i < mokepones.length; i++) {
         if (mascotaJugador== mokepones[i].nombre){
             return mokepones [i]
