@@ -202,12 +202,8 @@ express js <---crear servidores.  */
 
 
 function seleccionarMascotaJugador(){
-
         sectionSeleccionarMascota.style.display = 'none'
         sectionVerMapa.style.display = 'flex'
-
-
-
 
         let inputHipodoge = document.getElementById('Hipodoge')
         let inputCapipepo = document.getElementById('Capipepo')
@@ -236,7 +232,6 @@ function seleccionarMascotaJugador(){
 
 function seleccionarMokepon(mascotaJugador){
     //no es un get, es un post
-
     fetch(`http://localhost:8080/mokepon/${jugadorId}`,{
         method: "post",
         headers: {
@@ -650,6 +645,4 @@ function revisarColision(enemigo){
     seleccionarMascotaEnemigo(enemigo)
 }
 
-//probando la solucion
-//problemas con el merge.
-//se resolvio el problema de ubicacion y de rama principal main
+//30 funciones. 1 clase.
