@@ -651,3 +651,4 @@ function revisarColision(enemigo){
 }
 
 //probando la solucion
+//problemas con el merge.
