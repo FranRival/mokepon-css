@@ -75,7 +75,7 @@ if (anchoDelMapa>anchoMaximoDelMapa) {
     
 }
 
-class Mokepon {
+class Mokepon { //clase.
     constructor (nombre, foto, vida, fotoMapa, id = null){
         this.id = id
         this.nombre = nombre
@@ -111,7 +111,7 @@ let ratigueya = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQt
 
 
 
-const HIPODOGE_ATAQUES =[
+const HIPODOGE_ATAQUES =[//un array dentro de otro array.
     {nombre: '🧊', id:'boton-agua'},
     {nombre: '🧊', id:'boton-agua'},
     {nombre: '🧊', id:'boton-agua'},
