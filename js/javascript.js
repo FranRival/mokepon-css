@@ -181,15 +181,7 @@ function unirseAlJuego(){
                     jugadorId = respuesta
                 })
             
-        }//se hace un if para saber si todo salio bien. traemso datos de respuesta, entonces, hacemos un res. text, nos devuelva un teto con el id. 
-        //y su methodo then, se agrega una funcion. 
-        //
-
-/*         cd .. <--regresar una carpeta atras
-
-nmp init <--para inisializar el proyecto 
-express js <---crear servidores.  */
-
+        }
     })
 
 }
@@ -224,7 +216,6 @@ function seleccionarMascotaJugador(){
 }
 
 function seleccionarMokepon(mascotaJugador){
-    //no es un get, es un post
     fetch(`http://localhost:8080/mokepon/${jugadorId}`,{
         method: "post",
         headers: {
@@ -247,11 +238,11 @@ function extraerAtaques(mascotaJugador){
             } 
         }
         mostrarAtaques(ataques)
-    }
+    }//se obtiene el nombre y el ataque. 
 
 
 function mostrarAtaques(ataques){
-    ataques.forEach(ataque => { //ataques. en un forEach.
+    ataques.forEach(ataque => {//2 variables locales. 
         ataquesMokepon = `
         <button id=${ataque.id} class="boton-de-ataque BATaque">${ataque.nombre}</button>
         `
@@ -261,11 +252,11 @@ function mostrarAtaques(ataques){
         botonAgua = document.getElementById('boton-agua')
         botonTierra = document.getElementById('boton-tierra')
         botones = document.querySelectorAll('.BATaque')
-}
+}//da valor a ataquesMokepon/da valor, dice donde colocar ese valor, contenedorAtaques. 
 
 
 function secuenciaAtaque(){
-    botones.forEach((boton) =>{ //botones. en un forEach.
+    botones.forEach((boton) =>{ //array. + variable local
         boton.addEventListener('click',(Event) => {
             //console.log(Event)
             if (Event.target.textContent === '🔥') {
@@ -316,13 +307,12 @@ function obtenerAtaques (){
     })
 }
 
-//probablemente, aqui este el mistake
+
 function seleccionarMascotaEnemigo(){
     let mascotaAleatoria = aleatorio (0,mokepones.length -1)
     spanMascotaEnemigo.innerHTML= mokepones[mascotaAleatoria].nombre
     ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques
     secuenciaAtaque()
-    
 }
 
 function ataqueAleatorioEnemigo (){
@@ -341,8 +331,6 @@ function ataqueAleatorioEnemigo (){
     console.log(ataqueEnemigo)
 
     iniciarPelea()
-
-
 }
 
 function iniciarPelea (){
@@ -508,7 +496,6 @@ function enviarPocision (x,y){
                          
 
                 })
-            
         }
     })
 
