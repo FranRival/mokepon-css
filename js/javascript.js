@@ -652,3 +652,4 @@ function revisarColision(enemigo){
 
 //probando la solucion
 //problemas con el merge.
+//se resolvio el problema de ubicacion y de rama principal main
