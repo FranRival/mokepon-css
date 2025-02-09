@@ -649,3 +649,5 @@ function revisarColision(enemigo){
     sectionVerMapa.style.display='none'
     seleccionarMascotaEnemigo(enemigo)
 }
+
+//probando la solucion
