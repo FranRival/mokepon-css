@@ -182,7 +182,7 @@ function unirseAlJuego(){
 }
 
 
-function seleccionarMascotaJugador(){
+function seleccionarMascotaJugador(){//la segunda pagina.
         sectionSeleccionarMascota.style.display = 'none'
         sectionVerMapa.style.display = 'flex'
 
