@@ -156,7 +156,6 @@ function iniciarJuego (){
         <label class="tarjeta-de-mokepon" for=${mokepon.nombre}>
             <p>${mokepon.nombre}</p>
             <img src=${mokepon.foto} alt=${mokepon.nombre}>
-        
         </label>
         `
         contenedorTarjetas.innerHTML+=opcionDeMokepon   
@@ -169,9 +168,6 @@ function iniciarJuego (){
 }
 
 function unirseAlJuego(){
-    //se hace una peticion al servidor.
-    //fetch. hacia otros servicios. 
-    //es asincrona.
     fetch("http://localhost:8080/unirse")
     .then(function (res){
         if (res.ok) {
@@ -180,7 +176,6 @@ function unirseAlJuego(){
                     console.log(respuesta);
                     jugadorId = respuesta
                 })
-            
         }
     })
 
@@ -240,8 +235,8 @@ function extraerAtaques(mascotaJugador){
     }//se obtiene el nombre y el ataque. 
 
 
-    //asigna valor.
-function mostrarAtaques(ataques){
+
+function mostrarAtaques(ataques){//asigna valor.
     ataques.forEach(ataque => {//2 variables locales. 
         ataquesMokepon = `
         <button id=${ataque.id} class="boton-de-ataque BATaque">${ataque.nombre}</button>
@@ -259,22 +254,22 @@ function secuenciaAtaque(){
     botones.forEach((boton) =>{ //array. + variable local
         boton.addEventListener('click',(Event) => {
             //console.log(Event)
-            if (Event.target.textContent === '🔥') {
-                ataqueJugador.push('Fuego')
-                console.log(ataqueJugador)
-                boton.style.background = '#112f58'
-            }else if (Event.target.textContent === '🧊'){
-                ataqueJugador.push('Agua')
-                console.log(ataqueJugador)
-                boton.style.background = '#112f58'
-            }else{
-                ataqueJugador.push('Tierra')
-                console.log(ataqueJugador)
-                boton.style.background = '#112f58'
+                if (Event.target.textContent === '🔥') {
+                    ataqueJugador.push('Fuego')
+                    console.log(ataqueJugador)
+                    boton.style.background = '#112f58'
+                }else if (Event.target.textContent === '🧊'){
+                    ataqueJugador.push('Agua')
+                    console.log(ataqueJugador)
+                    boton.style.background = '#112f58'
+                }else{
+                    ataqueJugador.push('Tierra')
+                    console.log(ataqueJugador)
+                    boton.style.background = '#112f58'
             }
             if (ataqueJugador.length===5) {
                 enviarAtaques()
-            }
+            }/////esta funcion es extrana. how it works
         })
     })
 }
@@ -591,3 +586,16 @@ function revisarColision(enemigo){
 }
 
 //30 funciones. 1 clase.
+/* 
+seleccionarMascotaJugador: seleccionarMokepon() - extraerAtaques() - iniciarMapa()
+revisionColision: detenerMovimiento() - clearInterval() - seleccionarMascotaEnemigo() 
+
+extraerAtaques: mostrarAtaques()
+secuenciaAtaque: enviarAtaques()
+seleccionarMascotaEnemigo: secuenciaAtaque()
+ataqueAleatorioEnemigo: iniciarPelea()
+iniciarPelea: combate()
+combate: revisarVidas()
+pintarCanvas: revisarColision()
+*/
+
