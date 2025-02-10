@@ -146,7 +146,7 @@ mokepones.push(hypodoge,capipepo,ratigueya)
 
 
 
-function iniciarJuego (){
+function iniciarJuego (){ //como comienza el juego.
     sectionSeleccionarAtaque.style.display = 'none'
     sectionVerMapa.style.display = 'none'
 
@@ -203,7 +203,6 @@ function seleccionarMascotaJugador(){
             alert ("Tienes que selecionar")
     
         }
-
         seleccionarMokepon(mascotaJugador)
         extraerAtaques(mascotaJugador)
         iniciarMapa()  
