@@ -147,6 +147,7 @@ mokepones.push(hypodoge,capipepo,ratigueya)
 
 
 function iniciarJuego (){ //como comienza el juego.
+    //
     sectionSeleccionarAtaque.style.display = 'none'
     sectionVerMapa.style.display = 'none'
 
@@ -388,6 +389,8 @@ function revisarVidas (){//asigna o compara valor.
 }
 
 function crearMensajeFinal (resultadoFinal){ //asigna o compara valor.
+
+    //resultado segunda pagina. 
     sectionMensajes.innerHTML = resultadoFinal
     botonFuego.disabled = true
     botonAgua.disabled = true
@@ -582,6 +585,7 @@ function revisarColision(enemigo){
     clearInterval(intervalo)
     console.log('se deecto una colision');
     enemigoId = enemigo.id
+    //3er pagina para elegir el ataque.
     sectionSeleccionarAtaque.style.display = 'flex'
     sectionVerMapa.style.display='none'
     seleccionarMascotaEnemigo(enemigo)
@@ -602,3 +606,9 @@ pintarCanvas: revisarColision()
 */
 
 //d428673d197257ed9ab6b6d74dd979e1ef2a314e - existen formas de colisionar con otros jugadores en local. 
+
+/* 
+sectionReiniciar = reiniciar
+sectionSeleccionarAtaque = seleccionar-ataque
+sectionVerMapa = ver-mapa 
+*/ //
