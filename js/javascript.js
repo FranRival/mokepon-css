@@ -601,3 +601,4 @@ combate: revisarVidas()
 pintarCanvas: revisarColision()
 */
 
+//d428673d197257ed9ab6b6d74dd979e1ef2a314e - existen formas de colisionar con otros jugadores en local. 
