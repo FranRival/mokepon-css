@@ -78,7 +78,7 @@ mokepones.push(hypodogue,capipepo,ratigueya)
 function iniciarJuego (){
 
 
-    //ni siquiera entra o serviria la primera pantalla. 
+    //segunda pagina. 
     sectionSeleccionarAtaque.style.display = 'none'
 
     
@@ -100,9 +100,10 @@ function iniciarJuego (){
 
 
     function seleccionarMascotaJugador(){
+        //se activa la segunda pagina.
+        //se desactiva la primera pagina. 
         sectionSeleccionarAtaque.style.display = 'flex'
         sectionSeleccionarMascota.style.display = 'none'
-    //el error esta aqui. 
 
     let inputHipodoge = document.getElementById("Hipodoge")
     let inputCapipepo = document.getElementById("Capipepo")
@@ -237,14 +238,10 @@ function crearMensajeFinal (resultadoFinal){
     botonAgua.disabled = true
     botonTierra.disabled = true
 
+    //aparece el boton de reiniciar luego de jugar.
     sectionReiniciar.style.display = 'block'
+   
 }
-
-
-
-
-
-
 
 
 function aleatorio (min, max){
@@ -254,7 +251,7 @@ function aleatorio (min, max){
 function seleccionarMascotaEnemigo(){
     let mascotaAleatoria = aleatorio (1,3)
 
-
+//segunda pagina: nombre 
     if (mascotaAleatoria==1){
         spanMascotaEnemigo.innerHTML='Hipodoge'
     }else if (mascotaAleatoria==2){
