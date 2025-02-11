@@ -340,7 +340,10 @@ function indexAmbosOponente(jugador, enemigo){//asigna valor.
     indexAtaqueEnemigo = ataqueEnemigo[enemigo]
 }
 
-function combate (){
+
+//ahora la segunda pantalla es el canvas y chocar contra el otro jugador. encontrar el commit donde eso no era asi
+
+function combate (){//esta era la segunda pantalla. 
     clearInterval(intervalo)
     for (let index = 0; index < ataqueJugador.length; index++) {
         if (ataqueJugador[index]===ataqueEnemigo[index]) {
