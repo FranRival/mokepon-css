@@ -76,25 +76,18 @@ mokepones.push(hypodogue,capipepo,ratigueya)
 
 
 function iniciarJuego (){
-
-
-    //segunda pagina. 
+    //desactivacion de 2da pagina
     sectionSeleccionarAtaque.style.display = 'none'
 
-    
         mokepones.forEach((mokepon) =>{
         opcionDeMokepon = `
         <input type="radio" name="mascota" id=${mokepon.nombre} />
         <label class="tarjeta-de-mokepon" for="${mokepon.nombre}">
             <p>${mokepon.nombre}</p>
             <img src="${mokepon.foto}" alt="${mokepon.nombre}">
-        
         </label>
         `
-       
         contenedorTarjetas.innerHTML+=opcionDeMokepon
-
-
     }) 
 
 
@@ -120,7 +113,6 @@ function iniciarJuego (){
     
         }
         seleccionarMascotaEnemigo()
-        
     }
     
 
@@ -183,6 +175,10 @@ function ataqueAleatorioEnemigo (){
 
 
 function crearMensaje (resultado){
+    console.log('se repite cada');
+    console.log('el programa se reinicia en cada eleccion de boton.');
+    
+    
     let nuevoAtaqueDelJugador = document.createElement('p')
     let nuevoAtaqueDelEnemigo = document.createElement('p')
 
@@ -198,11 +194,10 @@ function crearMensaje (resultado){
 
 
 function combate (){
-
-
-
     if(ataqueEnemigo==ataqueJugador){
         crearMensaje('Empate')
+        console.log('Sentado en silencio');
+        
        } else if (ataqueJugador == 'Fuego' && ataqueEnemigo == 'Tierra'){
         crearMensaje("Ganaste")
         vidasEnemigo--
@@ -228,7 +223,6 @@ function revisarVidas (){
         crearMensajeFinal("Felicitaciones, ganaste 🎈")
     }else if (vidasJugador==0){
         crearMensajeFinal("Perdiste. 🎃")
-
     }
 }
 
@@ -237,7 +231,6 @@ function crearMensajeFinal (resultadoFinal){
     botonFuego.disabled = true
     botonAgua.disabled = true
     botonTierra.disabled = true
-
     //aparece el boton de reiniciar luego de jugar.
     sectionReiniciar.style.display = 'block'
    
