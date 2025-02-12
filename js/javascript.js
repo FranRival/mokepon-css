@@ -612,3 +612,6 @@ sectionReiniciar = reiniciar
 sectionSeleccionarAtaque = seleccionar-ataque
 sectionVerMapa = ver-mapa 
 */ //
+
+
+//funcion crearMensaje - iniciarJuego. tienen 2 funciones extranges.
