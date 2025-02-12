@@ -342,14 +342,14 @@ function indexAmbosOponente(jugador, enemigo){//asigna valor.
 }
 
 
-//ahora la segunda pantalla es el canvas y chocar contra el otro jugador. encontrar el commit donde eso no era asi
+//el programa vuelve a ejecutar el codigo por cada eleccion de boton de ataque. 
 
 function combate (){//esta era la segunda pantalla. 
     clearInterval(intervalo)
     for (let index = 0; index < ataqueJugador.length; index++) {
         if (ataqueJugador[index]===ataqueEnemigo[index]) {
             indexAmbosOponente(index, index)
-            crearMensaje('Empate')
+            crearMensaje('Empate')            
             spanVidasJugador.innerHTML = victoriasJugador
         } else if (ataqueJugador[index] ==='Fuego' && ataqueEnemigo[index] ==='Tierra'){
             indexAmbosOponente(index, index)
