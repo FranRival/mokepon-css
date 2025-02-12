@@ -75,8 +75,7 @@ ratigueya.ataques.push(
 mokepones.push(hypodogue,capipepo,ratigueya)
 
 
-function iniciarJuego (){
-    //desactivacion de 2da pagina
+function iniciarJuego (){//no se para que works
     sectionSeleccionarAtaque.style.display = 'none'
 
         mokepones.forEach((mokepon) =>{
@@ -93,8 +92,6 @@ function iniciarJuego (){
 
 
     function seleccionarMascotaJugador(){
-        //se activa la segunda pagina.
-        //se desactiva la primera pagina. 
         sectionSeleccionarAtaque.style.display = 'flex'
         sectionSeleccionarMascota.style.display = 'none'
 
@@ -110,15 +107,10 @@ function iniciarJuego (){
             spanMascotaJugador.innerHTML ="Ratigueya"
         }else {
             alert ("Tienes que selecionar")
-    
         }
         seleccionarMascotaEnemigo()
     }
     
-
-
-
-
     sectionReiniciar.style.display = 'none'
 
       botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
@@ -174,19 +166,16 @@ function ataqueAleatorioEnemigo (){
 
 
 
-function crearMensaje (resultado){
+function crearMensaje (resultado){ //this is extrange
     console.log('se repite cada');
     console.log('el programa se reinicia en cada eleccion de boton.');
-    
     
     let nuevoAtaqueDelJugador = document.createElement('p')
     let nuevoAtaqueDelEnemigo = document.createElement('p')
 
-
     sectionMensajes.innerHTML = resultado
     nuevoAtaqueDelJugador.innerHTML = ataqueJugador
     nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
-
     
     ataqueDelJugador.appendChild(nuevoAtaqueDelJugador)
     ataqueDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
@@ -197,7 +186,6 @@ function combate (){
     if(ataqueEnemigo==ataqueJugador){
         crearMensaje('Empate')
         console.log('Sentado en silencio');
-        
        } else if (ataqueJugador == 'Fuego' && ataqueEnemigo == 'Tierra'){
         crearMensaje("Ganaste")
         vidasEnemigo--
@@ -231,9 +219,9 @@ function crearMensajeFinal (resultadoFinal){
     botonFuego.disabled = true
     botonAgua.disabled = true
     botonTierra.disabled = true
-    //aparece el boton de reiniciar luego de jugar.
     sectionReiniciar.style.display = 'block'
-   
+    console.log('cunt');
+    
 }
 
 
@@ -243,8 +231,6 @@ function aleatorio (min, max){
 
 function seleccionarMascotaEnemigo(){
     let mascotaAleatoria = aleatorio (1,3)
-
-//segunda pagina: nombre 
     if (mascotaAleatoria==1){
         spanMascotaEnemigo.innerHTML='Hipodoge'
     }else if (mascotaAleatoria==2){
@@ -255,6 +241,7 @@ function seleccionarMascotaEnemigo(){
 }
 
 
-
+//aparecera de forma infinita hasta que se acaben las vidas.
+//porque se repite de forma infinita?
 
 
