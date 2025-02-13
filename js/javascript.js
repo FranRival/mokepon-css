@@ -89,7 +89,11 @@ function iniciarJuego (){//no se para que works
         </label>
         `
         contenedorTarjetas.innerHTML+=opcionDeMokepon
-        console.log(opcionDeMokepon);//inyecta los mokepones mas la imagen y el alt de los 3 mokepones
+        ///console.log(opcionDeMokepon);//inyecta los mokepones mas la imagen y el alt de los 3 mokepones
+
+        //ubicacion en el DOM + contenedorTarjetas, donde se inyecta la informacion.
+
+        //no se inyeta de manera normal. se utiliza un js + un dom. 
     }) 
 
 
@@ -169,14 +173,17 @@ function ataqueAleatorioEnemigo (){
 
 
 
-function crearMensaje (resultado){ //this is extrange
+function crearMensaje (resultado){ //se ejecuta cada que se elige el ataque. 
     console.log('se repite cada');
-    console.log('el programa se reinicia en cada eleccion de boton.');
     
     let nuevoAtaqueDelJugador = document.createElement('p')
+    //fuego, agua, tierra
     let nuevoAtaqueDelEnemigo = document.createElement('p')
+    //agua, tierra, fuego
+    
+    
 
-    sectionMensajes.innerHTML = resultado
+    sectionMensajes.innerHTML = resultado //ganaste - perdiste
     nuevoAtaqueDelJugador.innerHTML = ataqueJugador
     nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
     
