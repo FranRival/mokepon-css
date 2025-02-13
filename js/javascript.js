@@ -439,6 +439,9 @@ function aleatorio (min, max){//asigna o compara valor.
 
 
 function pintarCanvas(){
+
+    //tambien es infinita.
+    
     mascotaDelJugadorObjeto.x=mascotaDelJugadorObjeto.x+mascotaDelJugadorObjeto.velocidadX
     mascotaDelJugadorObjeto.y=mascotaDelJugadorObjeto.y+mascotaDelJugadorObjeto.velocidadY
     lienzo.clearRect(0,0,mapa.width,mapa.height)
