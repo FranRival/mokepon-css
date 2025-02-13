@@ -345,6 +345,9 @@ function indexAmbosOponente(jugador, enemigo){//asigna valor.
 //el programa vuelve a ejecutar el codigo por cada eleccion de boton de ataque. 
 
 function combate (){//esta era la segunda pantalla. 
+    //son 6,5,4,3,2,1. 
+    //quiere decir que el valor de ataque jugador y ataque enemigo ya esta inicializado.
+    
     clearInterval(intervalo)
     for (let index = 0; index < ataqueJugador.length; index++) {
         if (ataqueJugador[index]===ataqueEnemigo[index]) {
