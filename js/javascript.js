@@ -310,7 +310,7 @@ function seleccionarMascotaEnemigo(){
     secuenciaAtaque()
 }
 
-function ataqueAleatorioEnemigo (){
+function ataqueAleatorioEnemigo (){//ubicacion aleatoria del enemigo.
     console.log('Ataque enemigo', ataquesMokeponEnemigo);
     let ataqueAleatorio = aleatorio(0,ataquesMokeponEnemigo.length -1)
 
