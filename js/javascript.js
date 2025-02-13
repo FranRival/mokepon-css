@@ -624,3 +624,5 @@ sectionVerMapa = ver-mapa
 
 
 //funcion crearMensaje - iniciarJuego. tienen 2 funciones extranges.
+
+//9cfe46d589962924be0628ffd51cc4a4b5d4ad20 - fetch. 
