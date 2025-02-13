@@ -192,7 +192,8 @@ function crearMensaje (resultado){ //se ejecuta cada que se elige el ataque.
 }
 
 
-function combate (){
+function combate (){//ahora son 6. ya no hay un if. 
+    //viene ya definido la cantidad del ataqueEnemigo y ataqueJugador.
     if(ataqueEnemigo==ataqueJugador){
         crearMensaje('Empate')
         console.log('Sentado en silencio');
