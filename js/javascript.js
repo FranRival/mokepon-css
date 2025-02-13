@@ -409,11 +409,13 @@ function reiniciarJuego(){ //asigna o compara valor.
 
 
 
-function crearMensaje (resultado){ //asigna o compara valor.
+function crearMensaje (resultado){ 
     let nuevoAtaqueDelJugador = document.createElement('p')
+    //fuego, agua, tierra
     let nuevoAtaqueDelEnemigo = document.createElement('p')
+    //agua, tierra, fuego
 
-    sectionMensajes.innerHTML = resultado
+    sectionMensajes.innerHTML = resultado //ganaste, perdiste
     nuevoAtaqueDelJugador.innerHTML = indexAtaqueJugador
     nuevoAtaqueDelEnemigo.innerHTML = indexAtaqueEnemigo
 
