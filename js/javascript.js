@@ -146,8 +146,7 @@ mokepones.push(hypodoge,capipepo,ratigueya)
 
 
 
-function iniciarJuego (){ //como comienza el juego.
-    //
+function iniciarJuego (){
     sectionSeleccionarAtaque.style.display = 'none'
     sectionVerMapa.style.display = 'none'
 
@@ -159,7 +158,8 @@ function iniciarJuego (){ //como comienza el juego.
             <img src=${mokepon.foto} alt=${mokepon.nombre}>
         </label>
         `
-        contenedorTarjetas.innerHTML+=opcionDeMokepon   
+        contenedorTarjetas.innerHTML+=opcionDeMokepon 
+        ////inyecta los mokepones mas la imagen y el alt de los 3 mokepones  
 
     }) 
 
