@@ -414,6 +414,7 @@ function crearMensaje (resultado){
     //fuego, agua, tierra
     let nuevoAtaqueDelEnemigo = document.createElement('p')
     //agua, tierra, fuego
+    //es el proceso infinito. 
 
     sectionMensajes.innerHTML = resultado //ganaste, perdiste
     nuevoAtaqueDelJugador.innerHTML = indexAtaqueJugador
