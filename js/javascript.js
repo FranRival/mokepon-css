@@ -348,8 +348,11 @@ function combate (){//esta era la segunda pantalla.
     //son 6,5,4,3,2,1. 
     //quiere decir que el valor de ataque jugador y ataque enemigo ya esta inicializado.
     
+
     clearInterval(intervalo)
     for (let index = 0; index < ataqueJugador.length; index++) {
+
+        //que hace la funcion combate antes de nada
         if (ataqueJugador[index]===ataqueEnemigo[index]) {
             indexAmbosOponente(index, index)
             crearMensaje('Empate')            
