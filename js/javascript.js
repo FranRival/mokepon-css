@@ -78,6 +78,8 @@ mokepones.push(hypodogue,capipepo,ratigueya)
 function iniciarJuego (){//no se para que works
     sectionSeleccionarAtaque.style.display = 'none'
 
+    
+
         mokepones.forEach((mokepon) =>{
         opcionDeMokepon = `
         <input type="radio" name="mascota" id=${mokepon.nombre} />
@@ -87,6 +89,7 @@ function iniciarJuego (){//no se para que works
         </label>
         `
         contenedorTarjetas.innerHTML+=opcionDeMokepon
+        console.log(opcionDeMokepon);//inyecta los mokepones mas la imagen y el alt de los 3 mokepones
     }) 
 
 
