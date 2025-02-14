@@ -202,9 +202,8 @@ function seleccionarMascotaJugador(){//la segunda pagina.
             mascotaJugador=inputRatigueya.id
         }else {
             alert ("Tienes que selecionar")
-    
         }
-        seleccionarMokepon(mascotaJugador)
+        seleccionarMokepon(mascotaJugador)        
         extraerAtaques(mascotaJugador)
         iniciarMapa()  
 }
@@ -541,7 +540,7 @@ function detenerMovimiento(){ //asigna o compara valor.
 function obtenerObjetoMascota(){ //asigna o compara valor.
     for (let i = 0; i < mokepones.length; i++) {
         if (mascotaJugador== mokepones[i].nombre){
-            return mokepones [i]
+            return mokepones[i]
         } 
     }
 }
@@ -554,9 +553,12 @@ function iniciarMapa(){
     //el canvas se repite de manera infinita por el setInterval
     //porque esta dentro de un contexto.
     console.log(intervalo);
+    console.log(mascotaDelJugadorObjeto);
+    
     
     //el resultado de una funcion, devuelve un numero aleatorio menor a 5.
     //de donde saca ese puto < 6
+    //tendremos que hacer un recuento de todas las funciones
 
     
     window.addEventListener('keyup', detenerMovimiento)
@@ -641,3 +643,37 @@ sectionVerMapa = ver-mapa
 //funcion crearMensaje - iniciarJuego. tienen 2 funciones extranges.
 
 //9cfe46d589962924be0628ffd51cc4a4b5d4ad20 - fetch. 
+
+
+
+/* ---buscar con un log, todos los resultados de estas funciones
+iniciarJuego
+unirseAlJuego
+seleccionarMascotaJugador
+seleccionarMokepon
+extraerAtaques
+mostrarAtaques
+secuenciaAtaque
+enviarAtaque
+obtenerAtaques
+seleccionarMascotaEnemigo
+ataqueAleatorioEnemigo
+iniciarPelea
+indexAmbosOponentes
+combate
+revisarVidas
+crearMensajeFinal
+reiniciarJuego
+crearMensaje
+aleatorio
+pintarCanvas
+enviarPocision
+moverDerecha
+moverIzquierda
+moverAbajo
+moverArriba
+detenerMovimiento
+obtenerObjetoMascota
+iniciarMapa
+sePresionoUnaTecla
+revisarColision */
