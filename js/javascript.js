@@ -443,6 +443,10 @@ function pintarCanvas(){
     //tambien es infinita.
     
     mascotaDelJugadorObjeto.x=mascotaDelJugadorObjeto.x+mascotaDelJugadorObjeto.velocidadX
+
+    //console.log(mascotaDelJugadorObjeto.x);
+    //como funciona la velocidad
+    
     mascotaDelJugadorObjeto.y=mascotaDelJugadorObjeto.y+mascotaDelJugadorObjeto.velocidadY
     lienzo.clearRect(0,0,mapa.width,mapa.height)
     lienzo.drawImage(
@@ -547,6 +551,11 @@ function iniciarMapa(){
     mascotaDelJugadorObjeto = obtenerObjetoMascota(mascotaJugador)
 
     intervalo = setInterval(pintarCanvas,50)
+    //el canvas se repite de manera infinita por el setInterval
+    //porque esta dentro de un contexto.
+    console.log(intervalo);
+
+    
     window.addEventListener('keyup', detenerMovimiento)
     window.addEventListener('keydown',SePresionoUnaTecla)
 }
