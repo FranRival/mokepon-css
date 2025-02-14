@@ -554,6 +554,9 @@ function iniciarMapa(){
     //el canvas se repite de manera infinita por el setInterval
     //porque esta dentro de un contexto.
     console.log(intervalo);
+    
+    //el resultado de una funcion, devuelve un numero aleatorio menor a 5.
+    //de donde saca ese puto < 6
 
     
     window.addEventListener('keyup', detenerMovimiento)
