@@ -161,6 +161,9 @@ function iniciarJuego (){
         contenedorTarjetas.innerHTML+=opcionDeMokepon 
         ////inyecta los mokepones mas la imagen y el alt de los 3 mokepones  
 
+        console.log('1');
+        
+
     }) 
 
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
@@ -184,7 +187,7 @@ function unirseAlJuego(){
 
 
 function seleccionarMascotaJugador(){//la segunda pagina.
-    console.log('panoquiaa');
+    console.log('2');
     
         sectionSeleccionarMascota.style.display = 'none'
         sectionVerMapa.style.display = 'flex'
@@ -228,6 +231,8 @@ function seleccionarMokepon(mascotaJugador){
 
 function extraerAtaques(mascotaJugador){
         let ataques
+        console.log('3');
+        
 
         for (let i = 0; i < mokepones.length; i++) {
             if (mascotaJugador== mokepones[i].nombre){
@@ -246,6 +251,8 @@ function extraerAtaques(mascotaJugador){
 
 
 function mostrarAtaques(ataques){//asigna valor.
+    console.log('4');
+    
     ataques.forEach(ataque => {//2 variables locales. 
         ataquesMokepon = `
         <button id=${ataque.id} class="boton-de-ataque BATaque">${ataque.nombre}</button>
@@ -260,6 +267,8 @@ function mostrarAtaques(ataques){//asigna valor.
 
 
 function secuenciaAtaque(){
+    console.log('5');
+    
     botones.forEach((boton) =>{ //array. + variable local
         boton.addEventListener('click',(Event) => {
             //console.log(Event)
@@ -313,13 +322,17 @@ function obtenerAtaques (){
 
 
 function seleccionarMascotaEnemigo(){
+    console.log('6');
+    
     let mascotaAleatoria = aleatorio (0,mokepones.length -1)
     spanMascotaEnemigo.innerHTML= mokepones[mascotaAleatoria].nombre
     ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques
     secuenciaAtaque()
 }
 
-function ataqueAleatorioEnemigo (){//ubicacion aleatoria del enemigo.
+function ataqueAleatorioEnemigo (){
+    console.log('7');
+    
     console.log('Ataque enemigo', ataquesMokeponEnemigo);
     let ataqueAleatorio = aleatorio(0,ataquesMokeponEnemigo.length -1)
 
@@ -338,6 +351,8 @@ function ataqueAleatorioEnemigo (){//ubicacion aleatoria del enemigo.
 }
 
 function iniciarPelea (){
+    console.log('8');
+    
     if (ataqueJugador.length===5) {
         combate()   
     }
@@ -345,7 +360,9 @@ function iniciarPelea (){
 
 
 
-function indexAmbosOponente(jugador, enemigo){//asigna valor.
+function indexAmbosOponente(jugador, enemigo){
+    console.log('9');
+    
     indexAtaqueJugador = ataqueJugador[jugador]
     indexAtaqueEnemigo = ataqueEnemigo[enemigo]
 }
@@ -353,11 +370,9 @@ function indexAmbosOponente(jugador, enemigo){//asigna valor.
 
 //el programa vuelve a ejecutar el codigo por cada eleccion de boton de ataque. 
 
-function combate (){//esta era la segunda pantalla. 
-    //son 6,5,4,3,2,1. 
-    //quiere decir que el valor de ataque jugador y ataque enemigo ya esta inicializado.
+function combate (){
+    console.log('10');
     
-
     clearInterval(intervalo)
     for (let index = 0; index < ataqueJugador.length; index++) {
 
@@ -393,7 +408,9 @@ function combate (){//esta era la segunda pantalla.
 
 
 
-function revisarVidas (){//asigna o compara valor.
+function revisarVidas (){
+    console.log('11');
+    
     if (victoriasJugador===victoriasEnemigo){
         crearMensajeFinal("Esto fue un empate!!!")
     }else if (victoriasJugador>victoriasEnemigo){
@@ -403,9 +420,9 @@ function revisarVidas (){//asigna o compara valor.
     }
 }
 
-function crearMensajeFinal (resultadoFinal){ //asigna o compara valor.
-
-    //resultado segunda pagina. 
+function crearMensajeFinal (resultadoFinal){ 
+    console.log('12');
+    
     sectionMensajes.innerHTML = resultadoFinal
     botonFuego.disabled = true
     botonAgua.disabled = true
@@ -420,11 +437,14 @@ window.addEventListener('load',iniciarJuego)
 
 function reiniciarJuego(){ //asigna o compara valor.
     location.reload()
+    console.log('13');
 }
 
 
 
 function crearMensaje (resultado){ 
+    console.log('14');
+    
     let nuevoAtaqueDelJugador = document.createElement('p')
     //fuego, agua, tierra
     let nuevoAtaqueDelEnemigo = document.createElement('p')
@@ -442,12 +462,15 @@ function crearMensaje (resultado){
 
 
 function aleatorio (min, max){//asigna o compara valor.
+    console.log('15');
     return Math.floor(Math.random()*(max-min +1)+ min)
 }
 
 
 
 function pintarCanvas(){
+    console.log('16');
+    
 
     //tambien es infinita.
     
@@ -528,26 +551,38 @@ function enviarPocision (x,y){
 
 function moverDerecha(){ //asigna o compara valor.
     mascotaDelJugadorObjeto.velocidadX = 5
+    console.log('17');
+    
 }
 
 function moverIzquierda(){//asigna o compara valor.
     mascotaDelJugadorObjeto.velocidadX = - 5
+    console.log('18');
+    
 }
 
 function moverAbajo(){ //asigna o compara valor.
     mascotaDelJugadorObjeto.velocidadY = 5
+    console.log('19');
+    
 }
 
 function moverArriba(){ //asigna o compara valor.
     mascotaDelJugadorObjeto.velocidadY = -5
+    console.log('20');
+    
 }
 
 function detenerMovimiento(){ //asigna o compara valor.
     mascotaDelJugadorObjeto.velocidadY=0
     mascotaDelJugadorObjeto.velocidadX =0
+    console.log('21');
+    
 }
 
 function obtenerObjetoMascota(){ //asigna o compara valor.
+    console.log('22');
+    
     for (let i = 0; i < mokepones.length; i++) {
         if (mascotaJugador== mokepones[i].nombre){
             return mokepones[i]
@@ -557,12 +592,14 @@ function obtenerObjetoMascota(){ //asigna o compara valor.
 
 
 function iniciarMapa(){
+    console.log('23');
+    
     mascotaDelJugadorObjeto = obtenerObjetoMascota(mascotaJugador)
 
     intervalo = setInterval(pintarCanvas,50)
-    //el canvas se repite de manera infinita por el setInterval
+
     //porque esta dentro de un contexto.
-    console.log(intervalo);
+    console.log(intervalo); 
     
     ///no se como es que resulta 5.
     
@@ -579,6 +616,8 @@ function iniciarMapa(){
 
 
 function SePresionoUnaTecla(event){
+    console.log('24');
+    
     switch (event.key) {
         case 'ArrowUp':
             moverArriba()
@@ -598,6 +637,8 @@ function SePresionoUnaTecla(event){
 }
 
 function revisarColision(enemigo){
+    console.log('25');
+    
     const arribaEnemigo = enemigo.y
     const abajoEnemigo = enemigo.y+enemigo.alto
     const derechaEnemigo = enemigo.x+enemigo.ancho
@@ -621,7 +662,6 @@ function revisarColision(enemigo){
     clearInterval(intervalo)
     console.log('se deecto una colision');
     enemigoId = enemigo.id
-    //3er pagina para elegir el ataque.
     sectionSeleccionarAtaque.style.display = 'flex'
     sectionVerMapa.style.display='none'
     seleccionarMascotaEnemigo(enemigo)
