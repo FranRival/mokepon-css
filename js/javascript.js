@@ -235,7 +235,7 @@ function extraerAtaques(mascotaJugador){
                 //console.log(i);
                 console.log('aaaaaaaaaaa!');
                 
-                console.log(mokepones.length);
+                //console.log(mokepones.length);//da 3.
                 
                 
             } 
@@ -657,10 +657,10 @@ sectionVerMapa = ver-mapa
 
 
 /* ---buscar con un log, todos los resultados de estas funciones
-iniciarJuego
-unirseAlJuego
-seleccionarMascotaJugador
-seleccionarMokepon
+iniciarJuego - 
+unirseAlJuego -
+seleccionarMascotaJugador - 
+seleccionarMokepon -
 extraerAtaques
 mostrarAtaques
 secuenciaAtaque
