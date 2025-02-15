@@ -599,6 +599,7 @@ function iniciarMapa(){
     intervalo = setInterval(pintarCanvas,50)
 
     //porque esta dentro de un contexto.
+    console.log('!!!!!! - !!!');
     console.log(intervalo); 
     
     ///no se como es que resulta 5.
