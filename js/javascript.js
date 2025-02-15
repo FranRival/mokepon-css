@@ -184,6 +184,8 @@ function unirseAlJuego(){
 
 
 function seleccionarMascotaJugador(){//la segunda pagina.
+    console.log('panoquiaa');
+    
         sectionSeleccionarMascota.style.display = 'none'
         sectionVerMapa.style.display = 'flex'
 
@@ -208,6 +210,8 @@ function seleccionarMascotaJugador(){//la segunda pagina.
         iniciarMapa()  
 }
 
+
+
 function seleccionarMokepon(mascotaJugador){
     fetch(`http://localhost:8080/mokepon/${jugadorId}`,{
         method: "post",
@@ -228,6 +232,12 @@ function extraerAtaques(mascotaJugador){
         for (let i = 0; i < mokepones.length; i++) {
             if (mascotaJugador== mokepones[i].nombre){
                 ataques = mokepones[i].ataques
+                //console.log(i);
+                console.log('aaaaaaaaaaa!');
+                
+                console.log(mokepones.length);
+                
+                
             } 
         }
         mostrarAtaques(ataques)
@@ -553,8 +563,8 @@ function iniciarMapa(){
     //el canvas se repite de manera infinita por el setInterval
     //porque esta dentro de un contexto.
     console.log(intervalo);
-    console.log(mascotaDelJugadorObjeto);
     
+    ///no se como es que resulta 5.
     
     //el resultado de una funcion, devuelve un numero aleatorio menor a 5.
     //de donde saca ese puto < 6
