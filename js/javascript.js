@@ -596,19 +596,8 @@ function iniciarMapa(){
     
     mascotaDelJugadorObjeto = obtenerObjetoMascota(mascotaJugador)
 
+    //no se where sale el 5 y 6. de que funcion.
     intervalo = setInterval(pintarCanvas,50)
-
-    //porque esta dentro de un contexto.
-    console.log('!!!!!! - !!!');
-    console.log(intervalo); 
-    
-    ///no se como es que resulta 5.
-    
-    //el resultado de una funcion, devuelve un numero aleatorio menor a 5.
-    //de donde saca ese puto < 6
-    //tendremos que hacer un recuento de todas las funciones
-
-    
     window.addEventListener('keyup', detenerMovimiento)
     window.addEventListener('keydown',SePresionoUnaTecla)
 }
