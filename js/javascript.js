@@ -286,7 +286,7 @@ function secuenciaAtaque(){
                 boton.style.background = '#112f58'
             }
             ataqueAleatorioEnemigo()
-        })
+        }) //esto es una instancia. se compara con la funcion de: 
     })
 }
 
