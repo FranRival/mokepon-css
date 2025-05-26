@@ -142,6 +142,8 @@ const RATIGUEYA_ATAQUES=[
 ]
 ratigueya.ataques.push(...RATIGUEYA_ATAQUES)
 
+//para que dickenson son los 3 puntos?
+
 mokepones.push(hypodoge,capipepo,ratigueya)
 
 
