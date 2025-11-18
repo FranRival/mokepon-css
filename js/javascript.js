@@ -1,17 +1,26 @@
 
 window.addEventListener('load',iniciarJuego) //desde aqui comienza el juego.
 
+let ataqueJugador
+//window.addEventListener -> iniciarJuego -> ataqueFuego | ataqueAgua | ataqueTierra
+//...
+//ataqueFuego | ataqueAgua | ataqueTierra -> ataqueAleatorioEnemigo -> combate -> crearMensaje -> revisarVidas
+
 
 function iniciarJuego (){
     let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque').style.display = 'none'
+    //boton de ataque - no visible
 
     let sectionReiniciar = document.getElementById('reiniciar').style.display = 'none'
     //boton de reiniciar - no visible
 
      let botonMascotaJugador = document.getElementById('boton-mascota')
+     //boton seleccionar
       botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
+      //inicializacion + funcion seleccionarMascotaJugador
 
 
+      //botones seleccionados
       let botonFuego = document.getElementById('boton-fuego')
       botonFuego.addEventListener('click', ataqueFuego)
       let botonAgua = document.getElementById('boton-agua')
@@ -88,15 +97,6 @@ function ataqueAleatorioEnemigo (){
 let ataqueEnemigo
 
 
-function crearMensaje (resultado){
-    let sectionMensajes = document.getElementById('mensajes')
-
-
-    let parrafo = document.createElement('p')
-    parrafo.innerHTML = 'Tu mascota ataco con ' + ataqueJugador + ', la mascota del enemigo ataco con ' + ataqueEnemigo + ' - ' + resultado
-
-    sectionMensajes.appendChild(parrafo)
-}
 
 
 function combate (){
@@ -125,6 +125,18 @@ function combate (){
        }
        revisarVidas()
 }
+
+
+function crearMensaje (resultado){
+    let sectionMensajes = document.getElementById('mensajes')
+
+
+    let parrafo = document.createElement('p')
+    parrafo.innerHTML = 'Tu mascota ataco con ' + ataqueJugador + ', la mascota del enemigo ataco con ' + ataqueEnemigo + ' - ' + resultado
+
+    sectionMensajes.appendChild(parrafo)
+}
+
 
 function revisarVidas (){
     if (vidasEnemigo==0){
@@ -182,5 +194,5 @@ function seleccionarMascotaEnemigo(){
 
 
 
-let ataqueJugador
+
 
