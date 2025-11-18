@@ -9,6 +9,37 @@ let ataqueJugador
 //..reiniciarJuego
 
 
+/*
+//window.addEventListener 
+    -> iniciarJuego 
+
+-> seleccionarMascotaJugador 
+
+-> seleccionarMascotaEnemigo 
+    -> Aleatorio   (elige mascota enemiga)
+
+// aquí el juego espera ataques del jugador
+
+..-> ataqueFuego | ataqueAgua | ataqueTierra
+
+// Al elegir un ataque:
+
+ataqueFuego | ataqueAgua | ataqueTierra 
+    -> ataqueAleatorioEnemigo 
+    -> combate 
+    -> crearMensaje 
+    -> revisarVidas 
+        -> crearMensajeFinal (si vidas llegan a 0)
+
+..reiniciarJuego
+
+*/
+
+//**total de interacciones
+// 3 obligatorias
+// 2 opcionales.
+//  */
+
 function iniciarJuego (){
     let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque').style.display = 'none'
     //boton de ataque - no visible
