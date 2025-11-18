@@ -2,10 +2,11 @@
 window.addEventListener('load',iniciarJuego) //desde aqui comienza el juego.
 
 let ataqueJugador
-//window.addEventListener -> iniciarJuego -> seleccionarMascotaJugador -> seleccionarMascotaEnemigo -> ataqueAleatorio
+//window.addEventListener -> iniciarJuego -> seleccionarMascotaJugador -> seleccionarMascotaEnemigo -> Aleatorio
 //..-> ataqueFuego | ataqueAgua | ataqueTierra
 //...
-//ataqueFuego | ataqueAgua | ataqueTierra -> ataqueAleatorioEnemigo -> combate -> crearMensaje -> revisarVidas
+//ataqueFuego | ataqueAgua | ataqueTierra -> ataqueAleatorioEnemigo -> combate -> crearMensaje -> revisarVidas -> crearMensajeFinal
+//..reiniciarJuego
 
 
 function iniciarJuego (){
