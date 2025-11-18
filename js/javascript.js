@@ -2,7 +2,8 @@
 window.addEventListener('load',iniciarJuego) //desde aqui comienza el juego.
 
 let ataqueJugador
-//window.addEventListener -> iniciarJuego -> ataqueFuego | ataqueAgua | ataqueTierra
+//window.addEventListener -> iniciarJuego -> seleccionarMascotaJugador -> seleccionarMascotaEnemigo -> ataqueAleatorio
+//..-> ataqueFuego | ataqueAgua | ataqueTierra
 //...
 //ataqueFuego | ataqueAgua | ataqueTierra -> ataqueAleatorioEnemigo -> combate -> crearMensaje -> revisarVidas
 
