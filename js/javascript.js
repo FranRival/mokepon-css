@@ -1,4 +1,31 @@
 
+window.addEventListener('load',iniciarJuego) //desde aqui comienza el juego.
+
+
+function iniciarJuego (){
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque').style.display = 'none'
+
+    let sectionReiniciar = document.getElementById('reiniciar').style.display = 'none'
+    //boton de reiniciar - no visible
+
+     let botonMascotaJugador = document.getElementById('boton-mascota')
+      botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
+
+
+      let botonFuego = document.getElementById('boton-fuego')
+      botonFuego.addEventListener('click', ataqueFuego)
+      let botonAgua = document.getElementById('boton-agua')
+      botonAgua.addEventListener('click' , ataqueAgua)
+      let botonTierra = document.getElementById('boton-tierra')
+      botonTierra.addEventListener('click', ataqueTierra)
+
+
+      let botonReiniciar = document.getElementById('boton-reiniciar')
+      botonReiniciar.addEventListener('click', reiniciarJuego)
+}
+
+
+
 function seleccionarMascotaJugador(){
     let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque').style.display = 'block'
 
@@ -21,32 +48,6 @@ function seleccionarMascotaJugador(){
     }
     seleccionarMascotaEnemigo()
     
-}
-
-window.addEventListener('load',iniciarJuego)
-
-
-function iniciarJuego (){
-    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque').style.display = 'none'
-
-    let sectionReiniciar = document.getElementById('reiniciar').style.display = 'none'
-
-
-
-     let botonMascotaJugador = document.getElementById('boton-mascota')
-      botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
-
-
-      let botonFuego = document.getElementById('boton-fuego')
-      botonFuego.addEventListener('click', ataqueFuego)
-      let botonAgua = document.getElementById('boton-agua')
-      botonAgua.addEventListener('click' , ataqueAgua)
-      let botonTierra = document.getElementById('boton-tierra')
-      botonTierra.addEventListener('click', ataqueTierra)
-
-
-      let botonReiniciar = document.getElementById('boton-reiniciar')
-      botonReiniciar.addEventListener('click', reiniciarJuego)
 }
 
 function reiniciarJuego(){
