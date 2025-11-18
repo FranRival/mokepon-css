@@ -719,3 +719,6 @@ obtenerObjetoMascota
 iniciarMapa
 sePresionoUnaTecla
 revisarColision */
+
+//17-11-25
+//creamos el flujo de los primeros commits.
