@@ -724,3 +724,10 @@ revisarColision */
 //creamos el flujo de los primeros commits.
 
 //***hasta este commit -714df3728308c92a62271a5a0a5a49b05b5aeab1- el problema de Fuego, Agua, Tierra - AGUA, FUEGO, TIERRA, persiste. 
+
+//CONSTRUCCION DE ARQUITECTURA
+//crearMensaje siempre y unicamente es llamada desde combate()
+//empate - ganaste - perdiste
+
+
+//existe ataqueJugador y ataqueDelJugador
