@@ -735,7 +735,13 @@ revisarColision */
 //ataqueJugador y ataqueEnemigo envian datos a crearMensaje
 //se comparan dentro de combate. 
 
+//ERROR DE LOGICA
 //crearMensaje da: ganaste, perdiste, empate. 
 //pero tambien lee variables: ataqueJugador - ataqueEnemigo
 //el problem?
 //esta funcion tiene codigo mas abajo: let ataqueDelJugador, let ataqueDelEnemigo, nuevoAtaqueDelJugador, nuevoAtaqueDelEnemigo que se ejecutara tambien y no solo el mensaje.
+//es un problema logico, hace 2 cosas aunque no las necesita hacer. 
+//hace 2 cosas:
+//1. muestra el resultado de sectionMensajes: ganaste, perdiste, empate.
+//2. registra ataques (jugador y enemigo) creando 2 parrafos.
+//ambas utilizan la misma section: = document.getElementById('mensajes')
