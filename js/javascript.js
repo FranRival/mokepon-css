@@ -727,7 +727,15 @@ revisarColision */
 
 //CONSTRUCCION DE ARQUITECTURA
 //crearMensaje siempre y unicamente es llamada desde combate()
-//empate - ganaste - perdiste
+//se ejecuta 3 turnos. 2+ por si hay empates.
 
 
-//existe ataqueJugador y ataqueDelJugador
+//ataqueFuego | ataqueAgua | ataqueTierra -> ataqueAleatorioEnemigo -> combate -> crearMensaje -> revisarVidas
+
+//ataqueJugador y ataqueEnemigo envian datos a crearMensaje
+//se comparan dentro de combate. 
+
+//crearMensaje da: ganaste, perdiste, empate. 
+//pero tambien lee variables: ataqueJugador - ataqueEnemigo
+//el problem?
+//esta funcion tiene codigo mas abajo: let ataqueDelJugador, let ataqueDelEnemigo, nuevoAtaqueDelJugador, nuevoAtaqueDelEnemigo que se ejecutara tambien y no solo el mensaje.
