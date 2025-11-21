@@ -745,3 +745,6 @@ revisarColision */
 //1. muestra el resultado de sectionMensajes: ganaste, perdiste, empate.
 //2. registra ataques (jugador y enemigo) creando 2 parrafos.
 //ambas utilizan la misma section: = document.getElementById('mensajes')
+
+
+//9a371d0d20060ba47da3cb48dc8aaca66f2ecbc9 - se sacaron todas las variables internas dentro de las funciones y se volvieron globales. commits antes vimos como cambiar los colores de las tarjetas de los mokepones. 
