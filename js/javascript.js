@@ -748,3 +748,5 @@ revisarColision */
 
 
 //9a371d0d20060ba47da3cb48dc8aaca66f2ecbc9 - se sacaron todas las variables internas dentro de las funciones y se volvieron globales. commits antes vimos como cambiar los colores de las tarjetas de los mokepones. 
+
+//llegamos hoy hasta: ee30472b440a7d326dc435a870d37d35761d4365
