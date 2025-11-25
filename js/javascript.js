@@ -764,3 +764,5 @@ el de arriba esta funcionando bien. why?
 mokepones[mascotaAleatoria(1 entre 3)].nombre
 es decir, escalabilidad.
 */
+
+//1bf0c469e57d03949f4f2905e4bfd9030303fdca - la funcion de extraerAtaques se la pasa iterando hasta encontrar la variable exacta de la funcion anterior seleccionarMascotaJugador. ese indice de [i] se lleva a la siguiente linea, ataques=mokepones[i].ataques.
