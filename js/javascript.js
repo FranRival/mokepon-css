@@ -750,3 +750,17 @@ revisarColision */
 //9a371d0d20060ba47da3cb48dc8aaca66f2ecbc9 - se sacaron todas las variables internas dentro de las funciones y se volvieron globales. commits antes vimos como cambiar los colores de las tarjetas de los mokepones. 
 
 //llegamos hoy hasta: ee30472b440a7d326dc435a870d37d35761d4365
+
+//ESCALABILIDAD:
+/* 
+6c60a0fe3e3f4fa1d8fbba7a79b8cd09947f1132 - commit arriba
+26f534fae0a793a2325dcbd03ed057839f6f4d08 - commit abajo.
+FUNCION: seleccionarMascotaEnemigo <---captura de pantalla.
+
+el de arriba esta funcionando bien. why? 
+-entre esos 2 commits no se rompe el codigo, porque en el viejo, manejaba checks. y este nuevo, maneja el array con el indice.
+//1. el de arriba manejaba if-else comparando 1-3 mokepones.
+//2. el de abajo, el numero total del array -mokepones.length.
+mokepones[mascotaAleatoria(1 entre 3)].nombre
+es decir, escalabilidad.
+*/
