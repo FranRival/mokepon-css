@@ -160,7 +160,7 @@ function seleccionarMascotaEnemigo(){
 }
 
 
-function mostrarAtaques(){
+function mostrarAtaques(ataques){
     ataques.forEach((ataque) => {
         ataquesMokepon = `
         <button id=${ataque.id} class="boton-de-ataque">${ataque.nombre}</button>
