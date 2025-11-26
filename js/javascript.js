@@ -776,3 +776,6 @@ ALEATORIEDAD:
 1) no incrementa las posibilidades nuestras. porque el id es el mismo.
 2) incrementa la probabilidad de repetir ataque. por math.random
  */
+
+//118e971bfadab76ad6acdcdc823fe3aba26d4b81
+//extraerAtaques pasa los valores a mostrarAtaques. y ese parametro es un array...
