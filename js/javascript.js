@@ -766,3 +766,13 @@ es decir, escalabilidad.
 */
 
 //1bf0c469e57d03949f4f2905e4bfd9030303fdca - la funcion de extraerAtaques se la pasa iterando hasta encontrar la variable exacta de la funcion anterior seleccionarMascotaJugador. ese indice de [i] se lleva a la siguiente linea, ataques=mokepones[i].ataques.
+
+
+/* 
+DELETE3
+118e971bfadab76ad6acdcdc823fe3aba26d4b81 - el hecho que haya mas de 3 veces el ataque repetido en el array de ataques:
+
+ALEATORIEDAD:
+1) no incrementa las posibilidades nuestras. porque el id es el mismo.
+2) incrementa la probabilidad de repetir ataque. por math.random
+ */
