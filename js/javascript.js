@@ -131,19 +131,37 @@ function iniciarJuego (){
     }
 
 
+
+
     function extraerAtaques(mascotaJugador){
         let ataques
-        //iterar por cada elemento que existe en un arreglo. 
         for (let i = 0; i < mokepones.length; i++) {
             if (mascotaJugador== mokepones[i].nombre){
-                //arreglo: y le damos un numero I: nos va a regresar los datos que esten en ese indice. 
-                //pero nos regresara el elemento completo, pero solo queremos el .nombre
                 ataques = mokepones[i].ataques
             }
-            
         }
         mostrarAtaques(ataques)
     }
+//extraerAtaques da ataques = mokepones[1].ataques. TODO EL ARREGLO.
+
+    
+//se envia a mostrarAtaques. y usa ese mismo mokepon, indice y ataque.
+function mostrarAtaques(ataques){
+    ataques.forEach((ataque) => {
+        ataquesMokepon = `
+        <button id=${ataque.id} class="boton-de-ataque">${ataque.nombre}</button>
+        `
+        contenedorAtaques.innerHTML += ataquesMokepon
+    })
+        botonFuego = document.getElementById('boton-fuego')
+        botonAgua = document.getElementById('boton-agua')
+        botonTierra = document.getElementById('boton-tierra')
+        botonFuego.addEventListener('click', ataqueFuego)
+        botonAgua.addEventListener('click' , ataqueAgua)
+        botonTierra.addEventListener('click', ataqueTierra)
+}
+
+
 
     //a que perra funcion pertenece esta shit? 
      sectionReiniciar.style.display = 'none'
@@ -157,30 +175,6 @@ function seleccionarMascotaEnemigo(){
     let mascotaAleatoria = aleatorio (0,mokepones.length -1)
 
     spanMascotaEnemigo.innerHTML= mokepones[mascotaAleatoria].nombre
-}
-
-
-function mostrarAtaques(ataques){
-    ataques.forEach((ataque) => {
-        ataquesMokepon = `
-        <button id=${ataque.id} class="boton-de-ataque">${ataque.nombre}</button>
-        `
-        contenedorAtaques.innerHTML += ataquesMokepon
-    })
-
-        botonFuego = document.getElementById('boton-fuego')
-        botonAgua = document.getElementById('boton-agua')
-        botonTierra = document.getElementById('boton-tierra')
-
-
-        botonFuego.addEventListener('click', ataqueFuego)
-        botonAgua.addEventListener('click' , ataqueAgua)
-        botonTierra.addEventListener('click', ataqueTierra)
-  
-
-
-
-
 }
 
 
