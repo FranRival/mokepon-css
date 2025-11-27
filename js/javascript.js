@@ -783,3 +783,5 @@ ALEATORIEDAD:
 
 //33c25096ee72e16aee575ae3ca2e6d9d65125dfd
 //la funcion de secuenciaAtaques busca eliminar los getElementById de botonFuego, botonAgua, botonTierra.
+
+//en el commit 33c25096ee72e16aee575ae3ca2e6d9d65125dfd en la funcion mostrarAtaques aun existen las llamadas de los addEventListener. en el commit d6dea31d53b13aa0757e5f43c023accc7d8f66ce fueron eliminadas. y colocadas en la funcion de secuenciaAtaque.
