@@ -779,3 +779,7 @@ ALEATORIEDAD:
 
 //118e971bfadab76ad6acdcdc823fe3aba26d4b81
 //extraerAtaques pasa los valores a mostrarAtaques. y ese parametro es un array...
+
+
+//33c25096ee72e16aee575ae3ca2e6d9d65125dfd
+//la funcion de secuenciaAtaques busca eliminar los getElementById de botonFuego, botonAgua, botonTierra.
