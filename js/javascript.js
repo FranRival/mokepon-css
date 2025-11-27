@@ -164,6 +164,7 @@ function mostrarAtaques(ataques){
         botonAgua.addEventListener('click' , ataqueAgua)
         botonTierra.addEventListener('click', ataqueTierra)
 
+        secuenciaAtaque()
         
 }
 
@@ -175,6 +176,7 @@ function secuenciaAtaque(){
         boton.addEventListener('click',(e) => {
             //cada boton va a tener un eventlistener, que es el click. cuando le de click, la e siginifica el evento mismo.
             console.log(e)
+            
         })
     })
     //por cada boton que exista en el arreglo, haz algo. 
@@ -184,7 +186,6 @@ function secuenciaAtaque(){
 function seleccionarMascotaEnemigo(){
 
     
-    secuenciaAtaque()
     let mascotaAleatoria = aleatorio (0,mokepones.length -1)
 
     spanMascotaEnemigo.innerHTML= mokepones[mascotaAleatoria].nombre
