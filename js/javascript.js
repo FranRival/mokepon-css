@@ -788,3 +788,5 @@ ALEATORIEDAD:
 
 
 //bc4d0ab2a7e6d75127942367dac4323c8549d8eb - esa es la razon por la que nunca termina el usuario de jugar eligiendo botones. se vuelve infinito. los botones no funcionan. nunca reciben el eventListener. 
+
+//aun seguimos aqui...
