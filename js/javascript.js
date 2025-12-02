@@ -790,3 +790,8 @@ ALEATORIEDAD:
 //bc4d0ab2a7e6d75127942367dac4323c8549d8eb - esa es la razon por la que nunca termina el usuario de jugar eligiendo botones. se vuelve infinito. los botones no funcionan. nunca reciben el eventListener. 
 
 //aun seguimos aqui...
+
+//2463c822b581e65941313857e8f37ffedc9803d7 - es un juego infinito de eleccion. es porque ChatGPT me dice que ataqueAleatorioEnemigo() nunca se esta llamando en secuenciaAtaque().
+//En este commit se pregunta: en donde esta la opcion de entrar en combate? - donde se ligaron los botones con el ataque?
+//Yo respondi: combate() - mostrarAtaques(ataques).
+//Respuesta: 
