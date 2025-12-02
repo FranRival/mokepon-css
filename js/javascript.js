@@ -199,6 +199,8 @@ function secuenciaAtaque(){
                 ataqueJugador.push('TIERRA')
                 console.log(ataqueJugador)
                 boton.style.background = '#112f58'
+
+                ataqueAleatorioEnemigo()
             }
         })
     })
