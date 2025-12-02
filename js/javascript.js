@@ -795,3 +795,4 @@ ALEATORIEDAD:
 //En este commit se pregunta: en donde esta la opcion de entrar en combate? - donde se ligaron los botones con el ataque?
 //Yo respondi: combate() - mostrarAtaques(ataques).
 //Respuesta: 
+//en ese commit la funcion de ataqueAleatorioEnemigo() nunca se llama de manera efectiva. y debe estar en secuenciaAtaque()
