@@ -162,10 +162,10 @@ function iniciarJuego (){
 function mostrarAtaques(ataques){
     //fuego, agua, tierra
     
-    ataques.forEach(ataque => {
+    ataques.forEach((ataque, index) => {
         //vas a recorrer cada boton de mokepon, y le vas a asignar un nombre, id, ataque. 
         ataquesMokepon = `
-        <button id=${ataque.id} class="boton-de-ataque BATaque">${ataque.nombre}</button>
+        <button id=${ataque.id}-${index} class="boton-de-ataque BATaque">${ataque.nombre}</button>
         `
         contenedorAtaques.innerHTML += ataquesMokepon
     })
@@ -334,3 +334,4 @@ function aleatorio (min, max){
 //estructura, por cada ataque, hay 3 botones repetidos y 2 diferentes. 
 
 
+//las arrow funcion necesitan ser encerrados sus parametros cuando hay 0. 0 mas de 2 valores. 
