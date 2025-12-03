@@ -796,3 +796,8 @@ ALEATORIEDAD:
 //Yo respondi: combate() - mostrarAtaques(ataques).
 //Respuesta: 
 //en ese commit la funcion de ataqueAleatorioEnemigo() nunca se llama de manera efectiva. y debe estar en secuenciaAtaque()
+
+//porque los botones 2 y 3 no funcionan. 
+//las arrow function necesitan ser encerrados sus parametros cuando tiene 0 o 2+ parametros para funcionar. 
+//el callback
+//el callback: funcion que se le pasa como argumento a otra funcion para que la ejecute mas tarde.
