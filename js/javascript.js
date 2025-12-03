@@ -330,6 +330,7 @@ function aleatorio (min, max){
 }
 
 
-
+//el error del segundo y tercer boton que aun continuan funcionando es porque se deshabilita el boton. pero al compartir el mismo ID, solo funciona con el primero. los demas pasan desapaercibidos. 
+//estructura, por cada ataque, hay 3 botones repetidos y 2 diferentes. 
 
 
