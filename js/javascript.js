@@ -172,9 +172,7 @@ function mostrarAtaques(ataques){
 
 
     //este ocdigo puede ser eliminado?
-        botonFuego = document.getElementById('boton-fuego')
-        botonAgua = document.getElementById('boton-agua')
-        botonTierra = document.getElementById('boton-tierra')
+
         botones = document.querySelectorAll('.BATaque')
 
 }//
@@ -335,3 +333,5 @@ function aleatorio (min, max){
 
 
 //las arrow funcion necesitan ser encerrados sus parametros cuando hay 0. 0 mas de 2 valores. 
+
+//se eliminan los botones porque ya no estan en el DOM
