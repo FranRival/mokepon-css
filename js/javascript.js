@@ -803,3 +803,4 @@ ALEATORIEDAD:
 //el callback: funcion que se le pasa como argumento a otra funcion para que la ejecute mas tarde.
 
 //analizando delete6.
+//esto es lo que entiendo. comienza con la fucnion de iniciarJuego. entonces hay un click en un boton. y esa, llama a selecionarMascotaJuegador. ese click, es elegir el mokepon. lo que desata la ejecucion de esa funcion. y esa funcion comienza el flujo natural del juego.
