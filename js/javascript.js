@@ -330,3 +330,5 @@ function aleatorio (min, max){
 //las arrow funcion necesitan ser encerrados sus parametros cuando hay 0. 0 mas de 2 valores. 
 
 //se eliminan los botones porque ya no estan en el DOM
+
+//esto es lo que entiendo. comienza con la fucnion de iniciarJuego. entonces hay un click en un boton. y esa, llama a selecionarMascotaJuegador. ese click, es elegir el mokepon. lo que desata la ejecucion de esa funcion. y esa funcion comienza el flujo natural del juego.
