@@ -801,3 +801,5 @@ ALEATORIEDAD:
 //las arrow function necesitan ser encerrados sus parametros cuando tiene 0 o 2+ parametros para funcionar. 
 //el callback
 //el callback: funcion que se le pasa como argumento a otra funcion para que la ejecute mas tarde.
+
+//analizando delete6.
