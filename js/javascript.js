@@ -87,10 +87,7 @@ mokepones.push(hypodoge,capipepo,ratigueya)
 function iniciarJuego (){
     sectionSeleccionarAtaque.style.display = 'none'
 
-
-   //mokepones es un array. 
     mokepones.forEach((mokepon) =>{
-        //variable declarada fuera de la funcion. 
         opcionDeMokepon = `
         <input type="radio" name="mascota" id=${mokepon.nombre}>
         <label class="tarjeta-de-mokepon" for=${mokepon.nombre}>
@@ -99,10 +96,8 @@ function iniciarJuego (){
         
         </label>
         `
-        //templates literarios: html + variables
         contenedorTarjetas.innerHTML+=opcionDeMokepon   
-        //nadamas se esta imprimiendo uno de los mokepones. para que se impriman en pantalla los 3, solo hay que poner el simbolo de +
-    }) //instancia Mokepones. 
+    })
 }
 
 
@@ -175,7 +170,7 @@ function mostrarAtaques(ataques){
 
         botones = document.querySelectorAll('.BATaque')
 
-}//
+}//el index es escalable. si se tienen 1 o 1k ataques.
 
 
 
