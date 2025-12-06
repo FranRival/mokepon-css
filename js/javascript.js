@@ -804,3 +804,7 @@ ALEATORIEDAD:
 
 //analizando delete6.
 //esto es lo que entiendo. comienza con la fucnion de iniciarJuego. entonces hay un click en un boton. y esa, llama a selecionarMascotaJuegador. ese click, es elegir el mokepon. lo que desata la ejecucion de esa funcion. y esa funcion comienza el flujo natural del juego.
+
+
+
+//e4e189940f98752278b3d00b0d74ca20fb6071c4 - commit que resuelve el problema de seleccionar infinitos botones sin llegar al final. orden incorrecto: funciones de mostrarAtaques y secuenciaAtaques. secuencuaAtaques se ejecutaba antes de que existieran los botones. MostrarAtaques creaba botones demasiado tarde. 
