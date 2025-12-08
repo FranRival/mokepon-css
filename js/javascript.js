@@ -811,3 +811,7 @@ ALEATORIEDAD:
 //PROBLEMA: seleccionarMascotaEnemigo es la que llama secuenciaAtaque. 
 //cuantas veces se ejecuta seleccionarMascotaEnemigo?
 //porque se estara llamando a la funcion de secuenciaAtaque desde antes que existan los botones.
+
+//BATaque esta en el JS y no en el HTML.
+//es la clave para identificar los botones de ataque recien creados.
+//querySelectorAll('.BATaque') - junta todos los botones en una variable.
