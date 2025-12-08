@@ -817,3 +817,4 @@ ALEATORIEDAD:
 //querySelectorAll('.BATaque') - junta todos los botones en una variable.
 
 //7ae880869c808db1cf4c83b81210b4dcf3e1afd5 - los array de ataques enemigo y ataque jugador siguen creciendo a pesar de que el juego termino. el de enemigos, el array en consola esta en MAYUSCULAS. el del jugador en minusculas. 
+//en ese commit ChatGPT me dice que hay 3 funciones danadas.  
