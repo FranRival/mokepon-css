@@ -819,6 +819,7 @@ ALEATORIEDAD:
 //7ae880869c808db1cf4c83b81210b4dcf3e1afd5 - los array de ataques enemigo y ataque jugador siguen creciendo a pesar de que el juego termino. el de enemigos, el array en consola esta en MAYUSCULAS. el del jugador en minusculas. 
 //en ese commit ChatGPT me dice que hay 3 funciones danadas.  
 
-//7ae880869c808db1cf4c83b81210b4dcf3e1afd5 - commit secuenciaAtaque se sigue ejecutando antes de tiempo. llamado desde seleccionarMascotaEnemigo. 
+//7ae880869c808db1cf4c83b81210b4dcf3e1afd5 - funciona ya por turnos.
+//  secuenciaAtaque se sigue ejecutando antes de tiempo. llamado desde seleccionarMascotaEnemigo. 
 //mostrarAtaques crea los botones en el DOM
 //secuenciaAtaque - se esta ejecutando mas de una vez. 
