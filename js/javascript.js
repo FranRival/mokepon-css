@@ -836,3 +836,14 @@ El jugador
 -puede atacar aunque el juego termino
 ---no son las mismas reglas
 */
+
+/*
+Arrays no se comparan por turnos sino por longitud:
+ataqueJugador crece con cada click
+ataqueEnemigo crece con cada click
+-nunca se limpian, nunca se comparan ataque por ataque.
+***Se comparan arrays completos. 
+-no por rondas
+-no por turnos
+-no cara a cara
+*/
