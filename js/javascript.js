@@ -823,3 +823,16 @@ ALEATORIEDAD:
 //  secuenciaAtaque se sigue ejecutando antes de tiempo. llamado desde seleccionarMascotaEnemigo. 
 //mostrarAtaques crea los botones en el DOM
 //secuenciaAtaque - se esta ejecutando mas de una vez. 
+
+/*7ae880869c808db1cf4c83b81210b4dcf3e1afd5
+en esta version del juego siempre se pierde. la razon es estructural. el enemigo esta atacando fuera de turno. sin reglas. 
+-ataca siempre
+-ataca automaticamente
+-ataca cada vez que ataco 
+El jugador
+-puede repetir botones
+-puede equivocarse
+-hacer clicks extra
+-puede atacar aunque el juego termino
+---no son las mismas reglas
+*/
