@@ -847,3 +847,10 @@ ataqueEnemigo crece con cada click
 -no por turnos
 -no cara a cara
 */
+
+/* comparaciones imposibles de ganar
+en Combate:
+ataqueEnemigo == ataqueJugador
+*ambos son arrays. 
+*en JS 2 arrays nunca son iguales aunque tengan lo mismo.
+*/
