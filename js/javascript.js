@@ -854,3 +854,10 @@ ataqueEnemigo == ataqueJugador
 *ambos son arrays. 
 *en JS 2 arrays nunca son iguales aunque tengan lo mismo.
 */
+
+/*
+el enemigo sigue atacando luego del final del juego
+- los listener estan activos
+-arrays siguen creciendo
+-el enemigo sigue creciendo
+*/
