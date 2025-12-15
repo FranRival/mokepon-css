@@ -889,3 +889,8 @@ el enemigo sigue atacando luego del final del juego
 //5. siempre falla. 
 //6. caen en los else
 //7. el jugador pierde casi siempre
+
+//ERROR MAS GRAVE:
+//else if (ataqueJugador == 'Fuego' && ataqueEnemigo == 'Tierra')
+//ataqueJugador es un array. porque nunca sera fuego.
+//la funcion de combate no funciona. NADA.
