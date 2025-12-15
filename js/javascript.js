@@ -865,3 +865,17 @@ el enemigo sigue atacando luego del final del juego
 //en resumen:(ataqueJugador.length === 5)
 //no hay rondas. no hay indices. no hay turnos. no hay sincronizacion de jugador-enemigo.
 //el combate ocurre cuando llega el array a cierto tamano.
+
+//1era partida
+//el error es este:
+//cada boton tiene 1 listener
+//1 click = push a ataqueJugador
+//parece funcionar
+
+//2da partida
+//secuenciaAtaque se vuelve a ejecutar
+//los mismos botones reciben otro listener
+//ahora cada click ejecuta 2 veces
+//
+//el error es acumulativo
+//luego, esa acumulacion se compara con la de ataqueEnemigo
