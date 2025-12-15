@@ -861,3 +861,7 @@ el enemigo sigue atacando luego del final del juego
 -arrays siguen creciendo
 -el enemigo sigue creciendo
 */
+
+//en resumen:(ataqueJugador.length === 5)
+//no hay rondas. no hay indices. no hay turnos. no hay sincronizacion de jugador-enemigo.
+//el combate ocurre cuando llega el array a cierto tamano.
