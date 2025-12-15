@@ -879,3 +879,13 @@ el enemigo sigue atacando luego del final del juego
 //
 //el error es acumulativo
 //luego, esa acumulacion se compara con la de ataqueEnemigo
+///ataqueEnemigo == ataqueJugador.
+//SIEMPRE es false, excepto su ambos apuntan al mismo array en memoria. 
+//
+//1. ataqueJugador crece
+//2. ataqueEnemigo crece
+//3. combate se ejecuta
+//4. se compara array vs array
+//5. siempre falla. 
+//6. caen en los else
+//7. el jugador pierde casi siempre
