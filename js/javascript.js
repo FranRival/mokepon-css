@@ -894,3 +894,7 @@ el enemigo sigue atacando luego del final del juego
 //else if (ataqueJugador == 'Fuego' && ataqueEnemigo == 'Tierra')
 //ataqueJugador es un array. porque nunca sera fuego.
 //la funcion de combate no funciona. NADA.
+//
+//RESOLVIENDO UN PROBLEMA
+//1. en combate() se dejo de comparar todo el array con el otro array. ataqueEnemigo == ataqueJugador.
+//2. se tiene que utilizar un solo indice. 
