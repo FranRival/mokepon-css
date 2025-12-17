@@ -906,3 +906,8 @@ el enemigo sigue atacando luego del final del juego
 //ataquesMokeponEnemigo y mokepones[x].ataques (ejemplo) son el mismo array. solo con nombres distintos. 
 //es decir:
 //ataquesMokeponEnemigo y mokepones[mascotaAleatoria].ataques son la misma jalada. si se hace push a ataquesMokeponEnemigo, tambien mokepones[mascotaAleatoria].ataques se veria alterada. 
+//------------------------------
+//Los arrays no se copian automáticamente
+//Tu juego tiene un bug de “arrays que crecen solos”
+//no todos los arrays en el codigo se comportan igual.
+//cuando se asigna un array a otra variable, no se esta creando un nuevo array. solo se esta referenciando al mismo array en memoria.
