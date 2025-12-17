@@ -898,3 +898,6 @@ el enemigo sigue atacando luego del final del juego
 //RESOLVIENDO UN PROBLEMA
 //1. en combate() se dejo de comparar todo el array con el otro array. ataqueEnemigo == ataqueJugador.
 //2. se tiene que utilizar un solo indice. 
+//
+//secuenciaAtaque es llamada por seleccionarMascotaEnemigo. es un bug latente. si se vuelve a llamar a la funcion seleccionarMascotaEnemigo esta volvera a ejecutar secuenciaAtaque.
+//JS NO reemplaza listener anteriores. los acumula.
