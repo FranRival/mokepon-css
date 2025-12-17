@@ -901,3 +901,8 @@ el enemigo sigue atacando luego del final del juego
 //
 //secuenciaAtaque es llamada por seleccionarMascotaEnemigo. es un bug latente. si se vuelve a llamar a la funcion seleccionarMascotaEnemigo esta volvera a ejecutar secuenciaAtaque.
 //JS NO reemplaza listener anteriores. los acumula.
+//
+//en JS los arrays no se copian automaticamente. 
+//ataquesMokeponEnemigo y mokepones[x].ataques (ejemplo) son el mismo array. solo con nombres distintos. 
+//es decir:
+//ataquesMokeponEnemigo y mokepones[mascotaAleatoria].ataques son la misma jalada. si se hace push a ataquesMokeponEnemigo, tambien mokepones[mascotaAleatoria].ataques se veria alterada. 
