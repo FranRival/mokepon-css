@@ -911,3 +911,6 @@ el enemigo sigue atacando luego del final del juego
 //Tu juego tiene un bug de “arrays que crecen solos”
 //no todos los arrays en el codigo se comportan igual.
 //cuando se asigna un array a otra variable, no se esta creando un nuevo array. solo se esta referenciando al mismo array en memoria.
+///el detalle mas grande, se estan comparando arrays. ademas ataqueJugador - FUEGO, AGUA, TIERRA vs ataqueEnemigo - Fuego, Agua, Tierra 
+//if (ataqueEnemigo == ataqueJugador) - esta linea pregunta si tienen el mismo espacio en memoria. son arrays diferentes. por lo tanto, FALSE.
+//ataquesMokeponEnemigo y mokepones[x].ataques esta es TRUE. mismo espacio en memoria. 
