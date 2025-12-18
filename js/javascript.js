@@ -914,3 +914,5 @@ el enemigo sigue atacando luego del final del juego
 ///el detalle mas grande, se estan comparando arrays. ademas ataqueJugador - FUEGO, AGUA, TIERRA vs ataqueEnemigo - Fuego, Agua, Tierra 
 //if (ataqueEnemigo == ataqueJugador) - esta linea pregunta si tienen el mismo espacio en memoria. son arrays diferentes. por lo tanto, FALSE.
 //ataquesMokeponEnemigo y mokepones[x].ataques esta es TRUE. mismo espacio en memoria. 
+//por el momento, ataqueEnemigo y ataqueJugador tienen la misma longitud. 
+//es decir, se comparan ambos arrays, ataqueEnemigo y ataqueJugador, solo si tenian el mismo esapcio en memoria, false. para comparar es necesario extraer el ataque en si mismo. ataqueEnemigo.ataque == ataqueJugador.ataque. ahi es donde es necesario atacar por turnos. ya que esta version del codigo los ataques son acumulativos...
