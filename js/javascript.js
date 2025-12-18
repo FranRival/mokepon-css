@@ -916,3 +916,6 @@ el enemigo sigue atacando luego del final del juego
 //ataquesMokeponEnemigo y mokepones[x].ataques esta es TRUE. mismo espacio en memoria. 
 //por el momento, ataqueEnemigo y ataqueJugador tienen la misma longitud. 
 //es decir, se comparan ambos arrays, ataqueEnemigo y ataqueJugador, solo si tenian el mismo esapcio en memoria, false. para comparar es necesario extraer el ataque en si mismo. ataqueEnemigo.ataque == ataqueJugador.ataque. ahi es donde es necesario atacar por turnos. ya que esta version del codigo los ataques son acumulativos...
+
+//delete7: un bug de juego inifinito. no ha explotado porque: no esta usando el array completo.  
+//este codigo es "MIOPE". porque solo mira el ultimo elemento del array de ataque. 
