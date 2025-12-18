@@ -302,5 +302,16 @@ function aleatorio(min, max) {
 
 
 
+//este codigo tiene un error de ataques infinitos.
+//no hay un tope de cantidad de ataques
+//ChatGPT me dice que es una coincidencia de diseno.
+//historial muerto = arrays. la lista de los ataques. 
+//los anteriores ataques no participan mas.
 
+//el turno no esta en el array. esta en una sola linea: 
 
+/*
+let ataqueJugadorActual = ataqueJugador[ataqueJugador.length - 1]
+let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
+*/
+//cada click: representa un 1 turno - genere 1 ataque de jugador - genera 1 ataque del enemigo - ejecuta 1 combate.
