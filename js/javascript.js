@@ -919,3 +919,6 @@ el enemigo sigue atacando luego del final del juego
 
 //delete7: un bug de juego inifinito. no ha explotado porque: no esta usando el array completo.  
 //este codigo es "MIOPE". porque solo mira el ultimo elemento del array de ataque. 
+//se termina el juego cuando se acaban la cantidad de vidas.
+//se haciendo click en los botones los arrays siguen creciendo. 
+//LA LOGICA DEL JUEGO SE BASA EN ESTO: no rompe el juego porque solo se esta usando el ultimo valor. 
