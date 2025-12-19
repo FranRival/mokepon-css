@@ -922,3 +922,6 @@ el enemigo sigue atacando luego del final del juego
 //se termina el juego cuando se acaban la cantidad de vidas.
 //se haciendo click en los botones los arrays siguen creciendo. 
 //LA LOGICA DEL JUEGO SE BASA EN ESTO: no rompe el juego porque solo se esta usando el ultimo valor. 
+
+//aleatorio(0, mokepones.length - 1) esta linea esta mal en ataqueAleatorioEnemigo. da 3. menos 1, da 2. entre 1 y 2 es el ataque aleatorio enemigo.
+//la solucion es esta: ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques
