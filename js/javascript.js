@@ -935,3 +935,25 @@ el enemigo sigue atacando luego del final del juego
 //let ataque = ataquesMokeponEnemigo[indice].nombre
 
 //ataquesMokeponEnemigo viene de la funcion de seleccionarMascotaEnemigo
+//proceso:
+//let mascotaAleatoria = aleatorio(0, mokepones.length - 1) - mascotaAleatoria=aleatorio(0, 2)
+//ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques - ataquesMokeponEnemigo = mokepones[0,1,2].ataques **array de ataques**
+
+//ataquesMokepon.length === 5
+//let indice = aleatorio(0, ataquesMokeponEnemigo.length - 1)
+//indice =aleatorio(0, 0-1-2-3-4) el ataque. 
+
+//let ataque = ataquesMokeponEnemigo[indice].nombre
+//let ataque = ataquesMokeponEnemigo[0-1-2-3-4]
+
+
+/*
+Esta linea: ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques 
+Se traduce: ataquesMokeponEnemigo = mokepones[0,1,2].ataques 
+
+Esta linea: let indice = aleatorio(0, ataquesMokeponEnemigo.length - 1) 
+Se traduce: indice =aleatorio(0, 0-1-2-3-4) contiene un ataque..  
+
+esta linea: let ataque = ataquesMokeponEnemigo[indice].nombre 
+se traduce: ataque = ataquesMokeponEnemigo[0-1-2-3-4].nombre = agua, agua, agua, fuego, tierra,
+*/
