@@ -169,15 +169,15 @@ function secuenciaAtaque() {
         boton.addEventListener('click', (Event) => {
             console.log(Event)
             if (Event.target.textContent === '🔥') {
-                ataqueJugador.push('FUEGO')
+                ataqueJugador.push('Fuego')
                 console.log(ataqueJugador)
                 boton.style.background = '#112f58'
             } else if (Event.target.textContent === '🧊') {
-                ataqueJugador.push('AGUA')
+                ataqueJugador.push('Agua')
                 console.log(ataqueJugador)
                 boton.style.background = '#112f58'
             } else {
-                ataqueJugador.push('TIERRA')
+                ataqueJugador.push('Tierra')
                 console.log(ataqueJugador)
                 boton.style.background = '#112f58'
             }
@@ -322,3 +322,9 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 //crecen de manera infinita
 //guarda un historial que ya no se usa
 //el combate solo es el ultimo ataque
+
+//esta linea esta mal
+//aleatorio(0, mokepones.length - 1) en ataqueAleatorioEnemigo.
+//mokepones.length es la cantidad de animales. no de ataques.
+//a profundidad: esa linea da 3. pero menos 1, da 2. asi es como se elige el ataque del enemigo. 
+//mi opcion esta wrong: mokepones[ataques].length. ya que ataques no es un indice. es un array
