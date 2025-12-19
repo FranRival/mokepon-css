@@ -925,3 +925,13 @@ el enemigo sigue atacando luego del final del juego
 
 //aleatorio(0, mokepones.length - 1) esta linea esta mal en ataqueAleatorioEnemigo. da 3. menos 1, da 2. entre 1 y 2 es el ataque aleatorio enemigo.
 //la solucion es esta: ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques
+
+
+//ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques - esta en la funcion seleccionarMascotaEnemigo. la variable de ataquesMokeponEnemigo se volvera a reutilizar.
+
+////let ataqueAleatorio = aleatorio(0, mokepones.length - 1) esta linea esta mal.
+//se reemplazaria por esto:
+//let indice = aleatorio(0, ataquesMokeponEnemigo.length - 1)
+//let ataque = ataquesMokeponEnemigo[indice].nombre
+
+//ataquesMokeponEnemigo viene de la funcion de seleccionarMascotaEnemigo
