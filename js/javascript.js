@@ -315,3 +315,10 @@ let ataqueJugadorActual = ataqueJugador[ataqueJugador.length - 1]
 let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 */
 //cada click: representa un 1 turno - genere 1 ataque de jugador - genera 1 ataque del enemigo - ejecuta 1 combate.
+
+
+//actual estado del array:
+//nunca se vacian los arrays de ataqueJugador y ataqueEnemigo
+//crecen de manera infinita
+//guarda un historial que ya no se usa
+//el combate solo es el ultimo ataque
