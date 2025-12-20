@@ -959,3 +959,10 @@ se traduce: ataque = ataquesMokeponEnemigo[0-1-2-3-4].nombre = agua, agua, agua,
 */
 
 //ataqueAleatorioEnemigo esta mal. se asigna un ataque. pero la logica esta mal incluso en eso.
+//funcion arreglada. 
+
+//MAS ERRORES: secuenciaAtaque se esta ejecutando mas de una vez.
+//crearMensaje muestra arrays completos.
+//variables globales que estan duplicadas.
+//(deberiamos resolver el problema de variables globales regadas por todo el documento.)
+//ataqueJugador y ataqueEnemugo nunca se limpian
