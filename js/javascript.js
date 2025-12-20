@@ -957,3 +957,5 @@ Se traduce: indice =aleatorio(0, 0-1-2-3-4) contiene un ataque..
 esta linea: let ataque = ataquesMokeponEnemigo[indice].nombre 
 se traduce: ataque = ataquesMokeponEnemigo[0-1-2-3-4].nombre = agua, agua, agua, fuego, tierra,
 */
+
+//ataqueAleatorioEnemigo esta mal. se asigna un ataque. pero la logica esta mal incluso en eso.
