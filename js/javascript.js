@@ -198,6 +198,14 @@ function seleccionarMascotaEnemigo() {
 function ataqueAleatorioEnemigo() {
 
     let ataqueAleatorio = aleatorio(0, mokepones.length - 1)
+
+
+
+    //esta funcion crea los ataques. los asigna. ataqueAleatorio da un numero de entre 0 y 2.
+    //entonces, si da 0 o 1, es fuego.
+    //si da 3 y 4, es agua.
+    //si es 3, es tierra. 
+
     if (ataqueAleatorio == 0 || ataqueAleatorio == 1) {
         ataqueEnemigo.push('Fuego')
 
