@@ -198,7 +198,7 @@ function seleccionarMascotaEnemigo() {
 function ataqueAleatorioEnemigo() {
     let indice = aleatorio(0, ataquesMokeponEnemigo.length - 1)
     let ataque = ataquesMokeponEnemigo[indice].nombre
-    
+
 
     if (ataque === '🔥') {
         ataqueEnemigo.push('Fuego')
@@ -287,8 +287,9 @@ function crearMensaje(resultado) {
 
 
     sectionMensajes.innerHTML = resultado
-    nuevoAtaqueDelJugador.innerHTML = ataqueJugador
-    nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
+    nuevoAtaqueDelJugador.innerHTML = ataqueJugador[ataqueJugador.length - 1]
+    nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo[ataqueEnemigo.length - 1]
+
 
 
     ataqueDelJugador.appendChild(nuevoAtaqueDelJugador)
@@ -306,10 +307,10 @@ function aleatorio(min, max) {
 //este codigo tiene un error de ataques infinitos.
 //no hay un tope de cantidad de ataques
 //ChatGPT me dice que es una coincidencia de diseno.
-//historial muerto = arrays. la lista de los ataques. 
+//historial muerto = arrays. la lista de los ataques.
 //los anteriores ataques no participan mas.
 
-//el turno no esta en el array. esta en una sola linea: 
+//el turno no esta en el array. esta en una sola linea:
 
 /*
 let ataqueJugadorActual = ataqueJugador[ataqueJugador.length - 1]
@@ -327,5 +328,10 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 //esta linea esta mal
 //aleatorio(0, mokepones.length - 1) en ataqueAleatorioEnemigo.
 //mokepones.length es la cantidad de animales. no de ataques.
-//a profundidad: esa linea da 3. pero menos 1, da 2. asi es como se elige el ataque del enemigo. 
+//a profundidad: esa linea da 3. pero menos 1, da 2. asi es como se elige el ataque del enemigo.
 //mi opcion esta wrong: mokepones[ataques].length. ya que ataques no es un indice. es un array
+
+//esta lleno de basura la pantalla:
+//nuevoAtaqueDelJugador.innerHTML = ataqueJugador[i].ataque
+//esta linea esta mal.
+//
