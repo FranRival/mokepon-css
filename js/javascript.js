@@ -962,7 +962,11 @@ se traduce: ataque = ataquesMokeponEnemigo[0-1-2-3-4].nombre = agua, agua, agua,
 //funcion arreglada. 
 
 //MAS ERRORES: secuenciaAtaque se esta ejecutando mas de una vez.
-//crearMensaje muestra arrays completos.
+//crearMensaje muestra arrays completos. por eso es un cagadero la pantalla.
 //variables globales que estan duplicadas.
 //(deberiamos resolver el problema de variables globales regadas por todo el documento.)
-//ataqueJugador y ataqueEnemugo nunca se limpian
+//ataqueJugador y ataqueEnemigo nunca se limpian
+
+//crearMensaje muestra arrays completos.
+//nuevoAtaqueDelJugador.innerHTML = ataqueJugador
+//a solverlo. aun. pero ya estara resuelto. pronto. cuando ya haya escrito el siguiente commit here.
