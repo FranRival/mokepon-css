@@ -150,6 +150,7 @@ function mostrarAtaques(ataques) {
         ataquesMokepon = `
         <button id=${ataque.id} class="boton-de-ataque BATaque">${ataque.nombre}</button>
         `
+
         contenedorAtaques.innerHTML += ataquesMokepon
     })
 
@@ -158,6 +159,7 @@ function mostrarAtaques(ataques) {
     botonTierra = document.getElementById('boton-tierra')
     botones = document.querySelectorAll('.BATaque')
 
+    secuenciaAtaque()
 }//
 
 
@@ -191,8 +193,6 @@ function seleccionarMascotaEnemigo() {
     let mascotaAleatoria = aleatorio(0, mokepones.length - 1)
     spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatoria].nombre
     ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques
-    secuenciaAtaque()
-
 }
 
 function ataqueAleatorioEnemigo() {
@@ -334,4 +334,8 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 //esta lleno de basura la pantalla:
 //nuevoAtaqueDelJugador.innerHTML = ataqueJugador[i].ataque
 //esta linea esta mal.
-//
+//resuelto...
+
+
+//error de sobrecarga del boton de los eventListener. multiples veces al mismo boton. 
+//es simple: si una funcion que se puede ejecutar mas de una vez agrega addEventListener, esta mal. 
