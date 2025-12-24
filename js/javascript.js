@@ -970,3 +970,5 @@ se traduce: ataque = ataquesMokeponEnemigo[0-1-2-3-4].nombre = agua, agua, agua,
 //crearMensaje muestra arrays completos.
 //nuevoAtaqueDelJugador.innerHTML = ataqueJugador
 //a solverlo. aun. pero ya estara resuelto. pronto. cuando ya haya escrito el siguiente commit here.
+
+//secuenciaAtaque fue cambiada de lugar. porque? sepa la vrg
