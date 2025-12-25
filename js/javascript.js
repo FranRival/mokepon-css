@@ -59,27 +59,21 @@ let capipepo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjy
 let ratigueya = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5)
 
 hypodoge.ataques.push(
-    { nombre: '🧊', id: 'boton-agua' },
-    { nombre: '🧊', id: 'boton-agua' },
-    { nombre: '🧊', id: 'boton-agua' },
-    { nombre: '🔥', id: 'boton-fuego' },
-    { nombre: '🌱', id: 'boton-tierra' },
+    { nombre: '🧊', tipo: 'Agua', id: 'boton-agua' },
+    { nombre: '🔥', tipo: 'Fuego', id: 'boton-fuego' },
+    { nombre: '🌱', tipo: 'Tierra', id: 'boton-tierra' },
 )
 
 capipepo.ataques.push(
-    { nombre: '🌱', id: 'boton-tierra' },
-    { nombre: '🌱', id: 'boton-tierra' },
-    { nombre: '🌱', id: 'boton-tierra' },
-    { nombre: '🧊', id: 'boton-agua' },
-    { nombre: '🔥', id: 'boton-fuego' },
+    { nombre: '🌱', tipo: 'Tierra', id: 'boton-tierra' },
+    { nombre: '🧊', tipo: 'Agua', id: 'boton-agua' },
+    { nombre: '🔥', tipo: 'Fuego', id: 'boton-fuego' },
 )
 
 ratigueya.ataques.push(
-    { nombre: '🔥', id: 'boton-fuego' },
-    { nombre: '🔥', id: 'boton-fuego' },
-    { nombre: '🔥', id: 'boton-fuego' },
-    { nombre: '🌱', id: 'boton-tierra' },
-    { nombre: '🧊', id: 'boton-agua' },
+    { nombre: '🔥', tipo: 'Fuego', id: 'boton-fuego' },
+    { nombre: '🌱', tipo: 'Tierra', id: 'boton-tierra' },
+    { nombre: '🧊', tipo: 'Agua', id: 'boton-agua' },
 )
 
 mokepones.push(hypodoge, capipepo, ratigueya)
@@ -148,7 +142,7 @@ function mostrarAtaques(ataques) {
 
     ataques.forEach(ataque => {
         ataquesMokepon = `
-        <button id=${ataque.id} class="boton-de-ataque BATaque">${ataque.nombre}</button>
+        <button id=${ataque.id} class="boton-de-ataque BATaque">${ataque.nombre}" ataque.tipo="${ataque-tipo}">${ataque.nombre}</button>
         `
 
         contenedorAtaques.innerHTML += ataquesMokepon
