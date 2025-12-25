@@ -6,7 +6,7 @@ const botonReiniciar = document.getElementById('boton-reiniciar')
 const botonMascotaJugador = document.getElementById('boton-mascota')
 
 const sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
-const spanMascotaJugador = document.getElementById ('mascota-jugador')
+const spanMascotaJugador = document.getElementById('mascota-jugador')
 
 const spanMascotaEnemigo = document.getElementById('mascota-enemigo')
 
@@ -24,19 +24,14 @@ const contenedorAtaques = document.getElementById('contenedorAtaques')
 sectionReiniciar.style.display = 'none'
 
 
-const sectionVerMapa = document.getElementById('ver-mapa')
-const mapa = document.getElementById('mapa')
-let lienzo = mapa.getContext('2d')
-let intervalo
-
 let mokepones = []
 let ataqueEnemigo = []
 let vidasJugador = 3
 let vidasEnemigo = 3
 let opcionDeMokepon
 let inputHipodoge
-let inputCapipepo 
-let inputRatigueya 
+let inputCapipepo
+let inputRatigueya
 let mascotaJugador
 let ataquesMokepon
 let botones = []
@@ -47,415 +42,249 @@ let botonAgua
 let botonTierra
 
 let ataquesMokeponEnemigo
-let indexAtaqueJugador
-let indexAtaqueEnemigo
 
-let victoriasJugador= 0
-let victoriasEnemigo =0
-
-let mapaBackground = new Image ()
-mapaBackground.src ='https://images2.imgbox.com/b4/d9/x9ubpv2H_o.png'
-let mascotaDelJugadorObjeto
-
-let alturaQueBuscamos
-let anchoDelMapa = window.innerWidth - 20
-alturaQueBuscamos = anchoDelMapa*600/800
-
-mapa.width=anchoDelMapa
-mapa.height=alturaQueBuscamos
-
-let jugadorId = null
-let enemigoId = null
-
-let mokeponesEnemigos = []
-
-const anchoMaximoDelMapa = 350
-if (anchoDelMapa>anchoMaximoDelMapa) {
-    anchoDelMapa=anchoMaximoDelMapa-20
-    
-}
-
-class Mokepon { //clase.
-    constructor (nombre, foto, vida, fotoMapa, id = null){
-        this.id = id
+class Mokepon {
+    constructor(nombre, foto, vida) {
         this.nombre = nombre
         this.foto = foto
         this.vida = vida
         this.ataques = []
-        this.ancho = 40
-        this.alto = 40
-        this.x = aleatorio(0,mapa.width- this.ancho)
-        this.y = aleatorio(0,mapa.height-this.alto)
-        this.mapaFoto = new Image()
-        this.mapaFoto.src = fotoMapa
-        this.velocidadX=0
-        this.velocidadY=0
-    }
-
-    pintarMokepon(){
-        lienzo.drawImage(
-            this.mapaFoto, 
-            this.x,
-            this.y,
-            this.ancho, 
-            this.alto
-        )
     }
 }
 
 
-let hypodoge = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5, 'https://images2.imgbox.com/77/e6/LGzhLnXN_o.png')
-let capipepo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5, 'https://images2.imgbox.com/78/79/uZx0xJgg_o.png')
-let ratigueya = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5, 'https://images2.imgbox.com/26/83/CO9zxorc_o.png')
 
+let hypodoge = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5)
+let capipepo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5)
+let ratigueya = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5)
 
+hypodoge.ataques.push(
+    { nombre: '🧊', tipo: 'Agua', id: 'boton-agua' },
+    { nombre: '🔥', tipo: 'Fuego', id: 'boton-fuego' },
+    { nombre: '🌱', tipo: 'Tierra', id: 'boton-tierra' },
+)
 
+capipepo.ataques.push(
+    { nombre: '🌱', tipo: 'Tierra', id: 'boton-tierra' },
+    { nombre: '🧊', tipo: 'Agua', id: 'boton-agua' },
+    { nombre: '🔥', tipo: 'Fuego', id: 'boton-fuego' },
+)
 
-const HIPODOGE_ATAQUES =[//un array dentro de otro array.
-    {nombre: '🧊', id:'boton-agua'},
-    {nombre: '🧊', id:'boton-agua'},
-    {nombre: '🧊', id:'boton-agua'},
-    {nombre: '🔥', id:'boton-fuego'},
-    {nombre: '🌱', id:'boton-tierra'},
-]
+ratigueya.ataques.push(
+    { nombre: '🔥', tipo: 'Fuego', id: 'boton-fuego' },
+    { nombre: '🌱', tipo: 'Tierra', id: 'boton-tierra' },
+    { nombre: '🧊', tipo: 'Agua', id: 'boton-agua' },
+)
 
-hypodoge.ataques.push(...HIPODOGE_ATAQUES)
+mokepones.push(hypodoge, capipepo, ratigueya)
 
-
-const CAPIPEPO_ATAQUES=[
-    {nombre: '🌱', id:'boton-tierra'},
-    {nombre: '🌱', id:'boton-tierra'},
-    {nombre: '🌱', id:'boton-tierra'},
-    {nombre: '🧊', id:'boton-agua'},
-    {nombre: '🔥', id:'boton-fuego'},
-]
-
-capipepo.ataques.push(...CAPIPEPO_ATAQUES)
-
-
-const RATIGUEYA_ATAQUES=[
-    {nombre: '🔥', id:'boton-fuego'},
-    {nombre: '🔥', id:'boton-fuego'},
-    {nombre: '🔥', id:'boton-fuego'},
-    {nombre: '🌱', id:'boton-tierra'},
-    {nombre: '🧊', id:'boton-agua'},
-]
-ratigueya.ataques.push(...RATIGUEYA_ATAQUES)
-
-//para que dickenson son los 3 puntos?
-
-mokepones.push(hypodoge,capipepo,ratigueya)
-
-
-
-function iniciarJuego (){
+function iniciarJuego() {
     sectionSeleccionarAtaque.style.display = 'none'
-    sectionVerMapa.style.display = 'none'
-
-    mokepones.forEach((mokepon) =>{
+    mokepones.forEach((mokepon) => {
         opcionDeMokepon = `
         <input type="radio" name="mascota" id=${mokepon.nombre}>
         <label class="tarjeta-de-mokepon" for=${mokepon.nombre}>
             <p>${mokepon.nombre}</p>
             <img src=${mokepon.foto} alt=${mokepon.nombre}>
+        
         </label>
         `
-        contenedorTarjetas.innerHTML+=opcionDeMokepon 
-        ////inyecta los mokepones mas la imagen y el alt de los 3 mokepones  
+        contenedorTarjetas.innerHTML += opcionDeMokepon
 
-        console.log('1');
-        
-
-    }) 
+    })
 
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
-    botonReiniciar.addEventListener('click',reiniciarJuego)
-    unirseAlJuego()
 }
 
-function unirseAlJuego(){
-    fetch("http://localhost:8080/unirse")
-    .then(function (res){
-        if (res.ok) {
-            res.text()
-                .then(function(respuesta){
-                    console.log(respuesta);
-                    jugadorId = respuesta
-                })
+
+function seleccionarMascotaJugador() {
+    sectionSeleccionarAtaque.style.display = 'flex'
+    sectionSeleccionarMascota.style.display = 'none'
+
+    let inputHipodoge = document.getElementById('Hipodoge')
+    let inputCapipepo = document.getElementById('Capipepo')
+    let inputRatigueya = document.getElementById('Ratigueya')
+
+    if (inputHipodoge.checked) {
+        spanMascotaJugador.innerHTML = inputHipodoge.id
+        mascotaJugador = inputHipodoge.id
+    } else if (inputCapipepo.checked) {
+        spanMascotaJugador.innerHTML = inputCapipepo.id
+        mascotaJugador = inputCapipepo.id
+    } else if (inputRatigueya.checked) {
+        spanMascotaJugador.innerHTML = inputRatigueya.id
+        mascotaJugador = inputRatigueya.id
+    } else {
+        alert("Tienes que selecionar")
+
+    }
+
+    extraerAtaques(mascotaJugador)
+    seleccionarMascotaEnemigo()
+
+}
+
+function extraerAtaques(mascotaJugador) {
+    let ataques
+
+    for (let i = 0; i < mokepones.length; i++) {
+        if (mascotaJugador == mokepones[i].nombre) {
+            ataques = mokepones[i].ataques
         }
-    })
+    }
+
+    mostrarAtaques(ataques)
 
 }
 
 
-function seleccionarMascotaJugador(){//la segunda pagina.
-    console.log('2');
-    
-        sectionSeleccionarMascota.style.display = 'none'
-        sectionVerMapa.style.display = 'flex'
+function mostrarAtaques(ataques) {
 
-        let inputHipodoge = document.getElementById('Hipodoge')
-        let inputCapipepo = document.getElementById('Capipepo')
-        let inputRatigueya = document.getElementById('Ratigueya')
-
-        if (inputHipodoge.checked){
-            spanMascotaJugador.innerHTML = inputHipodoge.id
-            mascotaJugador=inputHipodoge.id
-        }else if (inputCapipepo.checked){
-            spanMascotaJugador.innerHTML = inputCapipepo.id
-            mascotaJugador=inputCapipepo.id
-        } else if (inputRatigueya.checked){
-            spanMascotaJugador.innerHTML = inputRatigueya.id
-            mascotaJugador=inputRatigueya.id
-        }else {
-            alert ("Tienes que selecionar")
-        }
-        seleccionarMokepon(mascotaJugador)        
-        extraerAtaques(mascotaJugador)
-        iniciarMapa()  
-}
-
-
-
-function seleccionarMokepon(mascotaJugador){
-    fetch(`http://localhost:8080/mokepon/${jugadorId}`,{
-        method: "post",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            mokepon:mascotaJugador
-        })
-    })
-
-
-}
-
-function extraerAtaques(mascotaJugador){
-        let ataques
-        console.log('3');
-        
-
-        for (let i = 0; i < mokepones.length; i++) {
-            if (mascotaJugador== mokepones[i].nombre){
-                ataques = mokepones[i].ataques
-                //console.log(i);
-                console.log('aaaaaaaaaaa!');
-                
-                //console.log(mokepones.length);//da 3.
-                
-                
-            } 
-        }
-        mostrarAtaques(ataques)
-    }//se obtiene el nombre y el ataque. 
-
-
-
-function mostrarAtaques(ataques){//asigna valor.
-    console.log('4');
-    
-    ataques.forEach(ataque => {//2 variables locales. 
+    ataques.forEach(ataque => {
         ataquesMokepon = `
-        <button id=${ataque.id} class="boton-de-ataque BATaque">${ataque.nombre}</button>
+        <button id=${ataque.id} class="boton-de-ataque BATaque">${ataque.nombre}" ataque.tipo="${ataque.tipo}">${ataque.nombre}</button>
         `
+
         contenedorAtaques.innerHTML += ataquesMokepon
     })
-        botonFuego = document.getElementById('boton-fuego')
-        botonAgua = document.getElementById('boton-agua')
-        botonTierra = document.getElementById('boton-tierra')
-        botones = document.querySelectorAll('.BATaque')
-}//da valor a ataquesMokepon/da valor, dice donde colocar ese valor, contenedorAtaques. 
 
+    botonFuego = document.getElementById('boton-fuego')
+    botonAgua = document.getElementById('boton-agua')
+    botonTierra = document.getElementById('boton-tierra')
+    botones = document.querySelectorAll('.BATaque')
 
-function secuenciaAtaque(){
-    console.log('5');
-    
-    botones.forEach((boton) =>{ //array. + variable local
-        boton.addEventListener('click',(Event) => {
-            //console.log(Event)
-                if (Event.target.textContent === '🔥') {
-                    ataqueJugador.push('Fuego')
-                    console.log(ataqueJugador)
-                    boton.style.background = '#112f58'
-                }else if (Event.target.textContent === '🧊'){
-                    ataqueJugador.push('Agua')
-                    console.log(ataqueJugador)
-                    boton.style.background = '#112f58'
-                }else{
-                    ataqueJugador.push('Tierra')
-                    console.log(ataqueJugador)
-                    boton.style.background = '#112f58'
-            }
-            if (ataqueJugador.length===5) {
-                enviarAtaques()
-            }/////esta funcion es extrana. how it works
-        })
-    })
-}
-
-function enviarAtaques(){
-    fetch(`http://localhost:8080/mokepon/${jugadorId}/ataques`,{
-        method: "post",
-        headers:{
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            ataques: ataqueJugador
-        })
-    })
-    intervalo = setInterval(obtenerAtaques, 50)
-}
-
-function obtenerAtaques (){
-    fetch(`http://localhost:8080/mokepon/${enemigoId}/ataques`)
-    .then(function(res){
-        if (res.ok) {
-            res.json()
-            .then(function({ataques}){
-                if (ataques.length===5) {
-                    ataqueEnemigo=ataques
-                    combate()
-                }
-            })
-        }
-    })
-}
-
-
-function seleccionarMascotaEnemigo(){
-    console.log('6');
-    
-    let mascotaAleatoria = aleatorio (0,mokepones.length -1)
-    spanMascotaEnemigo.innerHTML= mokepones[mascotaAleatoria].nombre
-    ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques
     secuenciaAtaque()
+}//
+
+
+
+function secuenciaAtaque() {
+
+
+    botones.forEach((boton) => {
+        boton.addEventListener('click', (Event) => {
+            console.log(Event)
+            if (Event.target.textContent === '🔥') {
+                ataqueJugador.push('Fuego')
+                console.log(ataqueJugador)
+                boton.style.background = '#112f58'
+            } else if (Event.target.textContent === '🧊') {
+                ataqueJugador.push('Agua')
+                console.log(ataqueJugador)
+                boton.style.background = '#112f58'
+            } else {
+                ataqueJugador.push('Tierra')
+                console.log(ataqueJugador)
+                boton.style.background = '#112f58'
+            }
+            ataqueAleatorioEnemigo()
+        })
+    })
 }
 
-function ataqueAleatorioEnemigo (){
-    console.log('7');
-    
-    console.log('Ataque enemigo', ataquesMokeponEnemigo);
-    let ataqueAleatorio = aleatorio(0,ataquesMokeponEnemigo.length -1)
 
-    if (ataqueAleatorio == 0 || ataqueAleatorio==1){
-       ataqueEnemigo.push('Fuego')
+function seleccionarMascotaEnemigo() {
+    let mascotaAleatoria = aleatorio(0, mokepones.length - 1)
+    spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatoria].nombre
+    ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques
+}
 
-    }else if (ataqueAleatorio == 3 || ataqueAleatorio==4){
+function ataqueAleatorioEnemigo() {
+    let indice = aleatorio(0, ataquesMokeponEnemigo.length - 1)
+    let ataque = ataquesMokeponEnemigo[indice].nombre
+
+
+    if (ataque === '🔥') {
+        ataqueEnemigo.push('Fuego')
+    } else if (ataque === '🧊') {
         ataqueEnemigo.push('Agua')
-
-    }else{
+    } else {
         ataqueEnemigo.push('Tierra')
     }
+
     console.log(ataqueEnemigo)
-
     iniciarPelea()
+
 }
 
-function iniciarPelea (){
-    console.log('8');
-    
-    if (ataqueJugador.length===5) {
-        combate()   
+function iniciarPelea() {
+    //cuando la longitud sea 5, se va a esperar a que sean 5
+    if (ataqueJugador.length === 5) {
+        combate()
     }
 }
 
 
+function combate() {
+    let ataqueJugadorActual = ataqueJugador[ataqueJugador.length - 1]
+    let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 
-function indexAmbosOponente(jugador, enemigo){
-    console.log('9');
-    
-    indexAtaqueJugador = ataqueJugador[jugador]
-    indexAtaqueEnemigo = ataqueEnemigo[enemigo]
+
+
+    if (ataqueEnemigoActual == ataqueJugadorActual) {
+        crearMensaje('Empate')
+    } else if (ataqueJugadorActual == 'Fuego' && ataqueEnemigoActual == 'Tierra') {
+        crearMensaje("Ganaste")
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
+    } else if (ataqueJugadorActual == 'Agua' && ataqueEnemigoActual == 'Fuego') {
+        crearMensaje("Ganaste")
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
+    } else if (ataqueJugadorActual == 'Tierra' && ataqueEnemigoActual == 'Agua') {
+        crearMensaje("Ganaste")
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
+    } else {
+        crearMensaje("Perdiste")
+        vidasJugador--
+        spanVidasJugador.innerHTML = vidasJugador
+    }
+    revisarVidas()
 }
 
-
-//el programa vuelve a ejecutar el codigo por cada eleccion de boton de ataque. 
-
-function combate (){
-    console.log('10');
-    
-    clearInterval(intervalo)
-    for (let index = 0; index < ataqueJugador.length; index++) {
-
-        //que hace la funcion combate antes de nada
-        if (ataqueJugador[index]===ataqueEnemigo[index]) {
-            indexAmbosOponente(index, index)
-            crearMensaje('Empate')            
-            spanVidasJugador.innerHTML = victoriasJugador
-        } else if (ataqueJugador[index] ==='Fuego' && ataqueEnemigo[index] ==='Tierra'){
-            indexAmbosOponente(index, index)
-            crearMensaje("Ganaste")
-            victoriasJugador++
-            spanVidasJugador.innerHTML = victoriasJugador
-        }else if (ataqueJugador[index]==='Agua' && ataqueEnemigo[index] === 'Fuego'){
-            indexAmbosOponente(index, index)
-            crearMensaje("Ganaste")
-            victoriasJugador++
-            spanVidasJugador.innerHTML = victoriasJugador
-        } else if (ataqueJugador[index]==='Tierra' && ataqueEnemigo[index] === 'Agua'){
-            indexAmbosOponente(index, index)
-            crearMensaje ("Ganaste")
-            victoriasJugador++
-            spanVidasJugador.innerHTML = victoriasJugador
-        }else {
-            indexAmbosOponente(index, index)
-            crearMensaje ("Perdiste")
-            victoriasEnemigo++
-            spanVidasEnemigo.innerHTML = victoriasEnemigo
-        }
-       }
-       revisarVidas()
-}
-
-
-
-function revisarVidas (){
-    console.log('11');
-    
-    if (victoriasJugador===victoriasEnemigo){
-        crearMensajeFinal("Esto fue un empate!!!")
-    }else if (victoriasJugador>victoriasEnemigo){
+function revisarVidas() {
+    if (vidasEnemigo == 0) {
         crearMensajeFinal("Felicitaciones, ganaste 🎈")
-    }else {
+    } else if (vidasJugador == 0) {
         crearMensajeFinal("Perdiste. 🎃")
+
     }
 }
 
-function crearMensajeFinal (resultadoFinal){ 
-    console.log('12');
-    
+function crearMensajeFinal(resultadoFinal) {
     sectionMensajes.innerHTML = resultadoFinal
     botonFuego.disabled = true
     botonAgua.disabled = true
     botonTierra.disabled = true
+
     sectionReiniciar.style.display = 'block'
 }
 
 
 
-window.addEventListener('load',iniciarJuego)
+window.addEventListener('load', iniciarJuego)
 
 
-function reiniciarJuego(){ //asigna o compara valor.
+
+
+
+function reiniciarJuego() {
     location.reload()
-    console.log('13');
 }
 
 
 
-function crearMensaje (resultado){ 
-    console.log('14');
-    
+function crearMensaje(resultado) {
     let nuevoAtaqueDelJugador = document.createElement('p')
-    //fuego, agua, tierra
     let nuevoAtaqueDelEnemigo = document.createElement('p')
-    //agua, tierra, fuego
-    //es el proceso infinito. 
 
-    sectionMensajes.innerHTML = resultado //ganaste, perdiste
-    nuevoAtaqueDelJugador.innerHTML = indexAtaqueJugador
-    nuevoAtaqueDelEnemigo.innerHTML = indexAtaqueEnemigo
+
+    sectionMensajes.innerHTML = resultado
+    nuevoAtaqueDelJugador.innerHTML = ataqueJugador[ataqueJugador.length - 1]
+    nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo[ataqueEnemigo.length - 1]
+
+
 
     ataqueDelJugador.appendChild(nuevoAtaqueDelJugador)
     ataqueDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
@@ -463,512 +292,46 @@ function crearMensaje (resultado){
 
 
 
-function aleatorio (min, max){//asigna o compara valor.
-    console.log('15');
-    return Math.floor(Math.random()*(max-min +1)+ min)
+function aleatorio(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 
 
-function pintarCanvas(){
-    console.log('16');
-    
-
-    //tambien es infinita.
-    
-    mascotaDelJugadorObjeto.x=mascotaDelJugadorObjeto.x+mascotaDelJugadorObjeto.velocidadX
-
-    //console.log(mascotaDelJugadorObjeto.x);
-    //como funciona la velocidad
-    
-    mascotaDelJugadorObjeto.y=mascotaDelJugadorObjeto.y+mascotaDelJugadorObjeto.velocidadY
-    lienzo.clearRect(0,0,mapa.width,mapa.height)
-    lienzo.drawImage(
-        mapaBackground,
-        0,
-        0,
-        mapa.width,
-        mapa.height
-    )
-
-    mascotaDelJugadorObjeto.pintarMokepon()
-    enviarPocision(mascotaDelJugadorObjeto.x,mascotaDelJugadorObjeto.y)
-
-    mokeponesEnemigos.forEach(function(mokepon){
-        mokepon.pintarMokepon()
-        revisarColision(mokepon)
-    })
-
-
-
-}
-
-function enviarPocision (x,y){
-    fetch(`http://localhost:8080/mokepon/${jugadorId}/pocision/`,{
-    method:'post',
-    headers:{
-        "Content-Type": "application/json"
-    },
-    body:JSON.stringify({
-        x,
-        y
-    })
-        
-    })
-
-    .then(function(res){
-        if (res.ok) {
-            res.json()
-                .then(function({enemigos}){
-                  console.log(enemigos)
-
-
-
-                  mokeponesEnemigos = enemigos.map(function(enemigo){
-                    let mokeponEnemigo=null
-                    const mokeponNombre = enemigo.mokepon.nombre || ""
-                    if(mokeponNombre==="Hipodoge"){
-                        mokeponEnemigo = new Mokepon('Hipodoge', 'https://images2.imgbox.com/72/4f/FtMeIIbY_o.png', 5, 'https://images2.imgbox.com/77/e6/LGzhLnXN_o.png', enemigo.id)
-
-                    }else if (mokeponNombre==="Capipepo"){
-                        mokeponEnemigo = new Mokepon('Capipepo', 'https://images2.imgbox.com/b3/45/k2jgVjyd_o.png', 5, 'https://images2.imgbox.com/78/79/uZx0xJgg_o.png', enemigo.id)
-
-                    }else if (mokeponNombre==="Ratigueya"){
-                        mokeponEnemigo = new Mokepon('Ratigueya', 'https://images2.imgbox.com/f3/e9/w1BQtPQL_o.png', 5, 'https://images2.imgbox.com/26/83/CO9zxorc_o.png', enemigo.id)
-
-                    }
-
-                    mokeponEnemigo.x = enemigo.x
-                    mokeponEnemigo.y = enemigo.y
-
-                    return mokeponEnemigo
-                  })
-                         
-
-                })
-        }
-    })
-
-}
-
-function moverDerecha(){ //asigna o compara valor.
-    mascotaDelJugadorObjeto.velocidadX = 5
-    console.log('17');
-    
-}
-
-function moverIzquierda(){//asigna o compara valor.
-    mascotaDelJugadorObjeto.velocidadX = - 5
-    console.log('18');
-    
-}
-
-function moverAbajo(){ //asigna o compara valor.
-    mascotaDelJugadorObjeto.velocidadY = 5
-    console.log('19');
-    
-}
-
-function moverArriba(){ //asigna o compara valor.
-    mascotaDelJugadorObjeto.velocidadY = -5
-    console.log('20');
-    
-}
-
-function detenerMovimiento(){ //asigna o compara valor.
-    mascotaDelJugadorObjeto.velocidadY=0
-    mascotaDelJugadorObjeto.velocidadX =0
-    console.log('21');
-    
-}
-
-function obtenerObjetoMascota(){ //asigna o compara valor.
-    console.log('22');
-    
-    for (let i = 0; i < mokepones.length; i++) {
-        if (mascotaJugador== mokepones[i].nombre){
-            return mokepones[i]
-        } 
-    }
-}
-
-
-function iniciarMapa(){
-    console.log('23');
-    
-    mascotaDelJugadorObjeto = obtenerObjetoMascota(mascotaJugador)
-
-    //no se where sale el 5 y 6. de que funcion.
-    intervalo = setInterval(pintarCanvas,50)
-    window.addEventListener('keyup', detenerMovimiento)
-    window.addEventListener('keydown',SePresionoUnaTecla)
-}
-
-
-
-
-function SePresionoUnaTecla(event){
-    console.log('24');
-    
-    switch (event.key) {
-        case 'ArrowUp':
-            moverArriba()
-            break;
-        case 'ArrowDown':
-                moverAbajo()
-             break;
-        case 'ArrowLeft':
-                moverIzquierda()
-                break;
-        case 'ArrowRight':
-            moverDerecha()
-                break;
-        default:
-            break;
-    }
-}
-
-function revisarColision(enemigo){
-    console.log('25');
-    
-    const arribaEnemigo = enemigo.y
-    const abajoEnemigo = enemigo.y+enemigo.alto
-    const derechaEnemigo = enemigo.x+enemigo.ancho
-    const izquierdaEnemigo = enemigo.x
-    const arribaMascota = mascotaDelJugadorObjeto.y
-    const abajoMascota = mascotaDelJugadorObjeto.y+mascotaDelJugadorObjeto.alto
-    const derechaMascota = mascotaDelJugadorObjeto.x+mascotaDelJugadorObjeto.ancho
-    const izquierdaMascota = mascotaDelJugadorObjeto.x
-
-
-    if (abajoMascota<arribaEnemigo||   
-        arribaMascota>abajoEnemigo||
-        derechaMascota<izquierdaEnemigo||
-        izquierdaMascota>derechaEnemigo
-        
-        ) {
-            return
-        
-    }
-    detenerMovimiento()
-    clearInterval(intervalo)
-    console.log('se deecto una colision');
-    enemigoId = enemigo.id
-    sectionSeleccionarAtaque.style.display = 'flex'
-    sectionVerMapa.style.display='none'
-    seleccionarMascotaEnemigo(enemigo)
-}
-
-//30 funciones. 1 clase.
-/* 
-seleccionarMascotaJugador: seleccionarMokepon() - extraerAtaques() - iniciarMapa()
-revisionColision: detenerMovimiento() - clearInterval() - seleccionarMascotaEnemigo() 
-
-extraerAtaques: mostrarAtaques()
-secuenciaAtaque: enviarAtaques()
-seleccionarMascotaEnemigo: secuenciaAtaque()
-ataqueAleatorioEnemigo: iniciarPelea()
-iniciarPelea: combate()
-combate: revisarVidas()
-pintarCanvas: revisarColision()
-*/
-
-//d428673d197257ed9ab6b6d74dd979e1ef2a314e - existen formas de colisionar con otros jugadores en local. 
-
-/* 
-sectionReiniciar = reiniciar
-sectionSeleccionarAtaque = seleccionar-ataque
-sectionVerMapa = ver-mapa 
-*/ //
-
-
-//funcion crearMensaje - iniciarJuego. tienen 2 funciones extranges.
-
-//9cfe46d589962924be0628ffd51cc4a4b5d4ad20 - fetch. 
-
-
-
-/* ---buscar con un log, todos los resultados de estas funciones
-iniciarJuego - 
-unirseAlJuego -
-seleccionarMascotaJugador - 
-seleccionarMokepon -
-extraerAtaques
-mostrarAtaques
-secuenciaAtaque
-enviarAtaque
-obtenerAtaques
-seleccionarMascotaEnemigo
-ataqueAleatorioEnemigo
-iniciarPelea
-indexAmbosOponentes
-combate
-revisarVidas
-crearMensajeFinal
-reiniciarJuego
-crearMensaje
-aleatorio
-pintarCanvas
-enviarPocision
-moverDerecha
-moverIzquierda
-moverAbajo
-moverArriba
-detenerMovimiento
-obtenerObjetoMascota
-iniciarMapa
-sePresionoUnaTecla
-revisarColision */
-
-//17-11-25
-//creamos el flujo de los primeros commits.
-
-//***hasta este commit -714df3728308c92a62271a5a0a5a49b05b5aeab1- el problema de Fuego, Agua, Tierra - AGUA, FUEGO, TIERRA, persiste. 
-
-//CONSTRUCCION DE ARQUITECTURA
-//crearMensaje siempre y unicamente es llamada desde combate()
-//se ejecuta 3 turnos. 2+ por si hay empates.
-
-
-//ataqueFuego | ataqueAgua | ataqueTierra -> ataqueAleatorioEnemigo -> combate -> crearMensaje -> revisarVidas
-
-//ataqueJugador y ataqueEnemigo envian datos a crearMensaje
-//se comparan dentro de combate. 
-
-//ERROR DE LOGICA
-//crearMensaje da: ganaste, perdiste, empate. 
-//pero tambien lee variables: ataqueJugador - ataqueEnemigo
-//el problem?
-//esta funcion tiene codigo mas abajo: let ataqueDelJugador, let ataqueDelEnemigo, nuevoAtaqueDelJugador, nuevoAtaqueDelEnemigo que se ejecutara tambien y no solo el mensaje.
-//es un problema logico, hace 2 cosas aunque no las necesita hacer. 
-//hace 2 cosas:
-//1. muestra el resultado de sectionMensajes: ganaste, perdiste, empate.
-//2. registra ataques (jugador y enemigo) creando 2 parrafos.
-//ambas utilizan la misma section: = document.getElementById('mensajes')
-
-
-//9a371d0d20060ba47da3cb48dc8aaca66f2ecbc9 - se sacaron todas las variables internas dentro de las funciones y se volvieron globales. commits antes vimos como cambiar los colores de las tarjetas de los mokepones. 
-
-//llegamos hoy hasta: ee30472b440a7d326dc435a870d37d35761d4365
-
-//ESCALABILIDAD:
-/* 
-6c60a0fe3e3f4fa1d8fbba7a79b8cd09947f1132 - commit arriba
-26f534fae0a793a2325dcbd03ed057839f6f4d08 - commit abajo.
-FUNCION: seleccionarMascotaEnemigo <---captura de pantalla.
-
-el de arriba esta funcionando bien. why? 
--entre esos 2 commits no se rompe el codigo, porque en el viejo, manejaba checks. y este nuevo, maneja el array con el indice.
-//1. el de arriba manejaba if-else comparando 1-3 mokepones.
-//2. el de abajo, el numero total del array -mokepones.length.
-mokepones[mascotaAleatoria(1 entre 3)].nombre
-es decir, escalabilidad.
-*/
-
-//1bf0c469e57d03949f4f2905e4bfd9030303fdca - la funcion de extraerAtaques se la pasa iterando hasta encontrar la variable exacta de la funcion anterior seleccionarMascotaJugador. ese indice de [i] se lleva a la siguiente linea, ataques=mokepones[i].ataques.
-
-
-/* 
-DELETE3
-118e971bfadab76ad6acdcdc823fe3aba26d4b81 - el hecho que haya mas de 3 veces el ataque repetido en el array de ataques:
-
-ALEATORIEDAD:
-1) no incrementa las posibilidades nuestras. porque el id es el mismo.
-2) incrementa la probabilidad de repetir ataque. por math.random
- */
-
-//118e971bfadab76ad6acdcdc823fe3aba26d4b81
-//extraerAtaques pasa los valores a mostrarAtaques. y ese parametro es un array...
-
-
-//33c25096ee72e16aee575ae3ca2e6d9d65125dfd
-//la funcion de secuenciaAtaques busca eliminar los getElementById de botonFuego, botonAgua, botonTierra.
-
-//en el commit 33c25096ee72e16aee575ae3ca2e6d9d65125dfd en la funcion mostrarAtaques aun existen las llamadas de los addEventListener. en el commit d6dea31d53b13aa0757e5f43c023accc7d8f66ce fueron eliminadas. y colocadas en la funcion de secuenciaAtaque.
-
-
-//bc4d0ab2a7e6d75127942367dac4323c8549d8eb - esa es la razon por la que nunca termina el usuario de jugar eligiendo botones. se vuelve infinito. los botones no funcionan. nunca reciben el eventListener. 
-
-//aun seguimos aqui...
-
-//2463c822b581e65941313857e8f37ffedc9803d7 - es un juego infinito de eleccion. es porque ChatGPT me dice que ataqueAleatorioEnemigo() nunca se esta llamando en secuenciaAtaque().
-//En este commit se pregunta: en donde esta la opcion de entrar en combate? - donde se ligaron los botones con el ataque?
-//Yo respondi: combate() - mostrarAtaques(ataques).
-//Respuesta: 
-//en ese commit la funcion de ataqueAleatorioEnemigo() nunca se llama de manera efectiva. y debe estar en secuenciaAtaque()
-
-//porque los botones 2 y 3 no funcionan. 
-//las arrow function necesitan ser encerrados sus parametros cuando tiene 0 o 2+ parametros para funcionar. 
-//el callback
-//el callback: funcion que se le pasa como argumento a otra funcion para que la ejecute mas tarde.
-
-//analizando delete6.
-//esto es lo que entiendo. comienza con la fucnion de iniciarJuego. entonces hay un click en un boton. y esa, llama a selecionarMascotaJuegador. ese click, es elegir el mokepon. lo que desata la ejecucion de esa funcion. y esa funcion comienza el flujo natural del juego.
-
-
-
-//e4e189940f98752278b3d00b0d74ca20fb6071c4 - commit que resuelve el problema de seleccionar infinitos botones sin llegar al final. orden incorrecto: funciones de mostrarAtaques y secuenciaAtaques. secuencuaAtaques se ejecutaba antes de que existieran los botones. MostrarAtaques creaba botones demasiado tarde. 
-//PROBLEMA: seleccionarMascotaEnemigo es la que llama secuenciaAtaque. 
-//cuantas veces se ejecuta seleccionarMascotaEnemigo?
-//porque se estara llamando a la funcion de secuenciaAtaque desde antes que existan los botones.
-
-//BATaque esta en el JS y no en el HTML.
-//es la clave para identificar los botones de ataque recien creados.
-//querySelectorAll('.BATaque') - junta todos los botones en una variable.
-
-//7ae880869c808db1cf4c83b81210b4dcf3e1afd5 - los array de ataques enemigo y ataque jugador siguen creciendo a pesar de que el juego termino. el de enemigos, el array en consola esta en MAYUSCULAS. el del jugador en minusculas. 
-//en ese commit ChatGPT me dice que hay 3 funciones danadas.  
-
-//7ae880869c808db1cf4c83b81210b4dcf3e1afd5 - funciona ya por turnos.
-//  secuenciaAtaque se sigue ejecutando antes de tiempo. llamado desde seleccionarMascotaEnemigo. 
-//mostrarAtaques crea los botones en el DOM
-//secuenciaAtaque - se esta ejecutando mas de una vez. 
-
-/*7ae880869c808db1cf4c83b81210b4dcf3e1afd5
-en esta version del juego siempre se pierde. la razon es estructural. el enemigo esta atacando fuera de turno. sin reglas. 
--ataca siempre
--ataca automaticamente
--ataca cada vez que ataco 
-El jugador
--puede repetir botones
--puede equivocarse
--hacer clicks extra
--puede atacar aunque el juego termino
----no son las mismas reglas
-*/
+//este codigo tiene un error de ataques infinitos.
+//no hay un tope de cantidad de ataques
+//ChatGPT me dice que es una coincidencia de diseno.
+//historial muerto = arrays. la lista de los ataques.
+//los anteriores ataques no participan mas.
+
+//el turno no esta en el array. esta en una sola linea:
 
 /*
-Arrays no se comparan por turnos sino por longitud:
-ataqueJugador crece con cada click
-ataqueEnemigo crece con cada click
--nunca se limpian, nunca se comparan ataque por ataque.
-***Se comparan arrays completos. 
--no por rondas
--no por turnos
--no cara a cara
+let ataqueJugadorActual = ataqueJugador[ataqueJugador.length - 1]
+let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 */
-
-/* comparaciones imposibles de ganar
-en Combate:
-ataqueEnemigo == ataqueJugador
-*ambos son arrays. 
-*en JS 2 arrays nunca son iguales aunque tengan lo mismo.
-*/
-
-/*
-el enemigo sigue atacando luego del final del juego
-- los listener estan activos
--arrays siguen creciendo
--el enemigo sigue creciendo
-*/
-
-//en resumen:(ataqueJugador.length === 5)
-//no hay rondas. no hay indices. no hay turnos. no hay sincronizacion de jugador-enemigo.
-//el combate ocurre cuando llega el array a cierto tamano.
-
-//1era partida
-//el error es este:
-//cada boton tiene 1 listener
-//1 click = push a ataqueJugador
-//parece funcionar
-
-//2da partida
-//secuenciaAtaque se vuelve a ejecutar
-//los mismos botones reciben otro listener
-//ahora cada click ejecuta 2 veces
-//
-//el error es acumulativo
-//luego, esa acumulacion se compara con la de ataqueEnemigo
-///ataqueEnemigo == ataqueJugador.
-//SIEMPRE es false, excepto su ambos apuntan al mismo array en memoria. 
-//
-//1. ataqueJugador crece
-//2. ataqueEnemigo crece
-//3. combate se ejecuta
-//4. se compara array vs array
-//5. siempre falla. 
-//6. caen en los else
-//7. el jugador pierde casi siempre
-
-//ERROR MAS GRAVE:
-//else if (ataqueJugador == 'Fuego' && ataqueEnemigo == 'Tierra')
-//ataqueJugador es un array. porque nunca sera fuego.
-//la funcion de combate no funciona. NADA.
-//
-//RESOLVIENDO UN PROBLEMA
-//1. en combate() se dejo de comparar todo el array con el otro array. ataqueEnemigo == ataqueJugador.
-//2. se tiene que utilizar un solo indice. 
-//
-//secuenciaAtaque es llamada por seleccionarMascotaEnemigo. es un bug latente. si se vuelve a llamar a la funcion seleccionarMascotaEnemigo esta volvera a ejecutar secuenciaAtaque.
-//JS NO reemplaza listener anteriores. los acumula.
-//
-//en JS los arrays no se copian automaticamente. 
-//ataquesMokeponEnemigo y mokepones[x].ataques (ejemplo) son el mismo array. solo con nombres distintos. 
-//es decir:
-//ataquesMokeponEnemigo y mokepones[mascotaAleatoria].ataques son la misma jalada. si se hace push a ataquesMokeponEnemigo, tambien mokepones[mascotaAleatoria].ataques se veria alterada. 
-//------------------------------
-//Los arrays no se copian automáticamente
-//Tu juego tiene un bug de “arrays que crecen solos”
-//no todos los arrays en el codigo se comportan igual.
-//cuando se asigna un array a otra variable, no se esta creando un nuevo array. solo se esta referenciando al mismo array en memoria.
-///el detalle mas grande, se estan comparando arrays. ademas ataqueJugador - FUEGO, AGUA, TIERRA vs ataqueEnemigo - Fuego, Agua, Tierra 
-//if (ataqueEnemigo == ataqueJugador) - esta linea pregunta si tienen el mismo espacio en memoria. son arrays diferentes. por lo tanto, FALSE.
-//ataquesMokeponEnemigo y mokepones[x].ataques esta es TRUE. mismo espacio en memoria. 
-//por el momento, ataqueEnemigo y ataqueJugador tienen la misma longitud. 
-//es decir, se comparan ambos arrays, ataqueEnemigo y ataqueJugador, solo si tenian el mismo esapcio en memoria, false. para comparar es necesario extraer el ataque en si mismo. ataqueEnemigo.ataque == ataqueJugador.ataque. ahi es donde es necesario atacar por turnos. ya que esta version del codigo los ataques son acumulativos...
-
-//delete7: un bug de juego inifinito. no ha explotado porque: no esta usando el array completo.  
-//este codigo es "MIOPE". porque solo mira el ultimo elemento del array de ataque. 
-//se termina el juego cuando se acaban la cantidad de vidas.
-//se haciendo click en los botones los arrays siguen creciendo. 
-//LA LOGICA DEL JUEGO SE BASA EN ESTO: no rompe el juego porque solo se esta usando el ultimo valor. 
-
-//aleatorio(0, mokepones.length - 1) esta linea esta mal en ataqueAleatorioEnemigo. da 3. menos 1, da 2. entre 1 y 2 es el ataque aleatorio enemigo.
-//la solucion es esta: ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques
+//cada click: representa un 1 turno - genere 1 ataque de jugador - genera 1 ataque del enemigo - ejecuta 1 combate.
 
 
-//ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques - esta en la funcion seleccionarMascotaEnemigo. la variable de ataquesMokeponEnemigo se volvera a reutilizar.
+//actual estado del array:
+//nunca se vacian los arrays de ataqueJugador y ataqueEnemigo
+//crecen de manera infinita
+//guarda un historial que ya no se usa
+//el combate solo es el ultimo ataque
 
-////let ataqueAleatorio = aleatorio(0, mokepones.length - 1) esta linea esta mal.
-//se reemplazaria por esto:
-//let indice = aleatorio(0, ataquesMokeponEnemigo.length - 1)
-//let ataque = ataquesMokeponEnemigo[indice].nombre
+//esta linea esta mal
+//aleatorio(0, mokepones.length - 1) en ataqueAleatorioEnemigo.
+//mokepones.length es la cantidad de animales. no de ataques.
+//a profundidad: esa linea da 3. pero menos 1, da 2. asi es como se elige el ataque del enemigo.
+//mi opcion esta wrong: mokepones[ataques].length. ya que ataques no es un indice. es un array
 
-//ataquesMokeponEnemigo viene de la funcion de seleccionarMascotaEnemigo
-//proceso:
-//let mascotaAleatoria = aleatorio(0, mokepones.length - 1) - mascotaAleatoria=aleatorio(0, 2)
-//ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques - ataquesMokeponEnemigo = mokepones[0,1,2].ataques **array de ataques**
-
-//ataquesMokepon.length === 5
-//let indice = aleatorio(0, ataquesMokeponEnemigo.length - 1)
-//indice =aleatorio(0, 0-1-2-3-4) el ataque. 
-
-//let ataque = ataquesMokeponEnemigo[indice].nombre
-//let ataque = ataquesMokeponEnemigo[0-1-2-3-4]
+//esta lleno de basura la pantalla:
+//nuevoAtaqueDelJugador.innerHTML = ataqueJugador[i].ataque
+//esta linea esta mal.
+//resuelto...
 
 
-/*
-Esta linea: ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques 
-Se traduce: ataquesMokeponEnemigo = mokepones[0,1,2].ataques 
+//error de sobrecarga del boton de los eventListener. multiples veces al mismo boton. 
+//es simple: si una funcion que se puede ejecutar mas de una vez agrega addEventListener, esta mal. 
 
-Esta linea: let indice = aleatorio(0, ataquesMokeponEnemigo.length - 1) 
-Se traduce: indice =aleatorio(0, 0-1-2-3-4) contiene un ataque..  
-
-esta linea: let ataque = ataquesMokeponEnemigo[indice].nombre 
-se traduce: ataque = ataquesMokeponEnemigo[0-1-2-3-4].nombre = agua, agua, agua, fuego, tierra,
-*/
-
-//ataqueAleatorioEnemigo esta mal. se asigna un ataque. pero la logica esta mal incluso en eso.
-//funcion arreglada. 
-
-//MAS ERRORES: secuenciaAtaque se esta ejecutando mas de una vez.
-//crearMensaje muestra arrays completos. por eso es un cagadero la pantalla.
-//variables globales que estan duplicadas.
-//(deberiamos resolver el problema de variables globales regadas por todo el documento.)
-//ataqueJugador y ataqueEnemigo nunca se limpian
-
-//crearMensaje muestra arrays completos.
-//nuevoAtaqueDelJugador.innerHTML = ataqueJugador
-//a solverlo. aun. pero ya estara resuelto. pronto. cuando ya haya escrito el siguiente commit here.
-
-//secuenciaAtaque fue cambiada de lugar. porque? sepa la vrg
+//mostrarAtaques se agrego el ataque.tipo.porque... el sistema de ataues depende leer los emojis en el dom. ademas de eliminar los ataques extra
