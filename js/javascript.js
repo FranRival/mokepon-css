@@ -181,6 +181,9 @@ function secuenciaAtaque() {
         })
     })
 }
+//esta funcion esta wrong. 
+//por escalabilidad. es demasiado codigo. si agrego otro ataque al array de ataques, debe de crear otro puto else if.
+//el otro problem, es que cualquier cosa que no sea el emoji de fuego o agua, caera en el ultimo else. aun si no tiene nada que ver.
 
 
 function seleccionarMascotaEnemigo() {
