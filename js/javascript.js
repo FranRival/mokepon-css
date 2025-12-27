@@ -335,3 +335,5 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 //es simple: si una funcion que se puede ejecutar mas de una vez agrega addEventListener, esta mal. 
 
 //mostrarAtaques se agrego el ataque.tipo.porque... el sistema de ataues depende leer los emojis en el dom. ademas de eliminar los ataques extra
+
+//reestructurando secienciaAtaque
