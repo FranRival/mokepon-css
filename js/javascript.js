@@ -154,7 +154,7 @@ function mostrarAtaques(ataques) {
     botones = document.querySelectorAll('.BATaque')
 
     secuenciaAtaque()
-}//
+}//data-* es el estandar entre JS y DOM
 
 
 
