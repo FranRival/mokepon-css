@@ -142,7 +142,7 @@ function mostrarAtaques(ataques) {
 
     ataques.forEach(ataque => {
         ataquesMokepon = `
-        <button id=${ataque.id} class="boton-de-ataque BATaque">${ataque.nombre}" ataque.tipo="${ataque.tipo}">${ataque.nombre}</button>
+        <button id=${ataque.id} class="boton-de-ataque BATaque">${ataque.nombre}" data-tipo="${ataque.tipo}">${ataque.nombre}</button>
         `
 
         contenedorAtaques.innerHTML += ataquesMokepon
@@ -155,6 +155,8 @@ function mostrarAtaques(ataques) {
 
     secuenciaAtaque()
 }//data-* es el estandar entre JS y DOM
+//son 3 funciones que estan enlazadas: seleccionarMascotaJugador > extraerAtaques > mostrarAtaques. 
+//desde las 3 funciones se obtiene el array con el que se trabajara. 
 
 
 
