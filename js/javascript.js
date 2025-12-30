@@ -154,10 +154,7 @@ function mostrarAtaques(ataques) {
     botones = document.querySelectorAll('.BATaque')
 
     secuenciaAtaque()
-}//data-* es el estandar entre JS y DOM
-//son 3 funciones que estan enlazadas: seleccionarMascotaJugador > extraerAtaques > mostrarAtaques. 
-//desde las 3 funciones se obtiene el array con el que se trabajara. 
-
+}
 
 
 function secuenciaAtaque() {
