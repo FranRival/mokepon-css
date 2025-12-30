@@ -142,7 +142,7 @@ function mostrarAtaques(ataques) {
 
     ataques.forEach(ataque => {
         ataquesMokepon = `
-        <button id=${ataque.id} class="boton-de-ataque BATaque">${ataque.nombre}" ataque.tipo="${ataque-tipo}">${ataque.nombre}</button>
+        <button id=${ataque.id} class="boton-de-ataque BATaque">${ataque.nombre}" data-tipo="${ataque-tipo}">${ataque.nombre}</button>
         `
 
         contenedorAtaques.innerHTML += ataquesMokepon
@@ -157,30 +157,21 @@ function mostrarAtaques(ataques) {
 }//
 
 
-
 function secuenciaAtaque() {
-
-
     botones.forEach((boton) => {
-        boton.addEventListener('click', (Event) => {
-            console.log(Event)
-            if (Event.target.textContent === '🔥') {
-                ataqueJugador.push('Fuego')
-                console.log(ataqueJugador)
-                boton.style.background = '#112f58'
-            } else if (Event.target.textContent === '🧊') {
-                ataqueJugador.push('Agua')
-                console.log(ataqueJugador)
-                boton.style.background = '#112f58'
-            } else {
-                ataqueJugador.push('Tierra')
-                console.log(ataqueJugador)
-                boton.style.background = '#112f58'
-            }
+        boton.addEventListener('click', (event) => {
+
+            const tipo = event.target.dataset.tipo
+
+            ataqueJugador.push(tipo)
+            boton.style.background = '#112f58'
+
             ataqueAleatorioEnemigo()
         })
     })
 }
+
+
 //esta funcion esta wrong. 
 //por escalabilidad. es demasiado codigo. si agrego otro ataque al array de ataques, debe de crear otro puto else if.
 //el otro problem, es que cualquier cosa que no sea el emoji de fuego o agua, caera en el ultimo else. aun si no tiene nada que ver.
