@@ -178,7 +178,10 @@ function secuenciaAtaque() {
             }
             ataqueAleatorioEnemigo()
         })
-    })
+    })//logica fragil.
+    //en delete7 ya no se usa el if. solo se guarda el ataque.
+    //aqui es lo mismo. decide cual es el emoji, y asigna el ataque.
+    //y lo guarda...
 }
 
 
