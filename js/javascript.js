@@ -142,7 +142,7 @@ function mostrarAtaques(ataques) {
 
     ataques.forEach(ataque => {
         ataquesMokepon = `
-        <button id=${ataque.id} class="boton-de-ataque BATaque">${ataque.nombre}" data-tipo="${ataque-tipo}">${ataque.nombre}</button>
+        <button id=${ataque.id} class="boton-de-ataque BATaque">${ataque.nombre} data-tipo="${ataque.tipo}">${ataque.nombre}</button>
         `
 
         contenedorAtaques.innerHTML += ataquesMokepon
@@ -171,10 +171,6 @@ function secuenciaAtaque() {
     })
 }
 
-
-//esta funcion esta wrong. 
-//por escalabilidad. es demasiado codigo. si agrego otro ataque al array de ataques, debe de crear otro puto else if.
-//el otro problem, es que cualquier cosa que no sea el emoji de fuego o agua, caera en el ultimo else. aun si no tiene nada que ver.
 
 
 function seleccionarMascotaEnemigo() {
@@ -327,3 +323,4 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 
 //error de sobrecarga del boton de los eventListener. multiples veces al mismo boton. 
 //es simple: si una funcion que se puede ejecutar mas de una vez agrega addEventListener, esta mal. 
+
