@@ -342,3 +342,4 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 //el tipo actual (codigo agrgado a delete7) no interviene en el codigo real. el problema, es que estamos usando el emoji como identificador de ataque. cuando debemos usar el tipo.
 
 //le dimos prioridad a la flota de webs. dia 2. aun no tenemos dinero para dar la flota la cantidad de dinero y atencion. 
+//creo que me estoy volviendo flojo. 
