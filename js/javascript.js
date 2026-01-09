@@ -343,3 +343,4 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 
 //le dimos prioridad a la flota de webs. dia 2. aun no tenemos dinero para dar la flota la cantidad de dinero y atencion. 
 //creo que me estoy volviendo flojo. 
+//otro dia para delegar this tarea
