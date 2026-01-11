@@ -345,3 +345,4 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 //creo que me estoy volviendo flojo. 
 //otro dia para delegar this tarea
 //other day... ya debo de comenzar a ponerme las pilas alv
+//comenzar a hacer mi linkedin
