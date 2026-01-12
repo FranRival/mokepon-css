@@ -344,3 +344,5 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 //
 //es un error. en secuenciaAtaque hay un emoji de fuego. 🔥. dentro de los <>. cuando deberia estar fuera de ellos. 
 //toda funcion que no devuelva un return sera automaticamente undefined.
+//mostrarAtaques tenia un error. ese emoji volvia un undefined a la funcion de secuenciaAtaque. data-tipo era undefined. porque el navegador leia el emoji. y el resto que estuviera luego de ese emoji, seria undefined. 
+//
