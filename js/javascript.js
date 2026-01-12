@@ -320,7 +320,8 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 //esta linea esta mal.
 //resuelto...
 
-
+//HOY
 //error de sobrecarga del boton de los eventListener. multiples veces al mismo boton. 
 //es simple: si una funcion que se puede ejecutar mas de una vez agrega addEventListener, esta mal. 
-
+//ESTOY PROGRAMANDO Y ME SIENTO TRISTE...
+//RAYOS!#! - si se el porque... 😭 
