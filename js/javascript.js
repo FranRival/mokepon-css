@@ -343,3 +343,4 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 
 //
 //es un error. en secuenciaAtaque hay un emoji de fuego. 🔥. dentro de los <>. cuando deberia estar fuera de ellos. 
+//toda funcion que no devuelva un return sera automaticamente undefined.
