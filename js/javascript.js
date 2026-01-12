@@ -142,7 +142,7 @@ function mostrarAtaques(ataques) {
 
     ataques.forEach(ataque => {
         ataquesMokepon = `
-        <button id=${ataque.id} class="boton-de-ataque BATaque">${ataque.nombre} data-tipo="${ataque.tipo}">${ataque.nombre}</button>
+        <button id=${ataque.id} class="boton-de-ataque BATaque" ${ataque.nombre} data-tipo="${ataque.tipo}">${ataque.nombre}</button>
         `
 
         contenedorAtaques.innerHTML += ataquesMokepon
