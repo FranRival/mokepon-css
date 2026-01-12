@@ -154,7 +154,7 @@ function mostrarAtaques(ataques) {
     botones = document.querySelectorAll('.BATaque')
 
     secuenciaAtaque()
-}//
+}//ataque.nombre da el emoji 🔥. pero es un error. porque no deberia estar dentro de los <>. ahi solo deberia estar los atributos. nunca contenido visual. solo deben estar texto. emojis, texto del usuario. 
 
 
 function secuenciaAtaque() {
