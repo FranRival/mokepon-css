@@ -341,8 +341,5 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 //reestructurando secienciaAtaque
 //el tipo actual (codigo agrgado a delete7) no interviene en el codigo real. el problema, es que estamos usando el emoji como identificador de ataque. cuando debemos usar el tipo.
 
-//le dimos prioridad a la flota de webs. dia 2. aun no tenemos dinero para dar la flota la cantidad de dinero y atencion. 
-//creo que me estoy volviendo flojo. 
-//otro dia para delegar this tarea
-//other day... ya debo de comenzar a ponerme las pilas alv
-//comenzar a hacer mi linkedin. tenemos que volver a programar. 
+//
+//es un error. en secuenciaAtaque hay un emoji de fuego. 🔥. dentro de los <>. cuando deberia estar fuera de ellos. 
