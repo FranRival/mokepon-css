@@ -345,4 +345,16 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 //es un error. en secuenciaAtaque hay un emoji de fuego. 🔥. dentro de los <>. cuando deberia estar fuera de ellos. 
 //toda funcion que no devuelva un return sera automaticamente undefined.
 //mostrarAtaques tenia un error. ese emoji volvia un undefined a la funcion de secuenciaAtaque. data-tipo era undefined. porque el navegador leia el emoji. y el resto que estuviera luego de ese emoji, seria undefined. 
-//
+//"el navegador no entiende emojis como atributos. entra el <error recovery>"
+
+
+//ERROR RECOVERY: sigue funcionando aunque la informacion este incorrecta, incompleta o currupta. 
+
+//aislarlo. se pueden crear funciones para decir que lo esta aislando. 
+//sin error recovery internet se caeria. 
+//CAPA 1: Error Recovery
+//CAPA 2: Coercion y tolerancia
+//CAPA 3: Fallbacks silenciosos
+//CAPA 4: Propagacion automatica 
+//CAPA 5: Scope y hoisting
+//CAPA 6: Event loop y asincronia 
