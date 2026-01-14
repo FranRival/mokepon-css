@@ -360,3 +360,4 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 //CAPA 6: Event loop y asincronia 
 
 //se eliminaron las variables globales de let inputHipodoge, i, imputRatigueya
+//se elimino el id=${ataque.id}
