@@ -358,3 +358,5 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 //CAPA 4: Propagacion automatica 
 //CAPA 5: Scope y hoisting
 //CAPA 6: Event loop y asincronia 
+
+//se eliminaron las variables globales de let inputHipodoge, i, imputRatigueya
