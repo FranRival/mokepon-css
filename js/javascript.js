@@ -148,7 +148,9 @@ function mostrarAtaques(ataques) {
         contenedorAtaques.innerHTML += ataquesMokepon
     })
 
-
+    botonFuego = document.getElementById('boton-fuego')
+    botonAgua = document.getElementById('boton-agua')
+    botonTierra = document.getElementById('boton-tierra')
     botones = document.querySelectorAll('.BATaque')
 
     secuenciaAtaque()
@@ -361,4 +363,6 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 //se elimino el id=${ataque.id}
 
 
-///
+///eliminamos los botones de botonFuego, botonAgua, botonTierra.
+
+//cambiando codigo de la funcion. por un event.tarjet.dataset.tipo
