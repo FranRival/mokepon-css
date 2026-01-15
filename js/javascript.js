@@ -145,9 +145,7 @@ function mostrarAtaques(ataques) {
         contenedorAtaques.innerHTML += ataquesMokepon
     })
 
-    botonFuego = document.getElementById('boton-fuego')
-    botonAgua = document.getElementById('boton-agua')
-    botonTierra = document.getElementById('boton-tierra')
+
     botones = document.querySelectorAll('.BATaque')
 
     secuenciaAtaque()
@@ -156,26 +154,14 @@ function mostrarAtaques(ataques) {
 
 function secuenciaAtaque() {
 
-
     botones.forEach((boton) => {
-        boton.addEventListener('click', (Event) => {
-            console.log(Event)
-            if (Event.target.textContent === '🔥') {
-                ataqueJugador.push('Fuego')
-                console.log(ataqueJugador)
-                boton.style.background = '#112f58'
-            } else if (Event.target.textContent === '🧊') {
-                ataqueJugador.push('Agua')
-                console.log(ataqueJugador)
-                boton.style.background = '#112f58'
-            } else {
-                ataqueJugador.push('Tierra')
-                console.log(ataqueJugador)
-                boton.style.background = '#112f58'
-            }
+        boton.addEventListener('click', (event) => {
+            const tipo = event.target.dataset.tipo
+            ataqueJugador.push(tipo)
+            boton.style.background = '#112f58'
             ataqueAleatorioEnemigo()
         })
-    })//logica fragil.
+    })    //logica fragil.
     //en delete7 ya no se usa el if. solo se guarda el ataque.
     //aqui es lo mismo. decide cual es el emoji, y asigna el ataque.
     //y lo guarda...
@@ -330,8 +316,8 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 //resuelto...
 
 
-//error de sobrecarga del boton de los eventListener. multiples veces al mismo boton. 
-//es simple: si una funcion que se puede ejecutar mas de una vez agrega addEventListener, esta mal. 
+//error de sobrecarga del boton de los eventListener. multiples veces al mismo boton.
+//es simple: si una funcion que se puede ejecutar mas de una vez agrega addEventListener, esta mal.
 
 //mostrarAtaques se agrego el ataque.tipo.porque... el sistema de ataues depende leer los emojis en el dom. ademas de eliminar los ataques extra
 
@@ -339,22 +325,22 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 //el tipo actual (codigo agrgado a delete7) no interviene en el codigo real. el problema, es que estamos usando el emoji como identificador de ataque. cuando debemos usar el tipo.
 
 //
-//es un error. en secuenciaAtaque hay un emoji de fuego. 🔥. dentro de los <>. cuando deberia estar fuera de ellos. 
+//es un error. en secuenciaAtaque hay un emoji de fuego. 🔥. dentro de los <>. cuando deberia estar fuera de ellos.
 //toda funcion que no devuelva un return sera automaticamente undefined.
-//mostrarAtaques tenia un error. ese emoji volvia un undefined a la funcion de secuenciaAtaque. data-tipo era undefined. porque el navegador leia el emoji. y el resto que estuviera luego de ese emoji, seria undefined. 
+//mostrarAtaques tenia un error. ese emoji volvia un undefined a la funcion de secuenciaAtaque. data-tipo era undefined. porque el navegador leia el emoji. y el resto que estuviera luego de ese emoji, seria undefined.
 //"el navegador no entiende emojis como atributos. entra el <error recovery>"
 
 
-//ERROR RECOVERY: sigue funcionando aunque la informacion este incorrecta, incompleta o currupta. 
+//ERROR RECOVERY: sigue funcionando aunque la informacion este incorrecta, incompleta o currupta.
 
-//aislarlo. se pueden crear funciones para decir que lo esta aislando. 
-//sin error recovery internet se caeria. 
+//aislarlo. se pueden crear funciones para decir que lo esta aislando.
+//sin error recovery internet se caeria.
 //CAPA 1: Error Recovery
 //CAPA 2: Coercion y tolerancia
 //CAPA 3: Fallbacks silenciosos
-//CAPA 4: Propagacion automatica 
+//CAPA 4: Propagacion automatica
 //CAPA 5: Scope y hoisting
-//CAPA 6: Event loop y asincronia 
+//CAPA 6: Event loop y asincronia
 
 //Bindings
 //referencias en el Scope
