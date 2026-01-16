@@ -368,3 +368,8 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 //cambiando codigo de la funcion. por un event.tarjet.dataset.tipo
 
 //OBSERVABILIDAD - branch -> delete7A 
+//porque???
+//DEVOPS - un sistema que no se puede observar, no se puede mejorar ni mantener. 
+//perfiles Backend - devops - arquitectura - sistemas distribuidos - trabajo remoto internaiconal - calidad de ingenieria
+
+//infraestructura - STATE central - 
