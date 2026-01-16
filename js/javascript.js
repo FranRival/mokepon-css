@@ -366,3 +366,5 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 ///eliminamos los botones de botonFuego, botonAgua, botonTierra.
 
 //cambiando codigo de la funcion. por un event.tarjet.dataset.tipo
+
+//OBSERVABILIDAD - branch -> delete7A 
