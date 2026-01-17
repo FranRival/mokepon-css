@@ -373,3 +373,4 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 //perfiles Backend - devops - arquitectura - sistemas distribuidos - trabajo remoto internaiconal - calidad de ingenieria
 
 //infraestructura - STATE central - 
+//prioridad a tiktaks... malo....
