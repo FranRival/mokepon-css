@@ -374,3 +374,6 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 
 //infraestructura - STATE central - 
 //prioridad a tiktaks... malo....
+
+
+//observabilidad. entraremos con ello tomorrow...
