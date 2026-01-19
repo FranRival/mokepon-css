@@ -34,9 +34,7 @@ let ataquesMokepon
 let botones = []
 let ataqueJugador = []
 
-let botonFuego
-let botonAgua
-let botonTierra
+
 
 let ataquesMokeponEnemigo
 
@@ -113,7 +111,7 @@ function seleccionarMascotaJugador() {
         mascotaJugador = inputRatigueya.id
     } else {
         alert("Tienes que selecionar")
-
+        return
     }
 
     extraerAtaques(mascotaJugador)
@@ -139,7 +137,7 @@ function mostrarAtaques(ataques) {
 
     ataques.forEach(ataque => {
         ataquesMokepon = `
-        <button class="boton-de-ataque BATaque">${ataque.nombre} data-tipo="${ataque.tipo}">${ataque.nombre}</button>
+        <button class="boton-de-ataque BATaque" data-tipo="${ataque.tipo}">${ataque.nombre}</button>
         `
 
         contenedorAtaques.innerHTML += ataquesMokepon
@@ -239,9 +237,10 @@ function revisarVidas() {
 
 function crearMensajeFinal(resultadoFinal) {
     sectionMensajes.innerHTML = resultadoFinal
-    botonFuego.disabled = true
-    botonAgua.disabled = true
-    botonTierra.disabled = true
+
+    botones.forEach(boton => {
+        boton.disabled = true
+    })
 
     sectionReiniciar.style.display = 'block'
 }
