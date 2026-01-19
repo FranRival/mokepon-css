@@ -93,7 +93,8 @@ function iniciarJuego() {
 
 
 function seleccionarMascotaJugador() {
-    sectionSeleccionarAtaque.style.display = 'flex'
+
+            sectionSeleccionarAtaque.style.display = 'flex'
     sectionSeleccionarMascota.style.display = 'none'
 
     let inputHipodoge = document.getElementById('Hipodoge')
@@ -113,6 +114,8 @@ function seleccionarMascotaJugador() {
         alert("Tienes que selecionar")
         return
     }
+
+
 
     extraerAtaques(mascotaJugador)
     seleccionarMascotaEnemigo()
@@ -344,3 +347,5 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 //Bindings
 //referencias en el Scope
 //declarqciones hoisted
+
+//hay un error. aun sin elegir mascota el programa continua. avanza. pero no hay nada mas que ver. 
