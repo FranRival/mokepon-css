@@ -378,3 +378,5 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 
 //observabilidad. entraremos con ello tomorrow...
 //se estan arreglando las fallas del codigo del delete7
+
+//prioridad a tiktas.
