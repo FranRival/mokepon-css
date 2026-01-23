@@ -95,7 +95,6 @@ function iniciarJuego() {
 function seleccionarMascotaJugador() {
 
 
-
     let inputHipodoge = document.getElementById('Hipodoge')
     let inputCapipepo = document.getElementById('Capipepo')
     let inputRatigueya = document.getElementById('Ratigueya')
@@ -117,6 +116,7 @@ function seleccionarMascotaJugador() {
     sectionSeleccionarAtaque.style.display = 'flex'
     sectionSeleccionarMascota.style.display = 'none'
 
+    //nunca cambies el estado visual o de sistema antes de validar. 
 
     extraerAtaques(mascotaJugador)
     seleccionarMascotaEnemigo()
