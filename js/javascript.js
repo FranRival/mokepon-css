@@ -380,3 +380,5 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 //se estan arreglando las fallas del codigo del delete7
 
 //prioridad a tiktas.
+
+//problemas para entender como funciona return
