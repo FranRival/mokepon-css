@@ -94,8 +94,7 @@ function iniciarJuego() {
 
 function seleccionarMascotaJugador() {
 
-            sectionSeleccionarAtaque.style.display = 'flex'
-    sectionSeleccionarMascota.style.display = 'none'
+
 
     let inputHipodoge = document.getElementById('Hipodoge')
     let inputCapipepo = document.getElementById('Capipepo')
@@ -115,6 +114,8 @@ function seleccionarMascotaJugador() {
         return
     }
 
+    sectionSeleccionarAtaque.style.display = 'flex'
+    sectionSeleccionarMascota.style.display = 'none'
 
 
     extraerAtaques(mascotaJugador)
