@@ -123,6 +123,17 @@ function seleccionarMascotaJugador() {
     //call stack
     //es una torre de platos. cada funcion agrega un nuevo plato. 
 
+    //eventos del navegador, no tiene nada que ver con pila. 
+
+    //el addEventListener es el que hace el truco. no el return. 
+    //creador el escuchante (adventListener) el call stack esta vacio. 
+    //el return termina la funcion. 
+    //pero el listener sigue ahi. escuchando los botones. 
+    //cuando se da click, se vuelve a colocar el call stack la funcion de seleccionarMascotaJugador. 
+
+    //el call stacj solo crece cuando llama una funcion a otra sin haber terminado. 
+
+
     sectionSeleccionarAtaque.style.display = 'flex'
     sectionSeleccionarMascota.style.display = 'none'
 
