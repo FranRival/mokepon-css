@@ -113,6 +113,13 @@ function seleccionarMascotaJugador() {
         return
     }
 
+    //como no funciona esta puta linea
+    //1. no vuelve a ejecutar inicarJuego
+    //2. no vuelve a ejecutar el addeventlistener
+    //3. no se rebobina el codigo. 
+    
+    //el motor se queda esperando el proximo evento. 
+
     sectionSeleccionarAtaque.style.display = 'flex'
     sectionSeleccionarMascota.style.display = 'none'
 
