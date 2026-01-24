@@ -120,6 +120,9 @@ function seleccionarMascotaJugador() {
     
     //el motor se queda esperando el proximo evento. 
 
+    //call stack
+    //es una torre de platos. cada funcion agrega un nuevo plato. 
+
     sectionSeleccionarAtaque.style.display = 'flex'
     sectionSeleccionarMascota.style.display = 'none'
 
