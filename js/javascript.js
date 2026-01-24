@@ -382,3 +382,6 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 //prioridad a tiktas.
 
 //problemas para entender como funciona return
+
+//return
+//call stack.
