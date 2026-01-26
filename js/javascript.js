@@ -133,10 +133,7 @@ function extraerAtaques(mascotaJugador) {
 
     mostrarAtaques(ataques)
 
-}//el codigo esta fragil ante cualquier variacion minima
-//- un cambio de letra de mayuscula a miniscula, hacen un undefined. 
-//reenombrar mascotas
-//
+}//cada mokepon se esta usando en constructores, id del imput, comparaciones, innerHTML
 
 
 function mostrarAtaques(ataques) {
