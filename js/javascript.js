@@ -113,31 +113,9 @@ function seleccionarMascotaJugador() {
         return
     }
 
-    //como no funciona esta puta linea
-    //1. no vuelve a ejecutar inicarJuego
-    //2. no vuelve a ejecutar el addeventlistener
-    //3. no se rebobina el codigo. 
-    
-    //el motor se queda esperando el proximo evento. 
-
-    //call stack
-    //es una torre de platos. cada funcion agrega un nuevo plato. 
-
-    //eventos del navegador, no tiene nada que ver con pila. 
-
-    //el addEventListener es el que hace el truco. no el return. 
-    //creador el escuchante (adventListener) el call stack esta vacio. 
-    //el return termina la funcion. 
-    //pero el listener sigue ahi. escuchando los botones. 
-    //cuando se da click, se vuelve a colocar el call stack la funcion de seleccionarMascotaJugador. 
-
-    //el call stacj solo crece cuando llama una funcion a otra sin haber terminado. 
-
 
     sectionSeleccionarAtaque.style.display = 'flex'
     sectionSeleccionarMascota.style.display = 'none'
-
-    //nunca cambies el estado visual o de sistema antes de validar. 
 
     extraerAtaques(mascotaJugador)
     seleccionarMascotaEnemigo()
@@ -155,7 +133,10 @@ function extraerAtaques(mascotaJugador) {
 
     mostrarAtaques(ataques)
 
-}
+}//el codigo esta fragil ante cualquier variacion minima
+//- un cambio de letra de mayuscula a miniscula, hacen un undefined. 
+//reenombrar mascotas
+//
 
 
 function mostrarAtaques(ataques) {
