@@ -385,3 +385,5 @@ let ataqueEnemigoActual = ataqueEnemigo[ataqueEnemigo.length - 1]
 
 //return
 //call stack.
+
+//las variables no estan encapsuladas. eso hace el codigo fragil. dependen de escribirlas bien. pueden ocurrir errores de typo. 
